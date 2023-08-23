@@ -1,0 +1,9 @@
+id_run,model_name,model_def,variable,type,element,dims,level
+1,var_interc_ind,varying intercepts by industry,ind,parameter,intercept,ind,1
+1,var_interc_ind,varying intercepts by industry,salary,target,,obs,
+2,var_interc_ind_occ,varying intercepts by industry and occupation,ind,parameter,intercept,ind,1
+2,var_interc_ind_occ,varying intercepts by industry and occupation,occ,parameter,intercept,occ,1
+2,var_interc_ind_occ,varying intercepts by industry and occupation,salary,target,,obs,
+3,var_interc_slopes,varying intercepts by industry and slope (occupation),ind,parameter,intercept,ind,1
+3,var_interc_slopes,varying intercepts by industry and slope (occupation),occ,parameter,slope,occ,1
+3,var_interc_slopes,varying intercepts by industry and slope (occupation),salary,target,,obs,

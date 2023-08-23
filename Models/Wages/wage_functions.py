@@ -1,0 +1,152 @@
+# Import libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pymc as pm
+import arviz as az
+import pymc.sampling.jax as pmjax
+import jax
+import datetime
+
+from wage_utils import Capturing, sampling_output
+
+# Set random seed
+RANDOM_SEED = 230810
+rng = np.random.default_rng(RANDOM_SEED)
+
+############################################## Functions ###############################################################
+def make_data(data_summary, model):
+    with model:
+        model_data = {}
+        for variable, data in data_summary.items():
+            if data["type"] == "parameter":
+                model_data[f"{variable}"] = pm.Data(f"data_{variable}", data["data"], mutable=False)
+    return model, model_data
+
+
+def make_hyperpriors(variable, data, model):
+    with model:
+        if data["type"] == "parameter":
+            mu = pm.Normal(f'mu_{variable}', mu=0, sigma=10)
+            sigma = pm.Exponential(f'sigma_{variable}', lam=10)
+    return model
+
+
+def make_prior(variable, data, model, param="centered"):
+    with model:
+        if data["type"] == "parameter":
+            # Get hyperpriors
+            mu = [ var for var in model.free_RVs if f"mu_{variable}" in var.name ][0]
+            sigma = [ var for var in model.free_RVs if f"sigma_{variable}" in var.name ][0]
+
+            # Define if centered or non-centered parametization
+            if param == "centered":
+                pm.Normal(f"beta_{variable}", mu=mu, sigma=sigma, dims=data["dims"])
+            elif param == "non-centered":
+                offset = pm.Normal(f"offset_{variable}", mu=0, sigma=1, dims=data["dims"])
+                pm.Deterministic(f"beta_{variable}", mu + sigma * offset)
+    return model
+
+
+def make_ev_level(variables, model, level, model_data=None):
+    mu = 0
+    with model:
+        for variable, data in variables:
+            if data["type"] == "parameter":
+                # Set parameter
+                parameter = [ var for var in model.unobserved_RVs if f"beta_{variable}" in var.name ][0]
+
+                # Define if intercept or slope
+                if data["element"] == "intercept":
+                    beta = 1
+                elif data["element"] == "slope":
+                    beta = model_data[f"{variable}"]
+                    
+                # Define define dimensions and parameter contribution to expected value
+                if data["dims"] == None:
+                    mu += parameter * beta
+                else:
+                    mu += parameter[model_data[f"{data['dims']}"]] * beta
+        pm.Deterministic(f"ev_{level}", pm.math.exp(mu))
+    return model
+
+
+def make_levels(data_summary, model, model_data=None):
+    with model:
+        levels = { f"level_{v['level']}": [ (key, val) for key, val in data_summary.items() if val.get('level') == v['level']]
+                      for v in data_summary.values() if v.get('level') is not None }
+        for level, variables in levels.items():
+            # Create hyperpriors and priors for the level
+            for variable in variables:
+                var_name, var_data = variable
+                make_hyperpriors(var_name, var_data, model)
+                make_prior(var_name, var_data, model)
+            # Create expected value expression for the level
+            make_ev_level(variables, model, level, model_data)
+    return model
+
+
+def make_likelihood(data_summary, model):
+    with model:
+        target = [ data["data"] for _, data in data_summary.items() if data["type"]=="target" ][0]
+        shape = pm.Exponential("shape", lam=10)
+        mu = [ var for var in model.unobserved_RVs if "ev" in var.name ][0]
+        y = pm.Gamma("salary_hat", alpha=shape, beta=shape/mu,  observed=target)
+    return model
+
+
+def sample(model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95):
+    # Save Model graph
+    model_graph = pm.model_to_graphviz(model)
+    model_graph.render(f"outputs/{model_name}/graph_{model_name}", format="svg")
+    # Sampling
+    with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
+        with model:
+            trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=False)
+            trace.to_netcdf(f"outputs/{model_name}/trace_{model_name}.nc")
+    # Save trace plot
+    az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
+                    .ravel()[0].figure.savefig(f"outputs/{model_name}/traceplot_{model_name}.svg")
+    # Save summary
+    sampling_summary = pm.summary(trace)
+    sampling_summary.to_csv(f"outputs/{model_name}/summary_{model_name}.csv")
+    # Save sampling metadata
+    sampling_metadata = sampling_output(sampling_info, nchains=nchains, ndraws=ndraws, ntunes=ntune)
+    sampling_metadata["maxRhat"] = sampling_summary["r_hat"].max()
+    
+    return sampling_metadata
+
+
+def run(id_run, model_name, data_summary, coords, sampling_record, nchains, ndraws, ntune, target_accept):
+    start_time = datetime.datetime.now()
+    # Setting up the model
+    model = pm.Model(coords=coords)
+    model, model_data = make_data(data_summary, model)
+    model = make_levels(data_summary, model, model_data)
+    model = make_likelihood(data_summary, model)
+
+    # Sampling
+    sampling = sample(model_name, model, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
+    sampling["start_time"] = start_time.strftime("%Y-%m-%d %H:%M")
+    sampling["end_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    sampling["model_name"] = model_name
+
+    # Save sampling metadata info
+    sampling_record = pd.concat([sampling_record, pd.DataFrame.from_dict({ id_run: sampling }, orient="index")])
+    sampling_record.to_csv("sampling_record.csv")
+
+    return sampling_record, sampling
+
+def create_data_summary(model_workflow, dataset, id_run):
+    data_summary = {}
+    for _, row in model_workflow.query(f"id_run == {id_run}").iterrows():
+        data_summary[row["variable"]] = {
+            "type": row["type"],
+            "element": row["element"] if row["type"] == "parameter" else None,
+            "data": pd.factorize(dataset[row["variable"]])[0] if row["type"] == "parameter" else dataset[row["variable"]].values,
+            "cats": pd.factorize(dataset[row["variable"]])[1] if row["type"] == "parameter" else None,
+            "dims": row["dims"],
+            "level": row["level"] if row["type"] == "parameter" else None
+        }
+    return data_summary
