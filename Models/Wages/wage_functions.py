@@ -87,30 +87,39 @@ def make_levels(data_summary, model, model_data=None):
     return model
 
 
-def make_likelihood(data_summary, model):
+def make_likelihood(id_run, model_name, data_summary, model):
     with model:
         target = [ data["data"] for _, data in data_summary.items() if data["type"]=="target" ][0]
         shape = pm.Exponential("shape", lam=10)
         mu = [ var for var in model.unobserved_RVs if "ev" in var.name ][0]
         y = pm.Gamma("salary_hat", alpha=shape, beta=shape/mu,  observed=target)
+
+        # Save Model graph
+        model_graph = pm.model_to_graphviz(model)
+        model_graph.render(f"outputs/{id_run}_{model_name}/{id_run}_graph_{model_name}", format="svg")
     return model
 
 
-def sample(model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95):
-    # Save Model graph
-    model_graph = pm.model_to_graphviz(model)
-    model_graph.render(f"outputs/{model_name}/graph_{model_name}", format="svg")
+def validate_workflow(id_run, model_name, data_summary, coords):
+    # Setting up the model
+    model = pm.Model(coords=coords)
+    model, model_data = make_data(data_summary, model)
+    model = make_levels(data_summary, model, model_data)
+    model = make_likelihood(id_run, model_name, data_summary, model)
+
+
+def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95):
     # Sampling
     with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
         with model:
             trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=False)
-            trace.to_netcdf(f"outputs/{model_name}/trace_{model_name}.nc")
+            trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
     # Save trace plot
     az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
-                    .ravel()[0].figure.savefig(f"outputs/{model_name}/traceplot_{model_name}.svg")
+                    .ravel()[0].figure.savefig(f"outputs/{id_run}_{model_name}/{id_run}_traceplot_{model_name}.svg")
     # Save summary
     sampling_summary = pm.summary(trace)
-    sampling_summary.to_csv(f"outputs/{model_name}/summary_{model_name}.csv")
+    sampling_summary.to_csv(f"outputs/{id_run}_{model_name}/{id_run}_summary_{model_name}.csv")
     # Save sampling metadata
     sampling_metadata = sampling_output(sampling_info, nchains=nchains, ndraws=ndraws, ntunes=ntune)
     sampling_metadata["maxRhat"] = sampling_summary["r_hat"].max()
@@ -124,10 +133,10 @@ def run(id_run, model_name, data_summary, coords, sampling_record, nchains, ndra
     model = pm.Model(coords=coords)
     model, model_data = make_data(data_summary, model)
     model = make_levels(data_summary, model, model_data)
-    model = make_likelihood(data_summary, model)
+    model = make_likelihood(id_run, model_name, data_summary, model)
 
     # Sampling
-    sampling = sample(model_name, model, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
+    sampling = sample(id_run, model_name, model, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
     sampling["start_time"] = start_time.strftime("%Y-%m-%d %H:%M")
     sampling["end_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     sampling["model_name"] = model_name

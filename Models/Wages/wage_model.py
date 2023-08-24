@@ -25,8 +25,8 @@ print(f"JAX default backend: {jax.default_backend()}")
 if __name__ == "__main__":
     # Set sampling parameters
     nchains = 4
-    ndraws = 4000
-    ntune = 4000
+    ndraws = 1000
+    ntune = 1000
     target_accept = 0.95
 
     # Load data and workflow
