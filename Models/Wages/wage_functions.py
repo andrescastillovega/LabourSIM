@@ -20,7 +20,7 @@ def make_data(data_summary, model):
     with model:
         model_data = {}
         for variable, data in data_summary.items():
-            if data["type"] == "parameter":
+            if data["element"] in ["slope","dimension"]:
                 model_data[f"{variable}"] = pm.Data(f"data_{variable}", data["data"], mutable=False)
     return model, model_data
 
@@ -112,7 +112,7 @@ def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target
     # Sampling
     with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
         with model:
-            trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=False)
+            trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=True)
             trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
     # Save trace plot
     az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
@@ -150,12 +150,21 @@ def run(id_run, model_name, data_summary, coords, sampling_record, nchains, ndra
 def create_data_summary(model_workflow, dataset, id_run):
     data_summary = {}
     for _, row in model_workflow.query(f"id_run == {id_run}").iterrows():
+        # Set data and cats None when dims is not defined
+        if (row["element"]=="intercept"):
+            data = None
+            cats = None
+        else:
+            data = pd.factorize(dataset[row["variable"]])[0] if row["type"] in ["parameter","dimension"] else dataset[row["variable"]].values
+            cats = pd.factorize(dataset[row["variable"]])[1] if row["type"] in ["parameter","dimension"] else None
+
+        # cats: If dims!=None, then cats is a list of the unique values of the variable
         data_summary[row["variable"]] = {
             "type": row["type"],
-            "element": row["element"] if row["type"] == "parameter" else None,
-            "data": pd.factorize(dataset[row["variable"]])[0] if row["type"] == "parameter" else dataset[row["variable"]].values,
-            "cats": pd.factorize(dataset[row["variable"]])[1] if row["type"] == "parameter" else None,
-            "dims": row["dims"],
+            "element": row["element"] if row["type"] in ["parameter","dimension"] else None,
+            "data": data,
+            "cats": cats,
+            "dims": row["dims"] if not pd.isna(row["dims"]) else None,
             "level": row["level"] if row["type"] == "parameter" else None
         }
     return data_summary
