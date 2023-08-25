@@ -50,7 +50,7 @@ def make_prior(variable, data, model, param="centered"):
 
 
 def make_ev_level(variables, model, level, model_data=None):
-    id_level = int(level.split("_")[1])
+    id_level = int(float(level.split("_")[1]))
     mu = 0
     with model:
         # Create expected value expression for the level

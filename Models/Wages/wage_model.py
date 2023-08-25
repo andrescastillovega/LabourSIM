@@ -8,6 +8,8 @@ import arviz as az
 import pymc.sampling.jax as pmjax
 import jax
 import datetime
+import argparse
+
 
 from wage_utils import Capturing, sampling_output
 import wage_functions as wage
@@ -33,6 +35,12 @@ az.rcParams.update(rc)
 
 # Run wage model
 if __name__ == "__main__":
+    # Get script arguments
+    parser = argparse.ArgumentParser(description="wage model")
+    parser.add_argument("model_workflow", help="Specify the .csv file with the model workflow")
+    parser.add_argument("model_dataset", help="Specify the .csv file with the model dataset")
+    args = parser.parse_args()
+
     # Set sampling parameters
     nchains = 4
     ndraws = 2000
@@ -40,8 +48,8 @@ if __name__ == "__main__":
     target_accept = 0.95
 
     # Load data and workflow
-    model_workflow = pd.read_csv("model_workflow.csv") # Contains the model workflow
-    dataset = pd.read_csv("model_dataset.csv") # This is the dataset for model estimation
+    model_workflow = pd.read_csv(args.model_workflow) # Contains the model workflow
+    dataset = pd.read_csv(args.model_dataset) # This is the dataset for model estimation
 
     # Get id_runs
     id_runs = model_workflow["id_run"].unique()
