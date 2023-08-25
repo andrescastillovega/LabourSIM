@@ -35,8 +35,8 @@ az.rcParams.update(rc)
 if __name__ == "__main__":
     # Set sampling parameters
     nchains = 4
-    ndraws = 10
-    ntune = 10
+    ndraws = 2000
+    ntune = 2000
     target_accept = 0.95
 
     # Load data and workflow

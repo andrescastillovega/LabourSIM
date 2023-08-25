@@ -28,8 +28,8 @@ def make_data(data_summary, model):
 def make_hyperpriors(variable, data, model):
     with model:
         if data["type"] == "parameter":
-            mu = pm.Normal(f'mu_{variable}', mu=0, sigma=10)
-            sigma = pm.Exponential(f'sigma_{variable}', lam=10)
+            mu = pm.Normal(f'mu_{variable}', mu=0, sigma=10, dims=data["dims"])
+            sigma = pm.Exponential(f'sigma_{variable}', lam=10, dims=data["dims"])
     return model
 
 
@@ -50,8 +50,10 @@ def make_prior(variable, data, model, param="centered"):
 
 
 def make_ev_level(variables, model, level, model_data=None):
+    id_level = int(level.split("_")[1])
     mu = 0
     with model:
+        # Create expected value expression for the level
         for variable, data in variables:
             if data["type"] == "parameter":
                 # Set parameter
@@ -68,6 +70,10 @@ def make_ev_level(variables, model, level, model_data=None):
                     mu += parameter * beta
                 else:
                     mu += parameter[model_data[f"{data['dims']}"]] * beta
+        # Add expected value from previous level to the current level
+        if id_level > 1:
+            mu += [ var for var in model.unobserved_RVs if f"ev_level_{id_level-1}" in var.name ][0]
+        # Apply exponential transformation (log-link)
         pm.Deterministic(f"ev_{level}", pm.math.exp(mu))
     return model
 
@@ -81,7 +87,7 @@ def make_levels(data_summary, model, model_data=None):
             for variable in variables:
                 var_name, var_data = variable
                 make_hyperpriors(var_name, var_data, model)
-                make_prior(var_name, var_data, model)
+                make_prior(var_name, var_data, model, param="non-centered")
             # Create expected value expression for the level
             make_ev_level(variables, model, level, model_data)
     return model
@@ -91,7 +97,7 @@ def make_likelihood(id_run, model_name, data_summary, model):
     with model:
         target = [ data["data"] for _, data in data_summary.items() if data["type"]=="target" ][0]
         shape = pm.Exponential("shape", lam=10)
-        mu = [ var for var in model.unobserved_RVs if "ev" in var.name ][0]
+        mu = [ var for var in model.unobserved_RVs if "ev" in var.name ][-1]
         y = pm.Gamma("salary_hat", alpha=shape, beta=shape/mu,  observed=target)
 
         # Save Model graph
