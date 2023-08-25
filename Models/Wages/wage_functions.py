@@ -112,13 +112,14 @@ def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target
     # Sampling
     with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
         with model:
-            trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=True)
+            trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=True,
+                                              idata_kwargs={"log_likelihood": True})
             trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
     # Save trace plot
     az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
                     .ravel()[0].figure.savefig(f"outputs/{id_run}_{model_name}/{id_run}_traceplot_{model_name}.svg")
     # Save summary
-    sampling_summary = pm.summary(trace)
+    sampling_summary = pm.summary(trace, var_names=["~ev_"], filter_vars="like")
     sampling_summary.to_csv(f"outputs/{id_run}_{model_name}/{id_run}_summary_{model_name}.csv")
     # Save sampling metadata
     sampling_metadata = sampling_output(sampling_info, nchains=nchains, ndraws=ndraws, ntunes=ntune)

@@ -20,13 +20,23 @@ rng = np.random.default_rng(RANDOM_SEED)
 jax.config.update('jax_platform_name', 'cpu')
 print(f"JAX default backend: {jax.default_backend()}")
 
+# Ignore Arviz RuntimeWarning when samplin with low number of draws (for testing purposes)
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
+# Set Arviz plotting options
+rc = {
+    "plot.max_subplots": 50,
+}
+az.rcParams.update(rc)
+
 
 # Run wage model
 if __name__ == "__main__":
     # Set sampling parameters
     nchains = 4
-    ndraws = 1000
-    ntune = 1000
+    ndraws = 10
+    ntune = 10
     target_accept = 0.95
 
     # Load data and workflow
