@@ -1,0 +1,275 @@
+id_run,model_name,model_def,variable,type,element,dims,level
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",avg_salary,parameter,intercept,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",elementary_edu,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",highschool_edu,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",postsec_edu,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",undergrad_edu,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",graduate_edu,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",grad_highschool_refyear,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",grad_college_refyear,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",grad_univ_refyear,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",student_status,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",public_sector,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",private_sector,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",self_emp,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",union,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",part_time,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",multiple_jobs,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",exp,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",months_last_worked,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",tenure,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",sex,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",age,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",firm_size,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",loc_size,parameter,slope,,1
+1,1997_onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",salary,target,target,obs,
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",student_status,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",public_sector,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",private_sector,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",self_emp,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",union,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",part_time,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",exp,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",months_last_worked,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",tenure,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",sex,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",age,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",firm_size,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",loc_size,parameter,slope,industry,1
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",salary,target,target,obs,
+2,1997_onelvl_ind_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: Industry",industry,dimension,dimension,industry,
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",student_status,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",public_sector,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",private_sector,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",self_emp,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",union,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",part_time,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",exp,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",months_last_worked,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",tenure,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",sex,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",age,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",firm_size,parameter,slope,industry,1
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",salary,target,target,obs,
+3,1997_onelvl_ind_no_loc_size,"Uni-level, varying intercepts and slopes - no loc_size. Dimensions: Industry",industry,dimension,dimension,industry,
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",student_status,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",public_sector,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",private_sector,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",self_emp,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",union,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",part_time,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",exp,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",months_last_worked,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",tenure,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",sex,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",age,parameter,slope,industry,1
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",salary,target,target,obs,
+4,1997_onelvl_ind_run_3_no_firm_size,"Uni-level, varying intercepts and slopes - run 3 with no firm_size. Dimensions: Industry",industry,dimension,dimension,industry,
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",student_status,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",public_sector,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",private_sector,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",self_emp,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",union,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",part_time,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",exp,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",months_last_worked,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",sex,parameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",age,prameter,slope,industry,1
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",salary,target,target,obs,
+5,1997_onelvl_ind_run_4_no_tenure,"Uni-level, varying intercepts and slopes - run 4 with no tenure. Dimensions: Industry",industry,dimension,dimension,industry,
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",student_status,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",public_sector,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",private_sector,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",self_emp,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",union,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",part_time,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",exp,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",sex,parameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",age,prameter,slope,industry,1
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",salary,target,target,obs,
+6,1997_onelvl_ind_run_5_no_months_last_worked,"Uni-level, varying intercepts and slopes - run 5 with no months_last_worked. Dimensions: Industry",industry,dimension,dimension,industry,
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",student_status,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",public_sector,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",private_sector,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",union,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",part_time,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",exp,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",sex,parameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",age,prameter,slope,industry,1
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",salary,target,target,obs,
+7,1997_onelvl_ind_run_6_no_self_emp,"Uni-level, varying intercepts and slopes - run 6 with no self_emp. Dimensions: Industry",industry,dimension,dimension,industry,
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",grad_highschool_refyear,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",grad_college_refyear,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",grad_univ_refyear,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",public_sector,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",private_sector,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",union,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",part_time,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",exp,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",sex,parameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",age,prameter,slope,industry,1
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",salary,target,target,obs,
+8,1997_onelvl_ind_run_7_no_student_status,"Uni-level, varying intercepts and slopes - run 7 with no student_status. Dimensions: Industry",industry,dimension,dimension,industry,
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",public_sector,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",private_sector,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",union,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",part_time,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",exp,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",sex,parameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",age,prameter,slope,industry,1
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",salary,target,target,obs,
+9,1997_onelvl_ind_run_8_no_grad_refyear,"Uni-level, varying intercepts and slopes - run 8 with no grad_refyear. Dimensions: Industry",industry,dimension,dimension,industry,
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",union,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",part_time,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",multiple_jobs,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",exp,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",sex,parameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",age,prameter,slope,industry,1
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",salary,target,target,obs,
+10,1997_onelvl_ind_run_9_no_public_private_sector,"Uni-level, varying intercepts and slopes - run 9 with no public_private_sector. Dimensions: Industry",industry,dimension,dimension,industry,
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",union,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",part_time,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",exp,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",sex,parameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",age,prameter,slope,industry,1
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",salary,target,target,obs,
+11,1997_onelvl_ind_run_10_no_multiple_jobs,"Uni-level, varying intercepts and slopes - run 10 with no multiple_jobs. Dimensions: Industry",industry,dimension,dimension,industry,
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",union,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",part_time,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",exp,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",sex,parameter,slope,industry,1
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",salary,target,target,obs,
+12,1997_onelvl_ind_run_11_on_age,"Uni-level, varying intercepts and slopes - run 11 with no age. Dimensions: Industry",industry,dimension,dimension,industry,
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",part_time,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",exp,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",sex,parameter,slope,industry,1
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",salary,target,target,obs,
+13,1997_onelvl_ind_run_12_no_union,"Uni-level, varying intercepts and slopes - run 12 with no union. Dimensions: Industry",industry,dimension,dimension,industry,
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",exp,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",sex,parameter,slope,industry,1
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",salary,target,target,obs,
+14,1997_onelvl_ind_run_13_no_part_time,"Uni-level, varying intercepts and slopes - run 13 with no part_time. Dimensions: Industry",industry,dimension,dimension,industry,
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",sex,parameter,slope,industry,1
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",salary,target,target,obs,
+15,1997_onelvl_ind_run_14_no_exp,"Uni-level, varying intercepts and slopes - run 14 with no exp. Dimensions: Industry",industry,dimension,dimension,industry,
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",elementary_edu,parameter,slope,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",highschool_edu,parameter,slope,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",postsec_edu,parameter,slope,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",undergrad_edu,parameter,slope,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",graduate_edu,parameter,slope,industry,1
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",salary,target,target,obs,
+16,1997_onelvl_ind_run_15_no_sex,"Uni-level, varying intercepts and slopes - run 15 with no sex. Dimensions: Industry",industry,dimension,dimension,industry,
+17,1997_onelvl_ind_run_16_no_edu_level,"Uni-level, varying intercepts and slopes - run 16 with no edu_level. Dimensions: Industry",avg_salary,parameter,intercept,industry,1
+17,1997_onelvl_ind_run_16_no_edu_level,"Uni-level, varying intercepts and slopes - run 16 with no edu_level. Dimensions: Industry",salary,target,target,obs,
+17,1997_onelvl_ind_run_16_no_edu_level,"Uni-level, varying intercepts and slopes - run 16 with no edu_level. Dimensions: Industry",industry,dimension,dimension,industry,
