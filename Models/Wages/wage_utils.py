@@ -20,7 +20,7 @@ class Capturing(list):
 def sampling_output(sampling_info, nchains, ndraws, ntunes):
     """ Function to organize the sampling info after the NUTS sampler has run."""
     sampling_metadata = {}
-    for location, stage in enumerate(["Compilation", "Sampling", "Transformation"]):
+    for location, stage in enumerate(["Compilation", "Sampling", "Transformation", "Log Likelihood"]):
         stage_duration = re.search(fr'{stage} time =\s+(\d+:\d+:\d+\.\d+)', sampling_info[(location * 2) + 1]).group(1)
         sampling_metadata[f"{stage}_time"] = stage_duration
         if stage == "Sampling":

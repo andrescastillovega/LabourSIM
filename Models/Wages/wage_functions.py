@@ -114,12 +114,12 @@ def validate_workflow(id_run, model_name, data_summary, coords):
     model = make_likelihood(id_run, model_name, data_summary, model)
 
 
-def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95):
+def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95, postprocess_chunks=10):
     # Sampling
     with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
         with model:
             trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=True,
-                                              idata_kwargs={"log_likelihood": True})
+                                              idata_kwargs={"log_likelihood": True}, postprocessing_chunks=postprocess_chunks)
             trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
     # Save trace plot
     az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
