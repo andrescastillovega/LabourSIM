@@ -27,7 +27,7 @@ import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # Set Arviz plotting options
-rc = {"plot.max_subplots": 50}
+rc = {"plot.max_subplots": 120}
 az.rcParams.update(rc)
 
 # Run wage model
@@ -36,13 +36,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="wage model")
     parser.add_argument("model_workflow", help="Specify the .csv file with the model workflow")
     parser.add_argument("model_dataset", help="Specify the .csv file with the model dataset")
+    parser.add_argument("--nchains", help="Specify the number of chains for the sampling", type=int, default=4)
+    parser.add_argument("--ndraws", help="Specify the number of draws for the sampling", type=int, default=4000)
+    parser.add_argument("--ntune", help="Specify the number of tuning steps for the sampling", type=int, default=4000)
+    parser.add_argument("--target_accept", help="Specify the target acceptance rate for the sampling", type=float, default=0.95)
     args = parser.parse_args()
 
     # Set sampling parameters
-    nchains = 4
-    ndraws = 10
-    ntune = 10
-    target_accept = 0.95
+    nchains = args.nchains
+    ndraws = args.ndraws
+    ntune = args.ntune
+    target_accept = args.target_accept
 
     # Load data and workflow
     model_workflow = pd.read_csv(args.model_workflow) # Contains the model workflow
