@@ -34,8 +34,8 @@ az.rcParams.update(rc)
 if __name__ == "__main__":
     # Get script arguments
     parser = argparse.ArgumentParser(description="wage model")
-    parser.add_argument("model_workflow", help="Specify the .csv file with the model workflow")
-    parser.add_argument("model_dataset", help="Specify the .csv file with the model dataset")
+    parser.add_argument("--workflow", help="Specify the .csv file with the model workflow")
+    parser.add_argument("--dataset", help="Specify the .csv file with the model dataset")
     parser.add_argument("--nchains", help="Specify the number of chains for the sampling", type=int, default=4)
     parser.add_argument("--ndraws", help="Specify the number of draws for the sampling", type=int, default=4000)
     parser.add_argument("--ntune", help="Specify the number of tuning steps for the sampling", type=int, default=4000)
