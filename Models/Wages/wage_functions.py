@@ -16,7 +16,7 @@ RANDOM_SEED = 230810
 rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
-BASE_PARAMS = {"mu":0,"sigma":10, "beta_sigma":10}
+BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1}
 
 # Set Arviz plotting options
 rc = {"plot.max_subplots": 120}
@@ -32,7 +32,8 @@ def make_data(data_summary, model):
     return model, model_data
 
 
-def make_hyperpriors(variable, data, model, params={"mu":0,"sigma":10, "beta_sigma":10}):
+def make_hyperpriors(variable, data, model, params):
+    print(f"Var: {variable}, params: {params}")
     with model:
         if data["type"] == "parameter":
             mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"], dims=data["dims"])
@@ -86,7 +87,7 @@ def make_ev_level(variables, model, level, model_data=None):
     return model
 
 
-def make_levels(data_summary, model, model_data=None, hyperpriors_params={"mu":0,"sigma":10, "beta_sigma":10}):
+def make_levels(data_summary, model, model_data=None):
     with model:
         levels = { f"level_{v['level']}": [ (key, val) for key, val in data_summary.items() if val.get('level') == v['level']]
                       for v in data_summary.values() if v.get('level') is not None }
