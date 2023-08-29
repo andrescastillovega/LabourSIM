@@ -15,6 +15,13 @@ from wage_utils import Capturing, sampling_output
 RANDOM_SEED = 230810
 rng = np.random.default_rng(RANDOM_SEED)
 
+# Set base parameters for hyperpriors
+BASE_PARAMS = {"mu":0,"sigma":10, "beta_sigma":10}
+
+# Set Arviz plotting options
+rc = {"plot.max_subplots": 120}
+az.rcParams.update(rc)
+
 ############################################## Functions ###############################################################
 def make_data(data_summary, model):
     with model:
@@ -25,11 +32,12 @@ def make_data(data_summary, model):
     return model, model_data
 
 
-def make_hyperpriors(variable, data, model):
+def make_hyperpriors(variable, data, model, params={"mu":0,"sigma":10, "beta_sigma":10}):
     with model:
         if data["type"] == "parameter":
-            mu = pm.Normal(f'mu_{variable}', mu=0, sigma=10, dims=data["dims"])
-            sigma = pm.Exponential(f'sigma_{variable}', lam=10, dims=data["dims"])
+            mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"], dims=data["dims"])
+            # sigma = pm.Exponential(f'sigma_{variable}', lam=10, dims=data["dims"])
+            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
     return model
 
 
@@ -78,7 +86,7 @@ def make_ev_level(variables, model, level, model_data=None):
     return model
 
 
-def make_levels(data_summary, model, model_data=None):
+def make_levels(data_summary, model, model_data=None, hyperpriors_params={"mu":0,"sigma":10, "beta_sigma":10}):
     with model:
         levels = { f"level_{v['level']}": [ (key, val) for key, val in data_summary.items() if val.get('level') == v['level']]
                       for v in data_summary.values() if v.get('level') is not None }
@@ -86,7 +94,8 @@ def make_levels(data_summary, model, model_data=None):
             # Create hyperpriors and priors for the level
             for variable in variables:
                 var_name, var_data = variable
-                make_hyperpriors(var_name, var_data, model)
+                hyperpriors_params = var_data["priors_params"] if var_data["priors_params"] is not None else BASE_PARAMS
+                make_hyperpriors(var_name, var_data, model, params=hyperpriors_params)
                 make_prior(var_name, var_data, model, param="non-centered")
             # Create expected value expression for the level
             make_ev_level(variables, model, level, model_data)
@@ -154,7 +163,31 @@ def run(id_run, model_name, data_summary, coords, sampling_record, nchains, ndra
 
     return sampling_record, sampling
 
-def create_data_summary(model_workflow, dataset, id_run):
+def run_updating_priors(id_run, model_name, data_summary, coords, sampling_record, nchains, ndraws, ntune, target_accept):
+    start_time = datetime.datetime.now()
+    # Setting up the model
+    model = pm.Model(coords=coords)
+    model, model_data = make_data(data_summary, model)
+    model = make_levels(data_summary, model, model_data)
+    model = make_likelihood(id_run, model_name, data_summary, model)
+
+    # Sampling
+    sampling = sample(id_run, model_name, model, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
+    sampling["start_time"] = start_time.strftime("%Y-%m-%d %H:%M")
+    sampling["end_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    sampling["model_name"] = model_name
+
+    # Save sampling metadata info
+    sampling_record = pd.concat([sampling_record, pd.DataFrame.from_dict({ id_run: sampling }, orient="index")])
+    sampling_record.to_csv("sampling_record.csv")
+
+    return sampling_record, sampling
+
+def create_data_summary(model_workflow, dataset, id_run, year= None, query=None):
+    # Filter dataset
+    if query is not None:
+        dataset = dataset.query(query)
+
     data_summary = {}
     for _, row in model_workflow.query(f"id_run == {id_run}").iterrows():
         # Set data and cats None when dims is not defined
@@ -165,6 +198,16 @@ def create_data_summary(model_workflow, dataset, id_run):
             data = pd.factorize(dataset[row["variable"]])[0] if row["type"] in ["parameter","dimension"] else dataset[row["variable"]].values
             cats = pd.factorize(dataset[row["variable"]])[1] if row["type"] in ["parameter","dimension"] else None
 
+        # Set params for updating priors
+        if (query is not None) & (row["type"] == "parameter") & (year != 1996):
+            last_trace = az.from_netcdf(f"outputs/{id_run}_{year - 1}/{id_run}_trace_{year - 1}.nc")
+            update_priors_params = {
+                "mu": last_trace.posterior[f"mu_{row['variable']}"].values.mean(),
+                "sigma": last_trace.posterior[f"mu_{row['variable']}"].values.std(),
+                "beta_sigma": last_trace.posterior[f"sigma_{row['variable']}"].values.mean(),
+            }
+
+
         # cats: If dims!=None, then cats is a list of the unique values of the variable
         data_summary[row["variable"]] = {
             "type": row["type"],
@@ -172,6 +215,7 @@ def create_data_summary(model_workflow, dataset, id_run):
             "data": data,
             "cats": cats,
             "dims": row["dims"] if not pd.isna(row["dims"]) else None,
-            "level": row["level"] if row["type"] == "parameter" else None
+            "level": row["level"] if row["type"] == "parameter" else None,
+            "priors_params": update_priors_params if (query is not None)&(year != 1996) else None,
         }
     return data_summary

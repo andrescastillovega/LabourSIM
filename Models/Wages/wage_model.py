@@ -43,8 +43,8 @@ if __name__ == "__main__":
 
     # Set sampling parameters
     nchains = 4
-    ndraws = 2000
-    ntune = 2000
+    ndraws = 4000
+    ntune = 4000
     target_accept = 0.95
 
     # Load data and workflow
