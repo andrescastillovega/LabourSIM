@@ -49,8 +49,8 @@ if __name__ == "__main__":
     target_accept = args.target_accept
 
     # Load data and workflow
-    model_workflow = pd.read_csv(args.model_workflow) # Contains the model workflow
-    dataset = pd.read_csv(args.model_dataset) # This is the dataset for model estimation
+    model_workflow = pd.read_csv(args.workflow) # Contains the model workflow
+    dataset = pd.read_csv(args.dataset) # This is the dataset for model estimation
 
     # Get id_runs
     id_runs = model_workflow["id_run"].unique()
