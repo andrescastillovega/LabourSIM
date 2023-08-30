@@ -16,7 +16,8 @@ RANDOM_SEED = 230810
 rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
-BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1}
+# BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1} # When using HalfCauchy
+BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
 
 # Set Arviz plotting options
 rc = {"plot.max_subplots": 120}
@@ -37,8 +38,8 @@ def make_hyperpriors(variable, data, model, params):
     with model:
         if data["type"] == "parameter":
             mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"], dims=data["dims"])
-            # sigma = pm.Exponential(f'sigma_{variable}', lam=10, dims=data["dims"])
-            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
+            sigma = pm.Exponential(f'sigma_{variable}', lam=params["lam"], dims=data["dims"])
+            # sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
     return model
 
 
@@ -201,12 +202,37 @@ def create_data_summary(model_workflow, dataset, id_run, year= None, query=None)
 
         # Set params for updating priors
         if (query is not None) & (row["type"] == "parameter") & (year != 1996):
-            last_trace = az.from_netcdf(f"outputs/{id_run}_{year - 1}/{id_run}_trace_{year - 1}.nc")
-            update_priors_params = {
-                "mu": last_trace.posterior[f"mu_{row['variable']}"].values.mean(),
-                "sigma": last_trace.posterior[f"mu_{row['variable']}"].values.std(),
-                "beta_sigma": last_trace.posterior[f"sigma_{row['variable']}"].values.mean(),
-            }
+            # Get last trace
+            last_trace = az.from_netcdf(f"outputs/{id_run}_{year - 1}/{id_run}_trace_{year - 1}.nc")\
+            
+            # Get mu and sigma from last trace
+            last_trace_mu = last_trace.posterior[f"mu_{row['variable']}"].values
+            last_trace_sigma = last_trace.posterior[f"sigma_{row['variable']}"].values
+            
+            # Filter chains with std greater than 0
+            if pd.isna(row["dims"]):
+                last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
+                last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
+            else:
+                last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
+                last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
+
+            if (last_trace_mu.shape[0] > 0) & (last_trace_sigma.shape[0] > 0):
+                ## >>>>>>>>> When using HalfCauchy <<<<<<<<<<<<
+                # update_priors_params = {
+                #     "mu": last_trace_mu.mean(),
+                #     "sigma": last_trace_mu.std(),
+                #     "beta_sigma": last_trace_sigma.mean(),
+                # }
+
+                ## >>>>>>>>> When using Exponential <<<<<<<<<<<<
+                update_priors_params = {
+                    "mu": last_trace_mu.mean(),
+                    "sigma": last_trace_mu.std(),
+                    "lam": last_trace_sigma.mean(),
+                }
+            else:
+                update_priors_params = BASE_PARAMS
 
 
         # cats: If dims!=None, then cats is a list of the unique values of the variable

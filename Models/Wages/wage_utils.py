@@ -25,6 +25,6 @@ def sampling_output(sampling_info, nchains, ndraws, ntunes):
         sampling_metadata[f"{stage}_time"] = stage_duration
         if stage == "Sampling":
             sampling_time_seconds = pd.to_timedelta(stage_duration).total_seconds()
-            sampling_metadata["AvgIt/s"] = round(((ndraws + ntunes) * nchains) / sampling_time_seconds, 2)
+            sampling_metadata["AvgIt/s"] = round((ndraws + ntunes) / sampling_time_seconds, 2)
 
     return sampling_metadata
