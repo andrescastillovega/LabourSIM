@@ -4,6 +4,7 @@ import numpy as np
 import re
 from io import StringIO 
 import sys
+import datetime
 
 
 class Capturing(list):
@@ -28,3 +29,19 @@ def sampling_output(sampling_info, nchains, ndraws, ntunes):
             sampling_metadata["AvgIt/s"] = round((ndraws + ntunes) / sampling_time_seconds, 2)
 
     return sampling_metadata
+
+
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open(f"logs/{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.log", "a")
+   
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        # this flush method is needed for python 3 compatibility.
+        # this handles the flush command by doing nothing.
+        # you might want to specify some extra behavior here.
+        pass   
