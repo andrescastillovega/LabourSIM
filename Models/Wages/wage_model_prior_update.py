@@ -76,7 +76,7 @@ if __name__ == "__main__":
     # Run models with updating priors (for each year)
     for id_run in id_runs:
         print(f"\n>>>>>>>>>>>>>>>>>>>>>>>> Run {id_run} <<<<<<<<<<<<<<<<<<<<<<<<<<<")
-        for year in years[:2]:
+        for year in years:
             print(f"+++++++++++++++++ Year {year} +++++++++++++++++")
             # Create data summary
             data_summary = wage.create_data_summary(model_workflow, dataset, id_run, year, f"year == {year}")
