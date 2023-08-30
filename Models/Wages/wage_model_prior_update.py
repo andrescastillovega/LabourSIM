@@ -48,6 +48,7 @@ if __name__ == "__main__":
     parser.add_argument("--ndraws", help="Specify the number of draws for the sampling", type=int, default=4000)
     parser.add_argument("--ntune", help="Specify the number of tuning steps for the sampling", type=int, default=4000)
     parser.add_argument("--target_accept", help="Specify the target acceptance rate for the sampling", type=float, default=0.95)
+    parser.add_argument("--year", help="Specify the year for the model estimation (e.g 1996)", default=None)
     args = parser.parse_args()
 
     # Set sampling parameters
@@ -64,8 +65,12 @@ if __name__ == "__main__":
     id_runs = model_workflow["id_run"].unique()
 
     # Get years of the dataset
-    years = dataset["year"].unique()
-    years.sort()
+    if args.year is None:
+        years = dataset["year"].unique()
+        years.sort()
+    else:
+        years = [int(args.year)]
+        
 
     # Create sampling record
     sampling_record = pd.DataFrame()
