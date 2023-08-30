@@ -22,3 +22,120 @@ id_run,model_name,model_def,variable,type,element,dims,level
 1,level1,level1,loc_size,parameter,slope,industry,1
 1,level1,level1,salary,target,target,obs,
 1,level1,level1,industry,dimension,dimension,industry,
+2,run1_no firm and loc size,run1_no firm and loc size,avg_salary,parameter,intercept,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,elementary_edu,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,highschool_edu,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,postsec_edu,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,undergrad_edu,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,graduate_edu,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,grad_highschool_refyear,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,grad_college_refyear,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,grad_univ_refyear,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,student_status,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,public_sector,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,private_sector,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,self_emp,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,union,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,part_time,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,exp,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,tenure,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,sex,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,age,parameter,slope,industry,1
+2,run1_no firm and loc size,run1_no firm and loc size,salary,target,target,obs,
+2,run1_no firm and loc size,run1_no firm and loc size,industry,dimension,dimension,industry,
+3,run2_no age,run2_no age,avg_salary,parameter,intercept,industry,1
+3,run2_no age,run2_no age,elementary_edu,parameter,slope,industry,1
+3,run2_no age,run2_no age,highschool_edu,parameter,slope,industry,1
+3,run2_no age,run2_no age,postsec_edu,parameter,slope,industry,1
+3,run2_no age,run2_no age,undergrad_edu,parameter,slope,industry,1
+3,run2_no age,run2_no age,graduate_edu,parameter,slope,industry,1
+3,run2_no age,run2_no age,grad_highschool_refyear,parameter,slope,industry,1
+3,run2_no age,run2_no age,grad_college_refyear,parameter,slope,industry,1
+3,run2_no age,run2_no age,grad_univ_refyear,parameter,slope,industry,1
+3,run2_no age,run2_no age,student_status,parameter,slope,industry,1
+3,run2_no age,run2_no age,public_sector,parameter,slope,industry,1
+3,run2_no age,run2_no age,private_sector,parameter,slope,industry,1
+3,run2_no age,run2_no age,self_emp,parameter,slope,industry,1
+3,run2_no age,run2_no age,union,parameter,slope,industry,1
+3,run2_no age,run2_no age,part_time,parameter,slope,industry,1
+3,run2_no age,run2_no age,exp,parameter,slope,industry,1
+3,run2_no age,run2_no age,tenure,parameter,slope,industry,1
+3,run2_no age,run2_no age,sex,parameter,slope,industry,1
+3,run2_no age,run2_no age,salary,target,target,obs,
+3,run2_no age,run2_no age,industry,dimension,dimension,industry,
+4,run3_no student_status,run3_no student_status,avg_salary,parameter,intercept,industry,1
+4,run3_no student_status,run3_no student_status,elementary_edu,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,highschool_edu,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,postsec_edu,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,undergrad_edu,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,graduate_edu,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,grad_highschool_refyear,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,grad_college_refyear,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,grad_univ_refyear,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,public_sector,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,private_sector,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,self_emp,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,union,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,part_time,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,exp,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,tenure,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,sex,parameter,slope,industry,1
+4,run3_no student_status,run3_no student_status,salary,target,target,obs,
+4,run3_no student_status,run3_no student_status,industry,dimension,dimension,industry,
+5,run4_no grad_ref_year,run3_no grad_ref_year,avg_salary,parameter,intercept,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,elementary_edu,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,highschool_edu,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,postsec_edu,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,undergrad_edu,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,graduate_edu,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,public_sector,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,private_sector,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,self_emp,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,union,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,part_time,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,exp,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,tenure,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,sex,parameter,slope,industry,1
+5,run4_no grad_ref_year,run3_no grad_ref_year,salary,target,target,obs,
+5,run4_no grad_ref_year,run3_no grad_ref_year,industry,dimension,dimension,industry,
+6,run5_no self_emp,run5_no self_emp,avg_salary,parameter,intercept,industry,1
+6,run5_no self_emp,run5_no self_emp,elementary_edu,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,highschool_edu,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,postsec_edu,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,undergrad_edu,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,graduate_edu,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,public_sector,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,private_sector,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,union,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,part_time,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,exp,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,tenure,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,sex,parameter,slope,industry,1
+6,run5_no self_emp,run5_no self_emp,salary,target,target,obs,
+6,run5_no self_emp,run5_no self_emp,industry,dimension,dimension,industry,
+7,run6_public private sector,run6_no public private sector,avg_salary,parameter,intercept,industry,1
+7,run6_public private sector,run6_no public private sector,elementary_edu,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,highschool_edu,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,postsec_edu,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,undergrad_edu,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,graduate_edu,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,union,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,part_time,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,exp,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,tenure,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,sex,parameter,slope,industry,1
+7,run6_public private sector,run6_no public private sector,salary,target,target,obs,
+7,run6_public private sector,run6_no public private sector,industry,dimension,dimension,industry,
+8,run7_public private sector,run6_no public private sector,avg_salary,parameter,intercept,industry,1
+8,run7_public private sector,run6_no public private sector,elementary_edu,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,highschool_edu,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,postsec_edu,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,undergrad_edu,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,graduate_edu,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,union,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,part_time,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,exp,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,tenure,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,sex,parameter,slope,industry,1
+8,run7_public private sector,run6_no public private sector,salary,target,target,obs,
+8,run7_public private sector,run6_no public private sector,industry,dimension,dimension,industry,
