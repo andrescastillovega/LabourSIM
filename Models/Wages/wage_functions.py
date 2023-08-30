@@ -16,8 +16,8 @@ RANDOM_SEED = 230810
 rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
-# BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1} # When using HalfCauchy
-BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
+BASE_PARAMS = {"mu":0,"sigma":2, "beta_sigma":2} # When using HalfCauchy
+# BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
 
 # Set Arviz plotting options
 rc = {"plot.max_subplots": 120}
@@ -34,12 +34,13 @@ def make_data(data_summary, model):
 
 
 def make_hyperpriors(variable, data, model, params):
-    print(f"Var: {variable}, params: {params}")
+    params_for_print = { k: v for k, v in params.items() }
+    print(f"Var: {variable}, params: {params_for_print}")
     with model:
         if data["type"] == "parameter":
             mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"], dims=data["dims"])
-            sigma = pm.Exponential(f'sigma_{variable}', lam=params["lam"], dims=data["dims"])
-            # sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
+            # sigma = pm.Exponential(f'sigma_{variable}', lam=params["lam"], dims=data["dims"])
+            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
     return model
 
 
@@ -218,19 +219,19 @@ def create_data_summary(model_workflow, dataset, id_run, year= None, query=None)
                 last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
 
             if (last_trace_mu.shape[0] > 0) & (last_trace_sigma.shape[0] > 0):
-                ## >>>>>>>>> When using HalfCauchy <<<<<<<<<<<<
+                # >>>>>>>>> When using HalfCauchy <<<<<<<<<<<<
+                update_priors_params = {
+                    "mu": round(last_trace_mu.mean(),5),
+                    "sigma": round(last_trace_mu.std(),5),
+                    "beta_sigma": round(last_trace_sigma.mean(),5),
+                }
+
+                # ## >>>>>>>>> When using Exponential <<<<<<<<<<<<
                 # update_priors_params = {
                 #     "mu": last_trace_mu.mean(),
                 #     "sigma": last_trace_mu.std(),
-                #     "beta_sigma": last_trace_sigma.mean(),
+                #     "lam": last_trace_sigma.mean(),
                 # }
-
-                ## >>>>>>>>> When using Exponential <<<<<<<<<<<<
-                update_priors_params = {
-                    "mu": last_trace_mu.mean(),
-                    "sigma": last_trace_mu.std(),
-                    "lam": last_trace_sigma.mean(),
-                }
             else:
                 update_priors_params = BASE_PARAMS
 
