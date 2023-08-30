@@ -38,8 +38,8 @@ if __name__ == "__main__":
     seconds = datetime.datetime.now().second
     # Log messages in log file
     with open(f"logs/run_{hour}_{minute}_{seconds}_logs.txt", "a") as logfile:
-        # Redirect stdout to logfile
-        sys.stdout = logfile
+        # # Redirect stdout to logfile
+        # sys.stdout = logfile
 
         # Get script arguments
         parser = argparse.ArgumentParser(description="wage model")

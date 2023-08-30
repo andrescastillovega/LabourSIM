@@ -1,4 +1,0 @@
-id_run,model_name,model_def,variable,type,element,dims,level
-1,test,test,avg_salary,parameter,intercept,,1
-1,test,test,part_time,parameter,slope,,1
-1,test,test,salary,target,target,obs,

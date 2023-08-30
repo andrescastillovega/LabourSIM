@@ -17,7 +17,7 @@ rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
 # BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1} # When using HalfCauchy
-BASE_PARAMS = {"mu":3,"sigma":1, "lam":1} # When using Exponential
+BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
 
 # Set Arviz plotting options
 rc = {"plot.max_subplots": 120}
@@ -133,7 +133,7 @@ def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target
                                               idata_kwargs={"log_likelihood": True}, postprocessing_chunks=postprocess_chunks)
             trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
     # Save trace plot
-    az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_"], filter_vars="like")\
+    az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_","~offset_"], filter_vars="like")\
                     .ravel()[0].figure.savefig(f"outputs/{id_run}_{model_name}/{id_run}_traceplot_{model_name}.svg")
     # Save summary
     sampling_summary = pm.summary(trace, var_names=["~ev_"], filter_vars="like")
