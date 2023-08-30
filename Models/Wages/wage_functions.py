@@ -17,7 +17,7 @@ rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
 # BASE_PARAMS = {"mu":0,"sigma":1, "beta_sigma":1} # When using HalfCauchy
-BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
+BASE_PARAMS = {"mu":3,"sigma":1, "lam":1} # When using Exponential
 
 # Set Arviz plotting options
 rc = {"plot.max_subplots": 120}
@@ -107,7 +107,7 @@ def make_levels(data_summary, model, model_data=None):
 def make_likelihood(id_run, model_name, data_summary, model):
     with model:
         target = [ data["data"] for _, data in data_summary.items() if data["type"]=="target" ][0]
-        shape = pm.Exponential("shape", lam=10)
+        shape = pm.Uniform("shape", 0, 100)
         mu = [ var for var in model.unobserved_RVs if "ev" in var.name ][-1]
         y = pm.Gamma("salary_hat", alpha=shape, beta=shape/mu,  observed=target)
 
