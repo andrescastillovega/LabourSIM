@@ -99,7 +99,7 @@ def make_levels(data_summary, model, model_data=None):
                 var_name, var_data = variable
                 hyperpriors_params = var_data["priors_params"] if var_data["priors_params"] is not None else BASE_PARAMS
                 make_hyperpriors(var_name, var_data, model, params=hyperpriors_params)
-                make_prior(var_name, var_data, model, param="non-centered")
+                make_prior(var_name, var_data, model, param="centered")
             # Create expected value expression for the level
             make_ev_level(variables, model, level, model_data)
     return model
