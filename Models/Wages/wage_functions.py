@@ -38,9 +38,9 @@ def make_hyperpriors(variable, data, model, params):
     print(f"Var: {variable}, params: {params_for_print}")
     with model:
         if data["type"] == "parameter":
-            mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"], dims=data["dims"])
+            mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=1, dims=data["dims"])
             # sigma = pm.Exponential(f'sigma_{variable}', lam=params["lam"], dims=data["dims"])
-            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"], dims=data["dims"])
+            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=1, dims=data["dims"])
     return model
 
 
@@ -222,8 +222,10 @@ def create_data_summary(model_workflow, dataset, id_run, year= None, query=None)
                 # >>>>>>>>> When using HalfCauchy <<<<<<<<<<<<
                 update_priors_params = {
                     "mu": round(last_trace_mu.mean(),5),
-                    "sigma": round(last_trace_mu.std(),5),
-                    "beta_sigma": round(last_trace_sigma.mean(),5),
+                    # "sigma": round(last_trace_mu.std(),5),
+                    # "beta_sigma": round(last_trace_sigma.mean(),5),
+                    "sigma": 1,
+                    "beta_sigma": 1,
                 }
 
                 # ## >>>>>>>>> When using Exponential <<<<<<<<<<<<
