@@ -16,7 +16,7 @@ RANDOM_SEED = 230810
 rng = np.random.default_rng(RANDOM_SEED)
 
 # Set base parameters for hyperpriors
-BASE_PARAMS = {"mu":0,"sigma":2, "beta_sigma":2} # When using HalfCauchy
+BASE_PARAMS = {"mu":10000,"sigma":1000, "beta_sigma":1000} # When using HalfCauchy
 # BASE_PARAMS = {"mu":0,"sigma":1, "lam":1} # When using Exponential
 
 # Set Arviz plotting options
@@ -38,9 +38,9 @@ def make_hyperpriors(variable, data, model, params):
     print(f"Var: {variable}, params: {params_for_print}")
     with model:
         if data["type"] == "parameter":
-            mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=1, dims=data["dims"])
+            mu = pm.Normal(f'mu_{variable}', mu=params["mu"], sigma=params["sigma"])
             # sigma = pm.Exponential(f'sigma_{variable}', lam=params["lam"], dims=data["dims"])
-            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=1, dims=data["dims"])
+            sigma = pm.HalfCauchy(f'sigma_{variable}', beta=params["beta_sigma"])
     return model
 
 
@@ -56,7 +56,7 @@ def make_prior(variable, data, model, param="centered"):
                 pm.Normal(f"beta_{variable}", mu=mu, sigma=sigma, dims=data["dims"])
             elif param == "non-centered":
                 offset = pm.Normal(f"offset_{variable}", mu=0, sigma=1, dims=data["dims"])
-                pm.Deterministic(f"beta_{variable}", mu + sigma * offset)
+                pm.Deterministic(f"beta_{variable}", mu + sigma * offset, dims=data["dims"])
     return model
 
 
@@ -84,8 +84,10 @@ def make_ev_level(variables, model, level, model_data=None):
         # Add expected value from previous level to the current level
         if id_level > 1:
             mu += [ var for var in model.unobserved_RVs if f"ev_level_{id_level-1}" in var.name ][0]
-        # Apply exponential transformation (log-link)
-        pm.Deterministic(f"ev_{level}", pm.math.exp(mu))
+        # # Apply exponential transformation (log-link)
+        # pm.Deterministic(f"ev_{level}", pm.math.exp(mu))
+        # Apply identity-link function
+        pm.Deterministic(f"ev_{level}", mu)
     return model
 
 
@@ -99,7 +101,7 @@ def make_levels(data_summary, model, model_data=None):
                 var_name, var_data = variable
                 hyperpriors_params = var_data["priors_params"] if var_data["priors_params"] is not None else BASE_PARAMS
                 make_hyperpriors(var_name, var_data, model, params=hyperpriors_params)
-                make_prior(var_name, var_data, model, param="centered")
+                make_prior(var_name, var_data, model, param="non-centered")
             # Create expected value expression for the level
             make_ev_level(variables, model, level, model_data)
     return model
