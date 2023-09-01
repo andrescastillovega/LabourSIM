@@ -107,7 +107,7 @@ def make_levels(data_summary, model, model_data=None):
     return model
 
 
-def make_likelihood(id_run, model_name, data_summary, model):
+def make_likelihood(id_run, model_name, data_summary, model, year):
     with model:
         target = [ data["data"] for _, data in data_summary.items() if data["type"]=="target" ][0]
         shape = pm.Uniform("shape", 0, 100)
@@ -116,7 +116,7 @@ def make_likelihood(id_run, model_name, data_summary, model):
 
         # Save Model graph
         model_graph = pm.model_to_graphviz(model)
-        model_graph.render(f"outputs/{id_run}_{model_name}/{id_run}_graph_{model_name}", format="svg")
+        model_graph.render(f"outputs/{model_name}/{year}/graph_{model_name}", format="svg")
     return model
 
 
@@ -128,19 +128,19 @@ def validate_workflow(id_run, model_name, data_summary, coords):
     model = make_likelihood(id_run, model_name, data_summary, model)
 
 
-def sample(id_run, model_name, model, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95, postprocess_chunks=10):
+def sample(id_run, model_name, model, year, nchains=4, ndraws=1000, ntune=1000, target_accept=0.95, postprocess_chunks=10):
     # Sampling
     with Capturing() as sampling_info: # This code captures the numpyro sampler stdout prints 
         with model:
             trace = pmjax.sample_numpyro_nuts(draws=ndraws, tune=ntune, target_accept=target_accept, chains=nchains, progressbar=True,
                                               idata_kwargs={"log_likelihood": True}, postprocessing_chunks=postprocess_chunks)
-            trace.to_netcdf(f"outputs/{id_run}_{model_name}/{id_run}_trace_{model_name}.nc")
+            trace.to_netcdf(f"outputs/{model_name}/{year}/trace_{model_name}.nc")
     # Save trace plot
     az.plot_trace(trace, combined=True, var_names=["~mu_","~sigma_","~ev_","~offset_"], filter_vars="like")\
-                    .ravel()[0].figure.savefig(f"outputs/{id_run}_{model_name}/{id_run}_traceplot_{model_name}.svg")
+                    .ravel()[0].figure.savefig(f"outputs/{model_name}/{year}/traceplot_{model_name}.svg")
     # Save summary
     sampling_summary = pm.summary(trace, var_names=["~ev_"], filter_vars="like")
-    sampling_summary.to_csv(f"outputs/{id_run}_{model_name}/{id_run}_summary_{model_name}.csv")
+    sampling_summary.to_csv(f"outputs/{model_name}/{year}/summary_{model_name}.csv")
     # Save sampling metadata
     sampling_metadata = sampling_output(sampling_info, nchains=nchains, ndraws=ndraws, ntunes=ntune)
     sampling_metadata["maxRhat"] = sampling_summary["r_hat"].max()
@@ -168,19 +168,20 @@ def run(id_run, model_name, data_summary, coords, sampling_record, nchains, ndra
 
     return sampling_record, sampling
 
-def run_updating_priors(id_run, model_name, data_summary, coords, sampling_record, nchains, ndraws, ntune, target_accept):
+def run_updating_priors(id_run, model_name, year, data_summary, coords, sampling_record, nchains, ndraws, ntune, target_accept):
     start_time = datetime.datetime.now()
     # Setting up the model
     model = pm.Model(coords=coords)
     model, model_data = make_data(data_summary, model)
     model = make_levels(data_summary, model, model_data)
-    model = make_likelihood(id_run, model_name, data_summary, model)
+    model = make_likelihood(id_run, model_name, data_summary, model, year)
 
     # Sampling
-    sampling = sample(id_run, model_name, model, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
+    sampling = sample(id_run, model_name, model, year, nchains=nchains, ndraws=ndraws, ntune=ntune, target_accept=target_accept)
     sampling["start_time"] = start_time.strftime("%Y-%m-%d %H:%M")
     sampling["end_time"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     sampling["model_name"] = model_name
+    sampling["year"] = year
 
     # Save sampling metadata info
     sampling_record = pd.concat([sampling_record, pd.DataFrame.from_dict({ id_run: sampling }, orient="index")])
@@ -188,7 +189,7 @@ def run_updating_priors(id_run, model_name, data_summary, coords, sampling_recor
 
     return sampling_record, sampling
 
-def create_data_summary(model_workflow, dataset, id_run, year= None, query=None):
+def create_data_summary(model_workflow, dataset, id_run, year= None, query=None, model_name=None):
     # Filter dataset
     if query is not None:
         dataset = dataset.query(query)
@@ -206,19 +207,22 @@ def create_data_summary(model_workflow, dataset, id_run, year= None, query=None)
         # Set params for updating priors
         if (query is not None) & (row["type"] == "parameter") & (year != 1996):
             # Get last trace
-            last_trace = az.from_netcdf(f"outputs/{id_run}_{year - 1}/{id_run}_trace_{year - 1}.nc")\
+            last_trace = az.from_netcdf(f"outputs/{model_name}/{year - 1}/trace_{model_name}.nc")\
             
             # Get mu and sigma from last trace
             last_trace_mu = last_trace.posterior[f"mu_{row['variable']}"].values
             last_trace_sigma = last_trace.posterior[f"sigma_{row['variable']}"].values
+
+            last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
+            last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
             
-            # Filter chains with std greater than 0
-            if pd.isna(row["dims"]):
-                last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
-                last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
-            else:
-                last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
-                last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
+            # # Filter chains with std greater than 0
+            # if pd.isna(row["dims"]):
+            #     last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
+            #     last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=1), 0, atol=1e-10), :]
+            # else:
+            #     last_trace_mu = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
+            #     last_trace_sigma = last_trace_mu[~np.isclose(last_trace_mu.std(axis=(1,2)), 0, atol=1e-10), :]
 
             if (last_trace_mu.shape[0] > 0) & (last_trace_sigma.shape[0] > 0):
                 # >>>>>>>>> When using HalfCauchy <<<<<<<<<<<<

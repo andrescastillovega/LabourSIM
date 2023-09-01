@@ -81,10 +81,11 @@ if __name__ == "__main__":
     # Run models with updating priors (for each year)
     for id_run in id_runs:
         print(f"\n>>>>>>>>>>>>>>>>>>>>>>>> Run {id_run} <<<<<<<<<<<<<<<<<<<<<<<<<<<")
+        model_name = model_workflow.query(f"id_run == {id_run}")["model_name"].unique()[0]
         for year in years:
             print(f"+++++++++++++++++ Year {year} +++++++++++++++++")
             # Create data summary
-            data_summary = wage.create_data_summary(model_workflow, dataset, id_run, year, f"year == {year}")
+            data_summary = wage.create_data_summary(model_workflow, dataset, id_run, year, f"year == {year}", model_name=f"{id_run}_{model_name}")
 
             # Create coordinates
             COORDS = { value["dims"]: (np.arange(dataset.query(f"year == {year}").shape[0]) if value["type"] == "target" else value["cats"])
@@ -92,7 +93,8 @@ if __name__ == "__main__":
 
             # Run model
             sampling_record, run_summary = wage.run_updating_priors(id_run=id_run,
-                                    model_name=f"{year}",
+                                    model_name=f"{id_run}_{model_name}",
+                                    year=year,
                                     data_summary=data_summary,
                                     coords=COORDS,
                                     sampling_record=sampling_record,
