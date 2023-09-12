@@ -1,0 +1,12 @@
+id_run,model_name,model_def,variable,type,element,dims,level
+1,test,lvl2-test,avg_salary_ind,parameter,intercept,industry,1
+1,test,lvl2-test,avg_salary_occ,parameter,intercept,occup,2
+1,test,lvl2-test,sex,parameter,slope,occup,2
+1,test,lvl2-test,salary,target,target,obs,2
+1,test,lvl2-test,industry,dimension,dimension,industry,1
+1,test,lvl2-test,occup,dimension,dimension,occup,2
+2,onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",avg_salary,parameter,intercept,,1
+2,onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",age,parameter,slope,,1
+2,onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",firm_size,parameter,slope,,1
+2,onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",loc_size,parameter,slope,,1
+2,onelvl_all_vars,"Uni-level, varying intercepts and slopes with all vars. Dimensions: none",salary,target,target,obs,
