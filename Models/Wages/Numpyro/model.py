@@ -1,24 +1,51 @@
+import argparse
+import arviz as az
+import datetime as dt
+import jax
+import jax.numpy as jnp
+from jax import random
+from jax import numpy as jnp
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy as np
+from numpy.lib.recfunctions import drop_fields, append_fields
+import numpyro
+from numpyro.infer import MCMC, NUTS
+import numpyro.distributions as dist
+import pandas as pd
+import psutil
+import seaborn as sns
+
+from GammaGML import GammaGML
 
 
-class  Model():
-    def __init__(self, name, parameters):
-        self.name = name
-        if not any(key in parameters for key in ["intercept", "slope"]):
-            raise ValueError("parameters dictionary must contain keys 'intercept' and 'slope'")
-        self.parameters = parameters
+if __name__ == "__main__":
+    # Set run parameters
+    parser = argparse.ArgumentParser(description="LabourSIM wage model")
+    parser.add_argument("--dataset", help="Specify the .csv file with the labour market data")
+    parser.add_argument("--year", help="Specify the year of analysis", type=int, default=None)
+    parser.add_argument("--nchains", help="Specify the number of chains for the sampling", type=int, default=4)
+    parser.add_argument("--ndraws", help="Specify the number of draws for the sampling", type=int, default=4000)
+    parser.add_argument("--ntune", help="Specify the number of tuning steps for the sampling", type=int, default=4000)
+    parser.add_argument("--target_accept", help="Specify the target acceptance rate for the sampling", type=float, default=0.95)
+    parser.add_argument("--ncores", help="Specify the number of CPU cores to use", type=int, default=4)
+    args = parser.parse_args()
 
-    def __str__(self):
-        return self.name
+    year = args.year
+    nchains = args.nchains
+    ndraws = args.ndraws
+    ntune = args.ntune
+    target_accept = args.target_accept
+    ncores = args.ncores
+
+    # Set number of cores
+    available_cores = psutil.cpu_count(logical=True)
+    if ncores > available_cores:
+        raise NameError(f"Number of cores specified ({ncores}) is greater than the number of available cores ({available_cores}).\n\
+                        >>> Please use --ncores to specify a number less than or equal to {available_cores}.")
+    else:
+        numpyro.set_platform("cpu")
+        numpyro.set_host_device_count(ncores)
     
-    def standardize_var(self, variable):
-        variable = (variable - variable.mean()) / variable.std()
-        return variable
-    
-    def data_processing(self, dataset, standardize_vars=[]):
 
     
-    def build(self, dataset, target_var="salary", standardize_vars=[], year=None, parameterization="centered"):
-        self.dataset = dataset.to_records(index=True)
-
-        
-        
