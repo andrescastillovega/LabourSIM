@@ -179,7 +179,7 @@ class GammaGML():
 
         return model
 
-    def run_model(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, postprocess_fn=None, progress_bar=True):
+    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, postprocess_fn=None, progress_bar=False):
         # Start from this source of randomness. We will split keys for subsequent operations.
         rng_key = random.PRNGKey(0)
         rng_key, rng_key_ = random.split(rng_key)
