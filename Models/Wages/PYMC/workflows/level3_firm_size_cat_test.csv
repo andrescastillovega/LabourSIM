@@ -1,7 +1,0 @@
-id_run,model_name,model_def,variable,type,element,dims,level
-1,level3_test_cat,level3_test_cat,avg_salary_ind,parameter,intercept,,1
-1,level3_test_cat,level3_test_cat,firm_size,parameter,slope,,1
-1,level3_test_cat,level3_test_cat,loc_size,parameter,slope,,1
-1,level3_test_cat,level3_test_cat,avg_salary_occ,parameter,intercept,,2
-1,level3_test_cat,level3_test_cat,exp,parameter,slope,,3
-1,level3_test_cat,level3_test_cat,salary,target,target,obs,

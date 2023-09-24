@@ -1,12 +1,5 @@
 Data/
-Models/Wages/Examples/
-Models/Wages/outputs
-Models/Wages/sampling_record.csv
+Models/Wages/git.sh
 Models/Wages/__pycache__
-Models/Wages/logs
-Models/Wages/PYMC/Examples/
-Models/Wages/PYMC/outputs
-Models/Wages/PYMC/sampling_record.csv
-Models/Wages/PYMC/__pycache__
-Models/Wages/PYMC/logs
+Models/Wages/outputs
 old/
