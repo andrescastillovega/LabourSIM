@@ -65,7 +65,7 @@ if __name__ == "__main__":
         model_year = model_specs["year"]
         model_standardize_vars = model_specs["standardize_vars"]
         model_params = model_specs["parameters"]
-        model_run_bar = tqdm(total=4, desc=f"Running {model_name} model", ncols=100,
+        model_run_bar = tqdm(total=5, desc=f"Running {model_name} model", ncols=100,
                              bar_format='{l_bar}{bar}|{n_fmt}/{total_fmt} [{elapsed}<{remaining}]{postfix}' )
         model_run_bar.update(0)
         
@@ -78,6 +78,16 @@ if __name__ == "__main__":
         # Build model
         model = gamma.build()
         model_run_bar.update(1)
+
+        # Render model
+        if model_year is None:
+            if not os.path.exists(f"../outputs/{model_name}"):
+                os.makedirs(f"../outputs/{model_name}")
+        else:
+            if not os.path.exists(f"../outputs/{model_name}/{model_year}"):
+                os.makedirs(f"../outputs/{model_name}/{model_year}")
+        gamma.render_model()
+        model_run_bar.update(1)
         
         # Run model
         trace = gamma.run(model, chains=nchains, draws=ndraws, warmup=ntune, target_accept_prob=target_accept)
@@ -86,18 +96,12 @@ if __name__ == "__main__":
         model_run_bar.set_postfix({"Max. rhat": f"{rhat_max:.3f}"})
 
         # Save summary
-        if not os.path.exists("../outputs/"):
-            os.makedirs("../outputs/")
         utils.save_summary(trace, model_name, year=model_year)        
 
         # Save trace
         if model_year is None:
-            if not os.path.exists(f"../outputs/{model_name}"):
-                os.makedirs(f"../outputs/{model_name}")
             trace.to_netcdf(f"../outputs/{model_name}/trace.nc")
         else:
-            if not os.path.exists(f"../outputs/{model_name}/{model_year}"):
-                os.makedirs(f"../outputs/{model_name}/{model_year}")
             trace.to_netcdf(f"../outputs/{model_name}/{model_year}/trace.nc")
         model_run_bar.update(1)
 

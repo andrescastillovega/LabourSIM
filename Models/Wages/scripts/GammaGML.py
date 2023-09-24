@@ -178,8 +178,17 @@ class GammaGML():
                 likelihood = numpyro.sample(self.target, dist.Gamma(concentration=shape, rate=rate), obs=self.dataset[self.target])
 
         return model
+    
+    def render_model(self):
+        model = self.build()
+        graph = numpyro.render_model(model, render_distributions=True)
+        if self.year is None:
+            graph_filename = f"../outputs/{self.name}/model"
+        else:
+            graph_filename = f"../outputs/{self.name}/{self.year}/model"
+        graph.render(filename=graph_filename, format='svg')
 
-    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, postprocess_fn=None, progress_bar=False):
+    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, postprocess_fn=None, progress_bar=True):
         # Start from this source of randomness. We will split keys for subsequent operations.
         rng_key = random.PRNGKey(0)
         rng_key, rng_key_ = random.split(rng_key)
