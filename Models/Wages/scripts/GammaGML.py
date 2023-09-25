@@ -31,6 +31,7 @@ class GammaGML():
         self.get_var_dims(parameters)
         self.data_processing(dataset, standardize_vars, year)
         self.get_plates()
+        self.get_coords_dims()
 
     def __repr__(self):
         if self.year is not None:
@@ -49,6 +50,22 @@ class GammaGML():
 
             if params.get("dims") is not None:
                 self.dimensions += [ dim for dim in params.get("dims") if dim not in self.dimensions ]
+
+    def get_coords_dims(self):
+        # Get coords and dims attributes for Arviz
+        coords = { coord[0]: list(coord[1]) for coord in self.dimensions }
+        dims = {}
+        for var in self.vars.keys():
+            if self.vars[var]["type"] == "intercept":
+                var_name = f"{var}"
+            elif self.vars[var]["type"] == "slope":
+                var_name = f"beta_{var}"
+
+            if self.vars[var]["dims"] is not None:
+                dims[var_name] = [f"{dim}" for dim in self.vars[var]["dims"]]
+        
+        self.coords = coords
+        self.dims = dims
 
     def data_processing(self, dataset, standardize_vars, year):
         # Data processing
@@ -72,11 +89,7 @@ class GammaGML():
     def get_prior_name(self, var):
         # Prior name
         if self.vars[var]["type"] == "intercept":
-            if self.vars[var]["dims"] is None:
-                dims_name = ""
-            else:
-                dims_name = f"[{self.vars[var]['dims'][0]}]"
-            prior_name = f"avg_{self.target}{dims_name}"
+            prior_name = f"{var}"
         elif self.vars[var]["type"] == "slope":
             prior_name = f"beta_{var}"
         else:
@@ -147,7 +160,6 @@ class GammaGML():
                     for var in plate_config["vars"]:
                         prior_name = plate_config["prior_names"][plate_config["vars"].index(var)]
                         dist_params = plate_config["dist_params"][plate_config["vars"].index(var)]
-                        # print(dist_params, prior_name, self.vars[var]["dist"])
                         # Priors  
                         if var == "shape":
                             shape = self.build_prior(var, prior_name, dist_params)
@@ -197,5 +209,5 @@ class GammaGML():
         kernel = NUTS(model, target_accept_prob=target_accept_prob)
         mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws, num_chains=chains, chain_method='parallel', postprocess_fn=postprocess_fn, progress_bar=progress_bar)
         mcmc.run(rng_key)
-        trace = az.from_numpyro(mcmc)
+        trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
         return trace

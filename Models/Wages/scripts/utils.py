@@ -21,7 +21,7 @@ def save_summary(trace, model_name, year=None):
         summary["year"] = year
 
     compilate_summary = pd.concat([compilate_summary, summary])
-    compilate_summary.to_csv("../outputs/compilate_summary.csv", index=False)
+    compilate_summary.to_csv("../outputs/compilate_summary.csv", index=True)
 
     
     
