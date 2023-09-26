@@ -168,7 +168,7 @@ class GammaGML():
                             mu += prior
                         else:
                             prior = self.build_prior(var, prior_name, dist_params)
-                            mu += prior * self.dataset[var]
+                            mu += prior * self.dataset[self.vars[var]["var"]]
                         
                 else:
                      # Hyperpriors should be outside the plate
@@ -181,7 +181,7 @@ class GammaGML():
                                 mu += prior[self.dataset[plate]]
                             else:
                                 prior = self.build_prior(var, prior_name, dist_params)
-                                mu += prior[self.dataset[plate]] * self.dataset[var]
+                                mu += prior[self.dataset[plate]] * self.dataset[self.vars[var]["var"]]
                                 
             mu = jnp.exp(mu)
             rate = shape / mu    
@@ -191,6 +191,13 @@ class GammaGML():
 
         return model
     
+    def add_unconstrained_vars(self, trace):
+        for var in trace.posterior.data_vars:
+            if var not in ['shape']:
+                new_var_name = f"unconstrained_{var}"
+                trace.posterior = trace.posterior.assign({new_var_name: np.exp(trace.posterior[var])})
+        return trace
+
     def render_model(self):
         model = self.build()
         graph = numpyro.render_model(model, render_distributions=True)
@@ -200,14 +207,19 @@ class GammaGML():
             graph_filename = f"../outputs/{self.name}/{self.year}/model"
         graph.render(filename=graph_filename, format='svg')
 
-    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, postprocess_fn=None, progress_bar=True):
+    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, progress_bar=True):
         # Start from this source of randomness. We will split keys for subsequent operations.
         rng_key = random.PRNGKey(0)
         rng_key, rng_key_ = random.split(rng_key)
 
         # Run NUTS
         kernel = NUTS(model, target_accept_prob=target_accept_prob)
-        mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws, num_chains=chains, chain_method='parallel', postprocess_fn=postprocess_fn, progress_bar=progress_bar)
+        mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws, num_chains=chains, chain_method='parallel', progress_bar=progress_bar)
         mcmc.run(rng_key)
         trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
-        return trace
+        trace = self.add_unconstrained_vars(trace)
+
+        # Extract the diverging samples
+        divergences = mcmc.get_extra_fields()['diverging'].sum()
+
+        return trace, divergences

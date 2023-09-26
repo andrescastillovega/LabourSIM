@@ -7,9 +7,9 @@ def get_rhat_max(trace):
     rhat_max = summary["r_hat"].max()
     return rhat_max
 
-def save_summary(trace, model_name, year=None):
-    if os.path.exists("../outputs/compilate_summary.csv"):
-        compilate_summary = pd.read_csv("../outputs/compilate_summary.csv")
+def save_summary(workflow, trace, model_name, year=None):
+    if os.path.exists(f"../outputs/compilate_summary_{workflow}.csv"):
+        compilate_summary = pd.read_csv(f"../outputs/compilate_summary_{workflow}.csv")
     else:
         compilate_summary = pd.DataFrame()
     summary = az.summary(trace)
@@ -17,11 +17,13 @@ def save_summary(trace, model_name, year=None):
     summary["model"] = model_name
     if year is None:
         summary["year"] = "all"
+        summary.to_csv(f"../outputs/{model_name}/summary.csv", index=True)
     else:
         summary["year"] = year
+        summary.to_csv(f"../outputs/{model_name}/{year}/summary.csv", index=True)
 
     compilate_summary = pd.concat([compilate_summary, summary])
-    compilate_summary.to_csv("../outputs/compilate_summary.csv", index=True)
+    compilate_summary.to_csv(f"../outputs/{model_name}/compilate_summary_{workflow}.csv", index=True)
 
     
     

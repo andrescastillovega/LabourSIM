@@ -1,30 +1,96 @@
-- gamma_gml:
-    year: 2009
+- mixed_model_ind:
+    year: 2011
+    draws: 2000
+    warmup: 2000
     standardize_vars:
     - exp
     parameters:
       avg_salary_ind:
         type: intercept
+        var: null
         dist: normal
         initial_values:
           loc: 0
           scale: 1
         dims:
         - industry
-        hyperprior: false
-        parameterization: centered
-      exp:
+        hyperprior: true
+        parameterization: non-centered
+      exp_ind:
         type: slope
+        var: exp
         dist: normal
         initial_values:
           loc: 0
           scale: 1
         dims:
         - industry
-        hyperprior: false
-        parameterization: centered
+        hyperprior: true
+        parameterization: non-centered
       shape:
         type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- mixed_model_ind_occ:
+    year: 2011
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: true
+        parameterization: non-centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: true
+        parameterization: non-centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: true
+        parameterization: non-centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: true
+        parameterization: non-centered
+      shape:
+        type: shape
+        var: null
         dist: uniform
         initial_values:
           low: 1
