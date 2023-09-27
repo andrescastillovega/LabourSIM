@@ -41,6 +41,7 @@ if __name__ == "__main__":
     # Load workflow
     with open(args.workflow, 'r') as file:
         workflow = yaml.safe_load(file)
+    utils.check_workflow(workflow)
 
     # Create workflows summary
     workflow_summary = pd.DataFrame(columns=["Year", "Draws", "Warmup", "Divergences", "MaxRhat", "SamplingTime"])

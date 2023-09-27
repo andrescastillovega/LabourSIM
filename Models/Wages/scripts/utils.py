@@ -25,5 +25,11 @@ def save_summary(workflow, trace, model_name, year=None):
     compilate_summary = pd.concat([compilate_summary, summary])
     compilate_summary.to_csv(f"../outputs/{model_name}/compilate_summary_{workflow}.csv", index=True)
 
+def check_workflow(workflow):
+    for model in workflow:
+        print(list(model.keys())[0], ",".join([param for param in list(model.values())[0]["parameters"].keys()]))
+
+
+
     
     
