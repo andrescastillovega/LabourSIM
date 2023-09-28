@@ -10,6 +10,9 @@ import numpyro
 from numpyro.infer import MCMC, NUTS
 import numpyro.distributions as dist
 import pandas as pd
+import pickle
+
+import utils
 
 class GammaGML():
     def __init__(self, name, parameters, target_var, dataset, year=None, standardize_vars=[]):
@@ -27,6 +30,11 @@ class GammaGML():
         self.vars = {}
         self.dimensions = []
         self.year = year
+
+        if self.year is None:
+            self.outputs_path = f"../outputs/{self.name}"
+        else:
+            self.outputs_path = f"../outputs/{self.name}/{self.year}"
 
         self.get_var_dims(parameters)
         self.data_processing(dataset, standardize_vars, year)
@@ -136,9 +144,8 @@ class GammaGML():
         else:
             prior = numpyro.sample(name = prior_name, fn = distribution)
         return prior
-
-    def build(self):
-        def model():
+    
+    def model(self):
             # Add prior names
             for plate, plate_config in self.plates.items():
                 self.plates[plate]["prior_names"] = []
@@ -189,8 +196,10 @@ class GammaGML():
             with numpyro.plate("data", len(self.dataset)):
                 likelihood = numpyro.sample(self.target, dist.Gamma(concentration=shape, rate=rate), obs=self.dataset[self.target])
 
+    def build(self):
+        model = self.model
         return model
-    
+        
     def add_unconstrained_vars(self, trace):
         for var in trace.posterior.data_vars:
             if var not in ['shape']:
@@ -201,25 +210,46 @@ class GammaGML():
     def render_model(self):
         model = self.build()
         graph = numpyro.render_model(model, render_distributions=True)
-        if self.year is None:
-            graph_filename = f"../outputs/{self.name}/model"
-        else:
-            graph_filename = f"../outputs/{self.name}/{self.year}/model"
-        graph.render(filename=graph_filename, format='svg')
+        graph.render(filename=f"{self.outputs_path}/model", format='svg')
 
-    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, progress_bar=True):
-        # Start from this source of randomness. We will split keys for subsequent operations.
+    def run(self, model, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, batch_size=None, progress_bar=True):
         rng_key = random.PRNGKey(0)
         rng_key, rng_key_ = random.split(rng_key)
 
-        # Run NUTS
-        kernel = NUTS(model, target_accept_prob=target_accept_prob)
-        mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws, num_chains=chains, chain_method='parallel', progress_bar=progress_bar)
-        mcmc.run(rng_key)
-        trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
-        trace = self.add_unconstrained_vars(trace)
+        if batch_size is None:
+            kernel = NUTS(model, target_accept_prob=target_accept_prob)
+            mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws,
+                        num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
+            mcmc.run(rng_key)
+            with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                pickle.dump(mcmc, output_file)
+            trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
+            divergences = mcmc.get_extra_fields()['diverging'].sum()
+        else:
+            iterations = int(warmup / batch_size)
+            divergences = 0
 
-        # Extract the diverging samples
-        divergences = mcmc.get_extra_fields()['diverging'].sum()
+            kernel = NUTS(model, target_accept_prob=target_accept_prob)
+            mcmc = MCMC(kernel, num_warmup=batch_size, num_samples=batch_size, 
+                        num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
+
+            for i in range(iterations):
+                if i == 0:
+                    mcmc.run(rng_key)
+                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                        pickle.dump(mcmc, output_file)
+                    trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
+                    divergences = mcmc.get_extra_fields()['diverging'].sum()
+                    print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+                else:
+                    mcmc.post_warmup_state = mcmc.last_state
+                    mcmc.run(mcmc.post_warmup_state.rng_key)
+                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                        pickle.dump(mcmc, output_file)
+                    trace = az.concat([trace, az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)], dim="draw")
+                    divergences += mcmc.get_extra_fields()['diverging'].sum()
+                    print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+
+            trace = self.add_unconstrained_vars(trace)
 
         return trace, divergences

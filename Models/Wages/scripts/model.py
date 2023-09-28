@@ -18,6 +18,7 @@ if __name__ == "__main__":
     parser.add_argument("--nchains", help="Specify the number of chains for the sampling", type=int, default=4)
     parser.add_argument("--target_accept", help="Specify the target acceptance rate for the sampling", type=float, default=0.95)
     parser.add_argument("--ncores", help="Specify the number of CPU cores to use", type=int, default=4)
+    parser.add_argument("--batch_size", help="Specify the batch size for the sampling", type=int, default=None)
     args = parser.parse_args()
 
     year = args.year
@@ -32,8 +33,9 @@ if __name__ == "__main__":
         raise NameError(f"Number of cores specified ({ncores}) is greater than the number of available cores ({available_cores}).\n\
                         >>> Please use --ncores to specify a number less than or equal to {available_cores}.")
     else:
-        numpyro.set_platform("cpu")
-        numpyro.set_host_device_count(ncores)
+        pass
+        # numpyro.set_platform("cpu")
+        # numpyro.set_host_device_count(ncores)
 
     # Load data
     data = pd.read_csv(args.dataset)
@@ -83,7 +85,8 @@ if __name__ == "__main__":
         model_run_bar.update(1)
         
         # Run model
-        trace, divergences = gamma.run(model, chains=nchains, draws=ndraws, warmup=ntune, target_accept_prob=target_accept)
+        trace, divergences = gamma.run(model, chains=nchains, draws=ndraws, warmup=ntune,
+                                        target_accept_prob=target_accept, batch_size=args.batch_size, progress_bar=False)
         rhat_max = utils.get_rhat_max(trace)
         model_run_bar.update(1)
         model_run_bar.set_postfix({"Max. rhat": f"{rhat_max:.3f}"})
