@@ -230,7 +230,7 @@ class GammaGML():
             divergences = 0
 
             kernel = NUTS(model, target_accept_prob=target_accept_prob)
-            mcmc = MCMC(kernel, num_warmup=warmup, num_samples=batch_size, 
+            mcmc = MCMC(kernel, num_warmup=batch_size, num_samples=batch_size, 
                         num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
 
             for i in range(iterations):
