@@ -1,5 +1,6 @@
 Data/
 Models/Wages/git.sh
 Models/Wages/__pycache__
+Models/Wages/scripts/__pycache__
 Models/Wages/outputs
 old/

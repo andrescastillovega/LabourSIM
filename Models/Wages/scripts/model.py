@@ -87,7 +87,7 @@ if __name__ == "__main__":
         
         # Run model
         trace, divergences = gamma.run(model, chains=nchains, draws=ndraws, warmup=ntune,
-                                        target_accept_prob=target_accept, batch_size=args.batch_size, progress_bar=True)
+                                        target_accept_prob=target_accept, batch_size=args.batch_size, progress_bar=args.progressbar)
         rhat_max = utils.get_rhat_max(trace)
         model_run_bar.update(1)
         model_run_bar.set_postfix({"Max. rhat": f"{rhat_max:.3f}"})
