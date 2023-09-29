@@ -1,7 +1,7 @@
 - MP1_all_vars_pooled:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 2000
+    warmup: 2000
     standardize_vars:
     - exp
     - tenure

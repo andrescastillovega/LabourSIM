@@ -19,6 +19,7 @@ if __name__ == "__main__":
     parser.add_argument("--target_accept", help="Specify the target acceptance rate for the sampling", type=float, default=0.95)
     parser.add_argument("--ncores", help="Specify the number of CPU cores to use", type=int, default=4)
     parser.add_argument("--batch_size", help="Specify the batch size for the sampling", type=int, default=None)
+    parser.add_argument("--progressbar", help="Specify whether to show the progress bar", type=bool, default=True)
     args = parser.parse_args()
 
     year = args.year
@@ -86,7 +87,7 @@ if __name__ == "__main__":
         
         # Run model
         trace, divergences = gamma.run(model, chains=nchains, draws=ndraws, warmup=ntune,
-                                        target_accept_prob=target_accept, batch_size=args.batch_size, progress_bar=False)
+                                        target_accept_prob=target_accept, batch_size=args.batch_size, progress_bar=True)
         rhat_max = utils.get_rhat_max(trace)
         model_run_bar.update(1)
         model_run_bar.set_postfix({"Max. rhat": f"{rhat_max:.3f}"})
