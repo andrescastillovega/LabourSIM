@@ -34,8 +34,7 @@ if __name__ == "__main__":
         raise NameError(f"Number of cores specified ({ncores}) is greater than the number of available cores ({available_cores}).\n\
                         >>> Please use --ncores to specify a number less than or equal to {available_cores}.")
     else:
-        pass
-        # numpyro.set_platform("cpu")
+        numpyro.set_platform("gpu")
         # numpyro.set_host_device_count(ncores)
 
     # Load data
@@ -62,7 +61,7 @@ if __name__ == "__main__":
         ntune = model_specs["warmup"]
         model_standardize_vars = model_specs["standardize_vars"]
         model_params = model_specs["parameters"]
-        model_run_bar = tqdm(total=5, desc=f"Running {model_name} model", ncols=100,
+        model_run_bar = tqdm(total=7, desc=f"Running {model_name} model", ncols=100,
                              bar_format='{l_bar}{bar}|{n_fmt}/{total_fmt} [{elapsed}<{remaining}]{postfix}' )
         model_run_bar.update(0)
         
@@ -93,7 +92,8 @@ if __name__ == "__main__":
         model_run_bar.set_postfix({"Max. rhat": f"{rhat_max:.3f}"})
 
         # Save run summary
-        utils.save_summary(workflow_filename, trace, model_name, year=model_year)    
+        utils.save_summary(workflow_filename, trace, model_name, year=model_year)
+        model_run_bar.update(1)    
 
         # Save trace
         if model_year is None:
@@ -108,6 +108,7 @@ if __name__ == "__main__":
                                                     "Divergences": divergences, "MaxRhat": rhat_max,
                                                     "SamplingTime": sampling_time}}, orient="index")])
         workflow_summary.to_csv(f"../outputs/{workflow_filename}_summary.csv")
+        model_run_bar.update(1)
 
         
 
