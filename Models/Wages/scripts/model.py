@@ -1,4 +1,5 @@
 import argparse
+import jax
 import numpyro
 import os
 import pandas as pd
@@ -34,8 +35,10 @@ if __name__ == "__main__":
         raise NameError(f"Number of cores specified ({ncores}) is greater than the number of available cores ({available_cores}).\n\
                         >>> Please use --ncores to specify a number less than or equal to {available_cores}.")
     else:
-        numpyro.set_platform("gpu")
-        # numpyro.set_host_device_count(ncores)
+        # numpyro.set_platform("gpu")
+        # # numpyro.set_host_device_count(ncores)
+        jax.config.update("jax_platform_name", "gpu")
+        jax.config.update("jax_enable_x64", True)
 
     # Load data
     data = pd.read_csv(args.dataset)

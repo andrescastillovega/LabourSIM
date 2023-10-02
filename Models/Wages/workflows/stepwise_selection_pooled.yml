@@ -1,7 +1,7 @@
 - MP1_all_vars_pooled:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -189,8 +189,8 @@
         parameterization: centered
 - MP2_MP1_no_grad_refyear:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -348,8 +348,8 @@
         parameterization: centered
 - MP3_MP2_no_self_emp:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -497,8 +497,8 @@
         parameterization: centered
 - MP4_MP3_no_public_sector:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -636,8 +636,8 @@
         parameterization: centered
 - MP5_MP4_no_part_time:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -765,8 +765,8 @@
         parameterization: centered
 - MP6_MP5_no_union:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -884,8 +884,8 @@
         parameterization: centered
 - MP7_MP6_no_tenure:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -993,8 +993,8 @@
         parameterization: centered
 - MP8_MP7_no_age:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1092,8 +1092,8 @@
         parameterization: centered
 - MP9_MP8_no_edu:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1141,8 +1141,8 @@
         parameterization: centered
 - MP10_MP9_no_sex:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1180,8 +1180,8 @@
         parameterization: centered
 - MP11_MP10_no_exp:
     year: null
-    draws: 3000
-    warmup: 3000
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure

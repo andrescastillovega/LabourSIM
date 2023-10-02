@@ -221,6 +221,7 @@ class GammaGML():
             mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws,
                         num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
             mcmc.run(rng_key)
+
             with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
                 pickle.dump(mcmc, output_file)
             trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
@@ -229,7 +230,49 @@ class GammaGML():
             iterations = int(warmup / batch_size)
             divergences = 0
 
-            kernel = NUTS(model, target_accept_prob=target_accept_prob)
+            kernel = NUTS(model, target_accept_prob=target_accept_prob, dense_mass=True, max_tree_depth=10)
+            mcmc = MCMC(kernel, num_warmup=batch_size, num_samples=batch_size, 
+                        num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
+
+            for i in range(iterations):
+                if i == 0:
+                    mcmc.run(rng_key)
+                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                        pickle.dump(mcmc, output_file)
+                    trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
+                    divergences = mcmc.get_extra_fields()['diverging'].sum()
+                    print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+                else:
+                    mcmc.post_warmup_state = mcmc.last_state
+                    mcmc.run(mcmc.post_warmup_state.rng_key)
+                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                        pickle.dump(mcmc, output_file)
+                    trace = az.concat([trace, az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)], dim="draw")
+                    divergences += mcmc.get_extra_fields()['diverging'].sum()
+                    print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+
+            trace = self.add_unconstrained_vars(trace)
+
+        return trace, divergences
+    
+    def continue__previous_run(self, model, mcmc_obj, draws=4000, warmup=4000, chains=4, target_accept_prob=0.95, batch_size=None, progress_bar=True):
+        rng_key = random.PRNGKey(0)
+        rng_key, rng_key_ = random.split(rng_key)
+
+        if batch_size is None:
+            kernel = NUTS(model, target_accept_prob=target_accept_prob, dense_mass=True, max_tree_depth=10)
+            mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws,
+                        num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
+            mcmc.run(rng_key)
+            with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                pickle.dump(mcmc, output_file)
+            trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
+            divergences = mcmc.get_extra_fields()['diverging'].sum()
+        else:
+            iterations = int(warmup / batch_size)
+            divergences = 0
+
+            kernel = NUTS(model, target_accept_prob=target_accept_prob, dense_mass=True, max_tree_depth=10)
             mcmc = MCMC(kernel, num_warmup=batch_size, num_samples=batch_size, 
                         num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
 
