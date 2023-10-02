@@ -221,9 +221,9 @@ class GammaGML():
             mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws,
                         num_chains=chains, chain_method='vectorized', progress_bar=progress_bar)
             mcmc.run(rng_key)
-
-            with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
-                pickle.dump(mcmc, output_file)
+            # NOTE: Pickle does not work when set hyperprior to True and non-centered parameterization
+            # with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+            #     pickle.dump(mcmc, output_file)
             trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
             divergences = mcmc.get_extra_fields()['diverging'].sum()
         else:
@@ -237,16 +237,17 @@ class GammaGML():
             for i in range(iterations):
                 if i == 0:
                     mcmc.run(rng_key)
-                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
-                        pickle.dump(mcmc, output_file)
+                    # NOTE: Pickle does not work when set hyperprior to True and non-centered parameterization
+                    # with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                    #     pickle.dump(mcmc, output_file)
                     trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
                     divergences = mcmc.get_extra_fields()['diverging'].sum()
                     print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
                 else:
                     mcmc.post_warmup_state = mcmc.last_state
                     mcmc.run(mcmc.post_warmup_state.rng_key)
-                    with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
-                        pickle.dump(mcmc, output_file)
+                    # with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
+                    #     pickle.dump(mcmc, output_file)
                     trace = az.concat([trace, az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)], dim="draw")
                     divergences += mcmc.get_extra_fields()['diverging'].sum()
                     print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
