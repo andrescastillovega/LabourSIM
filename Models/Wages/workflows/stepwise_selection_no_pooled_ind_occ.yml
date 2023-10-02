@@ -1,0 +1,2409 @@
+- MNPind1_all_vars_no_pooled_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      union_ind:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      part_time_ind:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      public_sector_ind:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      self_emp_ind:
+        type: slope
+        var: self_emp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      grad_highschool_refyear_ind:
+        type: slope
+        var: grad_highschool_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      grad_college_refyear_ind:
+        type: slope
+        var: grad_college_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      grad_univ_refyear_ind:
+        type: slope
+        var: grad_univ_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      union_occ:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      part_time_occ:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      public_sector_occ:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      self_emp_occ:
+        type: slope
+        var: self_emp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      grad_highschool_refyear_occ:
+        type: slope
+        var: grad_highschool_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      grad_college_refyear_occ:
+        type: slope
+        var: grad_college_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      grad_univ_refyear_occ:
+        type: slope
+        var: grad_univ_refyear
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind2_MNPind1_no_grad_refyear:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      union_ind:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      part_time_ind:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      public_sector_ind:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      self_emp_ind:
+        type: slope
+        var: self_emp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      union_occ:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      part_time_occ:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      public_sector_occ:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      self_emp_occ:
+        type: slope
+        var: self_emp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind3_MNPind2_no_self_emp_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      union_ind:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      part_time_ind:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      public_sector_ind:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      union_occ:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      part_time_occ:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      public_sector_occ:
+        type: slope
+        var: public_sector
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered  
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind4_MNPind3_no_public_sector_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      union_ind:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      part_time_ind:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      union_occ:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      part_time_occ:
+        type: slope
+        var: part_time
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind5_MNPind4_no_part_time_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      union_ind:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      union_occ:
+        type: slope
+        var: union
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind6_MNPind5_no_union_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      tenure_ind:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      tenure_occ:
+        type: slope
+        var: tenure
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind7_MNPind6_no_tenure_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      age_ind:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      age_occ:
+        type: slope
+        var: age
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind8_MNPind7_no_age_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_ind:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_ind:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_ind:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_ind:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_ind:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      elementary_edu_occ:
+        type: slope
+        var: elementary_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      highschool_edu_occ:
+        type: slope
+        var: highschool_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      postsec_edu_occ:
+        type: slope
+        var: postsec_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      undergrad_edu_occ:
+        type: slope
+        var: undergrad_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      graduate_edu_occ:
+        type: slope
+        var: graduate_edu
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind9_MNPind8_no_edu:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      sex_ind:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      sex_occ:
+        type: slope
+        var: sex
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind10_MNPind9_no_sex_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      exp_ind:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      exp_occ:
+        type: slope
+        var: exp
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
+- MNPind11_MNPind10_no_exp_ind:
+    year: null
+    draws: 1000
+    warmup: 1000
+    standardize_vars:
+    - exp
+    - tenure
+    - age
+    parameters:
+      avg_salary_ind:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - industry
+        hyperprior: false
+        parameterization: centered
+      avg_salary_occ:
+        type: intercept
+        var: null
+        dist: normal
+        initial_values:
+          loc: 0
+          scale: 1
+        dims:
+        - occup
+        hyperprior: false
+        parameterization: centered     
+      shape:
+        type: shape
+        var: null
+        dist: uniform
+        initial_values:
+          low: 1
+          high: 100
+        dims: null
+        hyperprior: false
+        parameterization: centered
