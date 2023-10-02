@@ -243,14 +243,21 @@ class GammaGML():
                     trace = az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)
                     divergences = mcmc.get_extra_fields()['diverging'].sum()
                     print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+                    if az.summary(trace)['r_hat'].max() < 1.01:
+                        print(f"Rhat is less than 1.01 - Run stopped at iteration {i}")
+                        break
                 else:
                     mcmc.post_warmup_state = mcmc.last_state
                     mcmc.run(mcmc.post_warmup_state.rng_key)
+                    # NOTE: Pickle does not work when set hyperprior to True and non-centered parameterization
                     # with open(fr"{self.outputs_path}/model.pickle", "wb") as output_file:
                     #     pickle.dump(mcmc, output_file)
                     trace = az.concat([trace, az.from_numpyro(mcmc, coords=self.coords, dims=self.dims)], dim="draw")
                     divergences += mcmc.get_extra_fields()['diverging'].sum()
                     print(f"It {i} - rhat: {az.summary(trace)['r_hat'].max():.3f}")
+                    if az.summary(trace)['r_hat'].max() < 1.01:
+                        print(f"Rhat is less than 1.01 - Run stopped at iteration {i}")
+                        break
 
             trace = self.add_unconstrained_vars(trace)
 

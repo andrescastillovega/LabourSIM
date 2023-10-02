@@ -1,7 +1,7 @@
 - MNPind1_all_vars_no_pooled_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -393,8 +393,8 @@
         parameterization: centered
 - MNPind2_MNPind1_no_grad_refyear:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -720,8 +720,8 @@
         parameterization: centered
 - MNPind3_MNPind2_no_self_emp_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -1025,8 +1025,8 @@
         parameterization: centered
 - MNPind4_MNPind3_no_public_sector_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -1308,8 +1308,8 @@
         parameterization: centered
 - MNPind5_MNPind4_no_part_time_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -1569,8 +1569,8 @@
         parameterization: centered
 - MNPind6_MNPind5_no_union_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -1808,8 +1808,8 @@
         parameterization: centered
 - MNPind7_MNPind6_no_tenure_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -2025,8 +2025,8 @@
         parameterization: centered
 - MNPind8_MNPind7_no_age_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -2220,8 +2220,8 @@
         parameterization: centered
 - MNPind9_MNPind8_no_edu:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -2305,8 +2305,8 @@
         parameterization: centered
 - MNPind10_MNPind9_no_sex_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
@@ -2368,8 +2368,8 @@
         parameterization: centered
 - MNPind11_MNPind10_no_exp_ind:
     year: null
-    draws: 1000
-    warmup: 1000
+    draws: 5000
+    warmup: 5000
     standardize_vars:
     - exp
     - tenure
