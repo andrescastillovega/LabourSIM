@@ -1,7 +1,7 @@
 - MHC1_all_vars_pooled:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -206,8 +206,8 @@
         parameterization: centered
 - MHC2_MHC1_no_grad_refyear:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -379,8 +379,8 @@
         parameterization: centered
 - MHC3_MHC2_no_self_emp:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -541,8 +541,8 @@
         parameterization: centered
 - MHC4_MHC3_no_public_sector:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -692,8 +692,8 @@
         parameterization: centered
 - MHC5_MHC4_no_part_time:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -832,8 +832,8 @@
         parameterization: centered
 - MHC6_MHC5_no_union:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -961,8 +961,8 @@
         parameterization: centered
 - MHC7_MHC6_no_tenure:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1079,8 +1079,8 @@
         parameterization: centered
 - MHC8_MHC7_no_age:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1186,8 +1186,8 @@
         parameterization: centered
 - MHC9_MHC8_no_edu:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1238,8 +1238,8 @@
         parameterization: centered
 - MHC10_MHC9_no_sex:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
@@ -1279,8 +1279,8 @@
         parameterization: centered
 - MHC11_MHC10_no_exp:
     year: null
-    draws: 100
-    warmup: 100
+    draws: 1000
+    warmup: 1000
     standardize_vars:
     - exp
     - tenure
