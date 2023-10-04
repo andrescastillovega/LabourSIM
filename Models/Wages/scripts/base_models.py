@@ -59,7 +59,7 @@ def hierarchical(features,
     prior_features = numpyro.deterministic("features", mu_hyperpriors + offset_features * sigma_hyperpriors)
 
     mu = avg_salary[:, dimension]
-    print(features.shape, prior_features.shape)
+    print(features.shape, prior_features.shape, avg_salary.shape, mu.shape)
     mu_sum = jnp.dot(prior_features[:, dimension], features)
 
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
