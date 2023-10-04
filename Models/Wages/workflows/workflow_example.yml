@@ -1,7 +1,7 @@
 - test:
-    model_type: "hierarchical_test"
+    model_type: "hierarchical"
     target: "salary"
-    year: null
+    year: 2011
     parameters:
     - exp
     - sex
@@ -26,11 +26,11 @@
     - age
     - tenure
     run_settings:
-      warmup: 2000
-      draws: 2000
+      warmup: 100
+      draws: 100
       chains: 4
       target_accept: 0.95
-      batch_size: 400
+      batch_size: null
 # - test_1:
 #     model_type: "hierarchical"
 #     target: "salary"

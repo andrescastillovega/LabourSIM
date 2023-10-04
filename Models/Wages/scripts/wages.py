@@ -1,5 +1,6 @@
 import argparse
 import jax
+import numpyro
 import os
 import pandas as pd
 from tqdm import tqdm
@@ -22,7 +23,7 @@ if __name__ == "__main__":
 
     # Configure precision and platform
     jax.config.update("jax_platform_name", "gpu")
-    jax.config.update("jax_enable_x64", True)
+    # jax.config.update("jax_enable_x64", True)
 
     # Load data and workflow
     data = pd.read_csv(args.dataset)

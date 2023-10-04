@@ -54,12 +54,13 @@ class GammaGLM():
         rng_key = random.PRNGKey(0)
         self.rng_key, self.rng_key_ = random.split(rng_key)
         self.model = self.model_fn
+        print(self.idx_dims.max() + 1, type(self.idx_dims.max() + 1))
         return f"Model {self.name} | {self.model_type} built"
 
 
     def run(self, warmup=2000, draws=2000, chains=4, target_accept_prob=0.95, batch_size=None):
         if batch_size is None:
-            kernel = NUTS(self.model, target_accept_prob=target_accept_prob, dense_mass=True)
+            kernel = NUTS(self.model, target_accept_prob=target_accept_prob)
             mcmc = MCMC(kernel, num_warmup=warmup, num_samples=draws,
                         num_chains=chains, chain_method='vectorized')
             mcmc.run(self.rng_key)
@@ -70,11 +71,9 @@ class GammaGLM():
         else:
             iterations = int(warmup / batch_size)
             divergences = 0
-
-            kernel = NUTS(self.model, target_accept_prob=target_accept_prob, dense_mass=True)
+            kernel = NUTS(self.model, target_accept_prob=target_accept_prob)
             mcmc = MCMC(kernel, num_warmup=warmup, num_samples=batch_size, 
                         num_chains=chains, chain_method='vectorized')
-
             for i in range(iterations):
                 if i == 0:
                     mcmc.run(self.rng_key)

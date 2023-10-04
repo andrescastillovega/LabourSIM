@@ -42,26 +42,28 @@ def hierarchical(features,
                  shape_dist="uniform",
                  shape_params={"low": 1, "high": 100},
                  target_dist="gamma"):
-    # Model definition
+    
+    # Hyperpriors
     mu_avg_salary = numpyro.sample("mu_avg_salary", utils.DISTRIBUTIONS[mu_dist](**mu_avg_salary_params))
     sigma_avg_salary = numpyro.sample("sigma_avg_salary", utils.DISTRIBUTIONS[sigma_dist](**sigma_params))
-    
-    offset_avg_salary = numpyro.sample(f"offset_avg_salary_{dimension_name}", dist.Normal(0, 1).expand([len(dimension)]))
-    avg_salary = mu_avg_salary + sigma_avg_salary * offset_avg_salary
-    
+    mu_hyperpriors = numpyro.sample("mu_hyperpriors", utils.DISTRIBUTIONS[mu_dist](**mu_params), sample_shape=(len(features_names),))
+    sigma_hyperpriors = numpyro.sample("sigma_hyperpriors", utils.DISTRIBUTIONS[sigma_dist](**sigma_params), sample_shape=(len(features_names),))
+
+    offset_avg_salary = numpyro.sample("offset_avg_salary", 
+                                       utils.DISTRIBUTIONS["normal"](loc=0, scale=1),
+                                       sample_shape=(dimension.max() + 1,))
+    avg_salary = numpyro.deterministic("avg_salary", mu_avg_salary + offset_avg_salary * sigma_avg_salary)
+    offset_features = numpyro.sample("offset_features",
+                                     utils.DISTRIBUTIONS["normal"](loc=0, scale=1),
+                                     sample_shape=(len(features_names), dimension.max() + 1))
+    prior_features = numpyro.deterministic("features", mu_hyperpriors + offset_features * sigma_hyperpriors)
+
     mu = avg_salary[dimension]
-    
-    for feature, name in zip(features.T, features_names):
-        mu_feature = numpyro.sample(f"mu_{name}", utils.DISTRIBUTIONS[mu_dist](**mu_params))
-        sigma_feature = numpyro.sample(f"sigma_{name}", utils.DISTRIBUTIONS[sigma_dist](**sigma_params))
-        
-        offset_feature = numpyro.sample(f"offset_{name}_{dimension_name}", dist.Normal(0, 1).expand([len(dimension)]))
-        beta = mu_feature + sigma_feature * offset_feature
-        
-        mu += beta[dimension] * feature
+    print(features.shape, prior_features.shape)
+    mu_sum = jnp.dot(prior_features[dimension], features.T)
 
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
-    mu = jnp.exp(mu)
+    mu = jnp.exp(mu + mu_sum)
     rate = shape / mu
 
     # Likelihood
