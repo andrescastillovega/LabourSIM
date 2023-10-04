@@ -60,7 +60,7 @@ def hierarchical(features,
 
     mu = avg_salary[dimension]
     print(features.shape, prior_features.shape)
-    mu_sum = jnp.dot(prior_features[dimension], features.T)
+    mu_sum = jnp.dot(prior_features[:, dimension], features.T)
 
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
     mu = jnp.exp(mu + mu_sum)
