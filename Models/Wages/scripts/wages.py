@@ -23,7 +23,6 @@ if __name__ == "__main__":
 
     # Configure precision and platform
     jax.config.update("jax_platform_name", "gpu")
-    # jax.config.update("jax_enable_x64", True)
 
     # Load data and workflow
     data = pd.read_csv(args.dataset)
@@ -69,8 +68,7 @@ if __name__ == "__main__":
         progress_bar.update(1)
 
         # Run model
-        trace, divergences = model.run(model_specs["run_settings"]["warmup"],
-                  model_specs["run_settings"]["draws"],
+        trace, divergences = model.run(model_specs["run_settings"]["iterations"],
                   model_specs["run_settings"]["chains"],
                   model_specs["run_settings"]["target_accept"],
                   model_specs["run_settings"]["batch_size"])
@@ -91,8 +89,8 @@ if __name__ == "__main__":
         run_summary = pd.DataFrame.from_dict({model_name: {"year": model_specs["year"],
                                                            "model_type": model_specs["model_type"],
                                                            "dimensions": model_specs["dimensions"],
-                                                           "draws": model_specs["run_settings"]["draws"],
-                                                           "warmup": model_specs["run_settings"]["warmup"],
+                                                           "iterations": model_specs["run_settings"]["iterations"],
+                                                           "batch_size": model_specs["run_settings"]["batch_size"],
                                                            "divergences": divergences,
                                                            "max_rhat": max_rhat,
                                                            "sampling_time": sampling_time}},
