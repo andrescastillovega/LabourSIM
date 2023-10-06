@@ -46,8 +46,6 @@ class GammaGLM():
             return hierarchical(self.features, self.features_names, self.idx_dims, self.dimensions_names, self.target)
         elif self.model_type == "no_pooled":
             return no_pooled(self.features, self.features_names, self.idx_dims, self.dimensions_names, self.target)
-        elif self.model_type == "hierarchical_test":
-            return hierarchical_test(self.features, self.features_names, self.idx_dims, self.dimensions_names, self.target)
         else:
             raise ValueError("Invalid model type")
 
