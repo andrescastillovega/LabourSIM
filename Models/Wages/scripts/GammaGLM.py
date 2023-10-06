@@ -2,7 +2,7 @@ import arviz as az
 import utils
 import pandas as pd
 import pickle
-from base_models import pooled, hierarchical, no_pooled, hierarchical_test
+from base_models import pooled, hierarchical, no_pooled
 from jax import random
 from numpyro import handlers
 from numpyro.infer import MCMC, NUTS
