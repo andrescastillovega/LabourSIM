@@ -23,10 +23,12 @@
     - age
     - tenure
     run_settings:
-      iterations: 10
       chains: 4
+      tune: 10
+      draws: 10
       target_accept: 0.95
-      batch_size: 200
+      batch_size: null
+      iterations: null
 # - test_1:
 #     model_type: "hierarchical"
 #     target: "salary"

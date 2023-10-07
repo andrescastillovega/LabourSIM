@@ -68,10 +68,12 @@ if __name__ == "__main__":
         progress_bar.update(1)
 
         # Run model
-        trace, divergences = model.run(model_specs["run_settings"]["iterations"],
-                  model_specs["run_settings"]["chains"],
-                  model_specs["run_settings"]["target_accept"],
-                  model_specs["run_settings"]["batch_size"])
+        trace, divergences = model.run(tune=model_specs["run_settings"]["tune"],
+                                        draws=model_specs["run_settings"]["draws"],
+                                        chains=model_specs["run_settings"]["chains"],
+                                        target_accept_prob=model_specs["run_settings"]["target_accept"],
+                                        batch_size=model_specs["run_settings"]["batch_size"],
+                                        iterations=model_specs["run_settings"]["iterations"])
         max_rhat = utils.get_rhat_max(trace)
         progress_bar.set_postfix({"max_rhat": f"{max_rhat:.3f}"})
         progress_bar.update(1)
