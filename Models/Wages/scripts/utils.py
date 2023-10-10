@@ -134,7 +134,7 @@ def create_inference_data(mcmc,
                  observed_data=observed_data)
 
 def create_mcmc(model, warmup, samples, chains, target_accept=0.95, last_sample=None):
-    kernel = NUTS(model, target_accept_prob=target_accept, init_strategy=init_to_median(num_samples=100))
+    kernel = NUTS(model, target_accept_prob=target_accept, init_strategy=init_to_median(num_samples=100), max_tree_depth=20, dense_mass=True)
     return MCMC(kernel, num_warmup=warmup, num_samples=samples, num_chains=chains, chain_method='vectorized', progress_bar=True)
 
 def get_batch_results(model, mcmc, samples, divergences, loglikehood, iteration, chains, nsamples, obs):    

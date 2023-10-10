@@ -5,17 +5,6 @@
     parameters:
     - exp
     - sex
-    - elementary_edu
-    - highschool_edu
-    - postsec_edu
-    - undergrad_edu
-    - graduate_edu
-    - age
-    - tenure
-    - union
-    - part_time
-    - public_sector
-    - self_emp
     dimensions:
     - industry
     standardize_vars:
@@ -24,8 +13,8 @@
     - tenure
     run_settings:
       chains: 4
-      tune: 10
-      draws: 10
+      tune: 1000
+      draws: 1000
       target_accept: 0.95
       batch_size: null
       iterations: null
