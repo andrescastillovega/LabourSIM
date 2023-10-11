@@ -2,11 +2,14 @@ import arviz as az
 import utils
 import pandas as pd
 import pickle
-from base_models import pooled, hierarchical, no_pooled
+from models import pooled, hierarchical, no_pooled
+import jax
 from jax import random
+from jax import numpy as jnp
 from numpyro import handlers
-from numpyro.infer import MCMC, NUTS
+from numpyro.infer import MCMC, NUTS, init_to_median
 from numpyro.infer.util import log_likelihood
+
 
 class GammaGLM():
     def __init__(self, name, model_type, dataset, target, parameters, dimensions, standardize_vars, OUTPUTS_PATH, year=None):
@@ -40,12 +43,14 @@ class GammaGLM():
             return f"Model: {self.name} - Type: {self.model_type} - Dims: {self.dimensions_names} - Params: {self.features_names}"
         
     def model_fn(self):
+        features_sharded, target_sharded, idx_dims_sharded = utils.get_sharded_data(self.features, self.target, self.idx_dims)
+        argmax_dim = self.idx_dims.max() + 1 if self.idx_dims is not None else None
         if self.model_type == "pooled":
-            return pooled(self.features, self.features_names, self.target)
+            return pooled(features_sharded, self.features_names, target_sharded)
         elif self.model_type == "hierarchical":
-            return hierarchical(self.features, self.features_names, self.idx_dims, self.dimensions_names, self.target)
+            return hierarchical(features_sharded, self.features_names, idx_dims_sharded, self.dimensions_names, target_sharded, argmax_dim)
         elif self.model_type == "no_pooled":
-            return no_pooled(self.features, self.features_names, self.idx_dims, self.dimensions_names, self.target)
+            return no_pooled(features_sharded, self.features_names, idx_dims_sharded, self.dimensions_names, target_sharded, argmax_dim)
         else:
             raise ValueError("Invalid model type")
 
@@ -66,63 +71,42 @@ class GammaGLM():
             divergences_count = (trace.sample_stats["diverging"].values == True).sum()
             return trace, divergences_count
         else:
-            # Initial run settings
-            iterations = iterations
-            prev_rhat = 10e10
-            nwarmup = batch_size
-            nsamples = batch_size
-            chains = chains
-            last_sample = None
-            mcmc = utils.create_mcmc(self.model, nwarmup, nsamples, chains, target_accept_prob)
             samples = None
             divergences = None
-            loglikelihood = None
-            nsample_updated = False
-
-            # Run NUTS
+            logll = None
             rng_key = random.PRNGKey(0)
             rng_key, rng_key_ = random.split(rng_key)
+            kernel = NUTS(self.model, target_accept_prob=0.98, dense_mass=True, max_tree_depth=12, init_strategy=init_to_median(num_samples=100))
+            mcmc = MCMC(kernel, num_warmup=batch_size, num_samples=batch_size, num_chains=4, chain_method="vectorized")
+            mcmc.run(rng_key)
+            samples = { key: jnp.array(value) for key, value in mcmc.get_samples(group_by_chain=True).items() }
+            divergences = jnp.array(mcmc.get_extra_fields(group_by_chain=True)["diverging"])
+            logll = jnp.array(log_likelihood(self.model, mcmc.get_samples(), batch_ndims=1)["salary_hat"].reshape(4, batch_size, -1))
+
+            samples = { key: jax.device_put(value, device=jax.devices("cpu")[0]) for key, value in samples.items() }
+            divergences = jax.device_put(divergences, jax.devices("cpu")[0])
+            logll = jax.device_put(logll, jax.devices("cpu")[0])
+            trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
+            max_rhat = az.summary(trace, round_to=5)["r_hat"].max()
+            utils.save_model_pickle(mcmc, "../outputs")
+            print(f">>>>>>>>>>>>>>>> Warmup complete - max_rhat: {max_rhat} <<<<<<<<<<<<<<<<<<<<")
+
             for it in range(iterations):
-                if it == 0:
-                    mcmc.run(rng_key)
-                    utils.save_model_pickle(mcmc, self.outputs_path)
-                elif nsample_updated:
-                    mcmc.run(rng_key, init_params=last_sample)
-                    utils.save_model_pickle(mcmc, self.outputs_path)
-                else:
-                    mcmc.post_warmup_state = mcmc.last_state
-                    mcmc.run(mcmc.post_warmup_state.rng_key)
-                    utils.save_model_pickle(mcmc, self.outputs_path)
-                    
-                samples, divergences, loglikelihood, sample_rhat, cumulative_rhat = utils.get_batch_results(self.model,
-                                                                                                            mcmc,
-                                                                                                            samples,
-                                                                                                            divergences,
-                                                                                                            loglikelihood,
-                                                                                                            it,
-                                                                                                            chains,
-                                                                                                            nsamples,
-                                                                                                            self.target.shape[0])
-                
-                trace = utils.create_inference_data(mcmc, samples, divergences, loglikelihood, "industry", self.coords["industry"], self.target)
-                trace.to_netcdf(f"{self.outputs_path}/intermediate_trace.nc")
-
-                print(f"It:{it} - sample rhat: {sample_rhat} - cumulative rhat: {cumulative_rhat}")
-                if cumulative_rhat < 1.01:
-                    print(f"Model converged at iteration: {it} with {loglikelihood.shape[1]} samples")
+                mcmc.post_warmup_state = mcmc.last_state
+                mcmc.run(mcmc.post_warmup_state.rng_key)
+                samples = utils.concat_samples([samples, mcmc.get_samples(group_by_chain=True)])
+                divergences = jnp.concatenate([divergences, mcmc.get_extra_fields(group_by_chain=True)["diverging"]], axis=1)
+                logll = jnp.concatenate([logll, log_likelihood(self.model, mcmc.get_samples(), batch_ndims=1)["salary_hat"].reshape(4,batch_size,-1)], axis=1)
+                trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
+                max_rhat = az.summary(trace, round_to=5)["r_hat"].max()
+                utils.save_model_pickle(mcmc, "../outputs")
+                trace.to_netcdf(f"../outputs/trace_{it}.nc")
+                print(f">>>>>>>>>>>>>>>> Iteration {it+1}/{iterations} complete - max_rhat: {max_rhat} <<<<<<<<<<<<<<<<<<<<")
+                if max_rhat <= 1.01:
+                    print(f"Convergence reached iteration: {it}")
                     break
-                if prev_rhat - cumulative_rhat < 0.05:
-                    last_sample = {k: v[:,-1] for k, v in mcmc.get_samples(group_by_chain=True).items()}
-                    nwarmup += 100
-                    nsamples += 100
-                    mcmc = utils.create_mcmc(self.model, nwarmup, nsamples, chains)
-                    nsample_updated = True
-                    print(f"Increasing warmup to {nwarmup} and samples to {nsamples}")
-                prev_rhat = cumulative_rhat
-
-            divergences_count = (divergences == True).sum()
-
-            trace = utils.create_inference_data(mcmc, samples, divergences, loglikelihood, "industry", self.coords["industry"], self.target)
+            trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
+            divergences_count = (trace.sample_stats["diverging"].values == True).sum()
             return trace, divergences_count
 
 

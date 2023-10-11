@@ -1,4 +1,5 @@
 import arviz as az
+import jax
 import jax.numpy as jnp
 import numpy as np
 import os
@@ -6,6 +7,8 @@ import pandas as pd
 import pickle
 import xarray as xr
 
+from jax.experimental import mesh_utils
+from jax.sharding import PositionalSharding
 from numpyro import distributions as dist
 from numpyro.infer import MCMC, NUTS, init_to_median
 from numpyro.infer.util import log_likelihood
@@ -105,6 +108,9 @@ def create_inference_data(mcmc,
     chains, draws, dim = samples["avg_salary"].shape
     obs = target.shape[0]
 
+    dimension_name = dimension_name[0]
+    dimension = dimension[dimension_name]
+
     posterior_dataset = xr.Dataset(
         data_vars = { var: (["chain", "draw", f"{dimension_name}"], samples[var]) 
                      if len(samples[var].shape)==3 else (["chain", "draw"], samples[var])
@@ -133,8 +139,8 @@ def create_inference_data(mcmc,
                  sample_stats=sample_stats,
                  observed_data=observed_data)
 
-def create_mcmc(model, warmup, samples, chains, target_accept=0.95, last_sample=None):
-    kernel = NUTS(model, target_accept_prob=target_accept, init_strategy=init_to_median(num_samples=100), max_tree_depth=20, dense_mass=True)
+def create_mcmc(model, warmup, samples, chains, target_accept=0.98):
+    kernel = NUTS(model, target_accept_prob=target_accept, init_strategy=init_to_median(num_samples=100), max_tree_depth=12, dense_mass=True)
     return MCMC(kernel, num_warmup=warmup, num_samples=samples, num_chains=chains, chain_method='vectorized', progress_bar=True)
 
 def get_batch_results(model, mcmc, samples, divergences, loglikehood, iteration, chains, nsamples, obs):    
@@ -155,3 +161,11 @@ def get_batch_results(model, mcmc, samples, divergences, loglikehood, iteration,
     sample_rhat = az.summary(az.from_dict(mcmc.get_samples(group_by_chain=True)))["r_hat"].max()
     cumulative_rhat = az.summary(az.from_dict(samples),round_to=5)["r_hat"].max()
     return samples, divergences, loglikehood, sample_rhat, cumulative_rhat
+
+def get_sharded_data(features, target, dimensions):
+    devices = len(jax.devices("gpu"))
+    sharding = PositionalSharding(mesh_utils.create_device_mesh((devices,)))
+    features_sharded = jax.device_put(features, sharding.reshape(devices, 1))
+    target_sharded = jax.device_put(target, sharding.reshape(devices))
+    dimensions_sharded = jax.device_put(dimensions, sharding.reshape(devices))
+    return features_sharded, target_sharded, dimensions_sharded
