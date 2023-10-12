@@ -46,7 +46,7 @@ def get_rhat_max(trace):
     """
     Get maximum rhat value from ArviZ inference data
     """
-    summary = az.summary(trace)
+    summary = az.summary(trace, round_to=5)
     rhat_max = summary["r_hat"].max()
     return rhat_max
 
@@ -62,7 +62,7 @@ def save_summary(workflow, trace, model_name, OUTPUTS_PATH, year=None):
     else:
         compilate_summary = pd.DataFrame()
 
-    summary = az.summary(trace)
+    summary = az.summary(trace, round_to=5)
     summary["model"] = model_name
     if year is None:
         summary["year"] = "all"
@@ -105,11 +105,12 @@ def create_inference_data(mcmc,
                           dimension,
                           target):
     trace = az.from_numpyro(mcmc)
-    chains, draws, dim = samples["avg_salary"].shape
+    chains, draws = samples["avg_salary"].shape[:2]
     obs = target.shape[0]
 
-    dimension_name = dimension_name[0]
-    dimension = dimension[dimension_name]
+    if dimension_name is not None:
+        dimension_name = dimension_name[0]
+        dimension = dimension[dimension_name]
 
     posterior_dataset = xr.Dataset(
         data_vars = { var: (["chain", "draw", f"{dimension_name}"], samples[var]) 
@@ -158,8 +159,8 @@ def get_batch_results(model, mcmc, samples, divergences, loglikehood, iteration,
                                                                   posterior_samples = mcmc.get_samples(),
                                                                   batch_ndims = 1)["salary_hat"]\
                                                                   .reshape(chains, nsamples, obs)], axis=1)
-    sample_rhat = az.summary(az.from_dict(mcmc.get_samples(group_by_chain=True)))["r_hat"].max()
-    cumulative_rhat = az.summary(az.from_dict(samples),round_to=5)["r_hat"].max()
+    sample_rhat = az.summary(az.from_dict(mcmc.get_samples(group_by_chain=True)), round_to=5)["r_hat"].max()
+    cumulative_rhat = az.summary(az.from_dict(samples), round_to=5)["r_hat"].max()
     return samples, divergences, loglikehood, sample_rhat, cumulative_rhat
 
 def get_sharded_data(features, target, dimensions):

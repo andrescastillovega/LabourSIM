@@ -19,7 +19,7 @@ def pooled(features,
     avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
     mu = avg_salary
     for feature, name in zip(features.T, feature_names):
-        prior = numpyro.sample(f"beta_{feature}", utils.DISTRIBUTIONS[prior_dist](**prior_params))
+        prior = numpyro.sample(f"beta_{name}", utils.DISTRIBUTIONS[prior_dist](**prior_params))
         mu += prior * feature
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
 
@@ -100,10 +100,10 @@ def no_pooled(features,
 
     # Priors
     with numpyro.plate(f"{dimension_name}", argmax_dim):
-        avg_salary = numpyro.sample("offset_avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
+        avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
         priors = []
         for i, feature in enumerate(features_names):
-            priors.append(numpyro.sample(f"offset_{feature}", utils.DISTRIBUTIONS[prior_dist](**prior_params)))
+            priors.append(numpyro.sample(f"beta_{feature}", utils.DISTRIBUTIONS[prior_dist](**prior_params)))
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
 
     # Expected value

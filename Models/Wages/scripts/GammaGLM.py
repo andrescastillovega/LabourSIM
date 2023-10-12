@@ -9,6 +9,7 @@ from jax import numpy as jnp
 from numpyro import handlers
 from numpyro.infer import MCMC, NUTS, init_to_median
 from numpyro.infer.util import log_likelihood
+import os
 
 
 class GammaGLM():
@@ -100,7 +101,8 @@ class GammaGLM():
             logll = jax.device_put(logll, jax.devices("cpu")[0])
             trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
             max_rhat = az.summary(trace, round_to=5)["r_hat"].max()
-            utils.save_model_pickle(mcmc, "../outputs")
+            utils.save_model_pickle(mcmc, self.outputs_path)
+            trace.to_netcdf(f"{self.outputs_path}/intermediate_trace.nc")
             print(f">>>>>>>>>>>>>>>> Warmup complete - max_rhat: {max_rhat} <<<<<<<<<<<<<<<<<<<<")
 
             for it in range(iterations):
@@ -111,12 +113,14 @@ class GammaGLM():
                 logll = jnp.concatenate([logll, log_likelihood(self.model, mcmc.get_samples(), batch_ndims=1)["salary_hat"].reshape(4,batch_size,-1)], axis=1)
                 trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
                 max_rhat = az.summary(trace, round_to=5)["r_hat"].max()
-                utils.save_model_pickle(mcmc, "../outputs")
-                trace.to_netcdf(f"../outputs/trace_{it}.nc")
+                utils.save_model_pickle(mcmc, self.outputs_path)
+                trace.to_netcdf(f"{self.outputs_path}/intermediate_trace.nc")
                 print(f">>>>>>>>>>>>>>>> Iteration {it+1}/{iterations} complete - max_rhat: {max_rhat} <<<<<<<<<<<<<<<<<<<<")
                 if max_rhat <= 1.01:
                     print(f"Convergence reached iteration: {it}")
                     break
+            trace.to_netcdf(f"{self.outputs_path}/trace.nc")
+            os.remove(f"{self.outputs_path}/intermediate_trace.nc")
             trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
             divergences_count = (trace.sample_stats["diverging"].values == True).sum()
             return trace, divergences_count, it

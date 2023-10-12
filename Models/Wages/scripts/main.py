@@ -92,7 +92,7 @@ if __name__ == "__main__":
         sampling_time = round(progress_bar.format_dict["elapsed"], 2)
         run_summary = pd.DataFrame.from_dict({model_name: {"year": model_specs["year"],
                                                            "model_type": model_specs["model_type"],
-                                                           "dimensions": model_specs["dimensions"],
+                                                           "dimensions": model_specs["dimensions"][0] if model_specs["dimensions"] is not None else None,
                                                            "tune": model_specs["run_settings"]["tune"],
                                                            "draws": model_specs["run_settings"]["draws"],
                                                            "iterations": model_specs["run_settings"]["iterations"],
@@ -109,6 +109,7 @@ if __name__ == "__main__":
             workflow_summary = run_summary.copy()
         workflow_summary.to_csv(f"{OUTPUTS_PATH}/{workflow_filename}_summary.csv")
         progress_bar.update(1)
+        progress_bar.close()
         os.system('clear')
         print(workflow_summary)
 
