@@ -12,12 +12,13 @@ from numpyro.infer.util import log_likelihood
 
 
 class GammaGLM():
-    def __init__(self, name, model_type, dataset, target, parameters, dimensions, standardize_vars, OUTPUTS_PATH, year=None):
+    def __init__(self, name, model_type, dataset, target, parameters, dimensions, standardize_vars, OUTPUTS_PATH, year=None, **init_params_kwargs):
         self.name = name
         self.model_type = model_type
         self.features_names = parameters
         self.dimensions_names = dimensions
         self.year = year
+        self.init_params_kwargs = init_params_kwargs
 
         data = dataset.copy()
         data = utils.standardize_vars(data, standardize_vars)
@@ -46,11 +47,22 @@ class GammaGLM():
         features_sharded, target_sharded, idx_dims_sharded = utils.get_sharded_data(self.features, self.target, self.idx_dims)
         argmax_dim = self.idx_dims.max() + 1 if self.idx_dims is not None else None
         if self.model_type == "pooled":
-            return pooled(features_sharded, self.features_names, target_sharded)
+            return pooled(features_sharded, self.features_names, target_sharded, **self.init_params_kwargs)
         elif self.model_type == "hierarchical":
-            return hierarchical(features_sharded, self.features_names, idx_dims_sharded, self.dimensions_names, target_sharded, argmax_dim)
+            return hierarchical(features_sharded, 
+                                self.features_names, 
+                                idx_dims_sharded, 
+                                self.dimensions_names, 
+                                target_sharded, argmax_dim,
+                                **self.init_params_kwargs)
         elif self.model_type == "no_pooled":
-            return no_pooled(features_sharded, self.features_names, idx_dims_sharded, self.dimensions_names, target_sharded, argmax_dim)
+            return no_pooled(features_sharded, 
+                             self.features_names, 
+                             idx_dims_sharded, 
+                             self.dimensions_names, 
+                             target_sharded, 
+                             argmax_dim,
+                             **self.init_params_kwargs)
         else:
             raise ValueError("Invalid model type")
 

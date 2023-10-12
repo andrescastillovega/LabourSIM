@@ -1,10 +1,9 @@
 - test:
     model_type: "hierarchical"
     target: "salary"
-    year: null
+    year: 2011
     parameters:
     - exp
-    - sex
     dimensions:
     - industry
     standardize_vars:
@@ -13,11 +12,27 @@
     - tenure
     run_settings:
       chains: 4
-      tune: 10
-      draws: 10
+      tune: 200
+      draws: 200
       target_accept: 0.95
-      batch_size: 10
-      iterations: 2
+      batch_size: 100
+      iterations: 100
+    initial_params:
+      mu_dist: "laplace"
+      mu_avg_salary_params: 
+        loc: 0
+        scale: 0.001
+      mu_params:
+        loc: 0
+        scale: 0.001
+      sigma_dist: "half_normal"
+      sigma_params: 
+        scale: 0.001
+      shape_dist: "uniform"
+      shape_params:
+        low: 1
+        high: 100
+      target_dist: "gamma"
 # - test_1:
 #     model_type: "hierarchical"
 #     target: "salary"

@@ -6,13 +6,15 @@ from numpyro import distributions as dist
 def pooled(features,
            feature_names,
            target,
-           prior_dist="normal",
-           avg_salary_params={"loc": 10, "scale": 1}, 
-           prior_params={"loc": 0, "scale": 1},
-           shape_dist="uniform", 
-           shape_params={"low": 1, "high": 100},
-           target_dist="gamma"):
-    
+           **init_params_kwargs):
+    # Initial parameters
+    prior_dist = init_params_kwargs.get("prior_dist", "normal")
+    avg_salary_params = init_params_kwargs.get("avg_salary_params", {"loc": 10, "scale": 1})
+    prior_params = init_params_kwargs.get("prior_params", {"loc": 0, "scale": 1})
+    shape_dist = init_params_kwargs.get("shape_dist", "uniform")
+    shape_params = init_params_kwargs.get("shape_params", {"low": 1, "high": 100})
+    target_dist = init_params_kwargs.get("target_dist", "gamma")
+
     # Priors and expected value
     avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
     mu = avg_salary
@@ -35,14 +37,17 @@ def hierarchical(features,
                  dimension_name,
                  target,
                  argmax_dim,
-                 mu_dist="normal",
-                 mu_avg_salary_params={"loc": 10, "scale": 3},
-                 mu_params={"loc": 0, "scale": 3},
-                 sigma_dist="half_normal",
-                 sigma_params={"scale": 3},
-                 shape_dist="uniform",
-                 shape_params={"low": 1, "high": 100},
-                 target_dist="gamma"):
+                 **init_params_kwargs):
+    # Initial parameters
+    mu_dist = init_params_kwargs.get("mu_dist", "normal")
+    mu_avg_salary_params = init_params_kwargs.get("mu_avg_salary_params", {"loc": 10, "scale": 3})
+    mu_params = init_params_kwargs.get("mu_params", {"loc": 0, "scale": 3})
+    sigma_dist = init_params_kwargs.get("sigma_dist", "half_normal")
+    sigma_params = init_params_kwargs.get("sigma_params", {"scale": 3})
+    shape_dist = init_params_kwargs.get("shape_dist", "uniform")
+    shape_params = init_params_kwargs.get("shape_params", {"low": 1, "high": 100})
+    target_dist = init_params_kwargs.get("target_dist", "gamma")
+
     # Hyperpriors
     mus = []
     sigmas = []
@@ -84,12 +89,15 @@ def no_pooled(features,
               dimension_name,
               target,
               argmax_dim,
-              prior_dist="normal",
-              avg_salary_params={"loc": 10, "scale": 1},
-              prior_params={"loc": 0, "scale": 1},
-              shape_dist="uniform", 
-              shape_params={"low": 1, "high": 100},
-              target_dist="gamma"):
+              **init_params_kwargs):
+    # Initial parameters
+    prior_dist = init_params_kwargs.get("prior_dist", "normal")
+    avg_salary_params = init_params_kwargs.get("avg_salary_params", {"loc": 10, "scale": 1})
+    prior_params = init_params_kwargs.get("prior_params", {"loc": 0, "scale": 1})
+    shape_dist = init_params_kwargs.get("shape_dist", "uniform")
+    shape_params = init_params_kwargs.get("shape_params", {"low": 1, "high": 100})
+    target_dist = init_params_kwargs.get("target_dist", "gamma")
+
     # Priors
     with numpyro.plate(f"{dimension_name}", argmax_dim):
         avg_salary = numpyro.sample("offset_avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))

@@ -52,6 +52,7 @@ if __name__ == "__main__":
                              bar_format='{l_bar}{bar}|{n_fmt}/{total_fmt} [{elapsed}<{remaining}]{postfix}' )
 
         # Create model object
+        initial_params = model_specs["initial_params"] if "initial_params" in model_specs.keys() else dict()
         model = GammaGLM(model_name, 
                          model_specs["model_type"], 
                          data,
@@ -60,7 +61,8 @@ if __name__ == "__main__":
                          model_specs["dimensions"], 
                          model_specs["standardize_vars"],
                          OUTPUTS_PATH, 
-                         model_specs["year"])
+                         model_specs["year"],
+                         **initial_params)
         progress_bar.update(1)
 
         # Build model
