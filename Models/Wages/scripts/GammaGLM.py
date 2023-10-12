@@ -81,7 +81,7 @@ class GammaGLM():
             utils.save_model_pickle(mcmc, self.outputs_path)
             trace = az.from_numpyro(mcmc)
             divergences_count = (trace.sample_stats["diverging"].values == True).sum()
-            return trace, divergences_count
+            return trace, divergences_count, None
         else:
             samples = None
             divergences = None
@@ -119,7 +119,7 @@ class GammaGLM():
                     break
             trace = utils.create_inference_data(mcmc, samples, divergences, logll, self.dimensions_names, self.coords, self.target)
             divergences_count = (trace.sample_stats["diverging"].values == True).sum()
-            return trace, divergences_count
+            return trace, divergences_count, it
 
 
 

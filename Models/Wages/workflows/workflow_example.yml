@@ -1,44 +1,114 @@
-- test:
-    model_type: "hierarchical"
+- pooled:
+    model_type: "pooled"
     target: "salary"
     year: 2011
     parameters:
     - exp
-    dimensions:
-    - industry
+    dimensions: null
     standardize_vars:
     - exp
-    - age
-    - tenure
     run_settings:
       chains: 4
-      tune: 200
-      draws: 200
+      tune: 1000
+      draws: 1000
       target_accept: 0.95
-      batch_size: 100
-      iterations: 100
+      batch_size: null
+      iterations: null
+- pooled-reg:
+    model_type: "pooled"
+    target: "salary"
+    year: 2011
+    parameters:
+    - exp
+    dimensions: null
+    standardize_vars:
+    - exp
+    run_settings:
+      chains: 4
+      tune: 1000
+      draws: 1000
+      target_accept: 0.95
+      batch_size: null
+      iterations: null
     initial_params:
-      mu_dist: "laplace"
-      mu_avg_salary_params: 
+      prior_dist: "laplace"
+      avg_salary_params: 
         loc: 0
-        scale: 0.001
-      mu_params:
+        scale: 0.01
+      prior_params:
         loc: 0
-        scale: 0.001
-      sigma_dist: "half_normal"
-      sigma_params: 
-        scale: 0.001
+        scale: 0.01
       shape_dist: "uniform"
       shape_params:
         low: 1
         high: 100
       target_dist: "gamma"
-# - test_1:
-#     model_type: "hierarchical"
+- pooled-batch:
+    model_type: "pooled"
+    target: "salary"
+    year: 2011
+    parameters:
+    - exp
+    dimensions: null
+    standardize_vars:
+    - exp
+    run_settings:
+      chains: 4
+      tune: null
+      draws: null
+      target_accept: 0.96
+      batch_size: 100
+      iterations: 100
+- pooled-reg-batch:
+    model_type: "pooled"
+    target: "salary"
+    year: 2011
+    parameters:
+    - exp
+    dimensions: null
+    standardize_vars:
+    - exp
+    run_settings:
+      chains: 4
+      tune: null
+      draws: null
+      target_accept: 0.95
+      batch_size: 100
+      iterations: 100
+    initial_params:
+      prior_dist: "laplace"
+      avg_salary_params: 
+        loc: 0
+        scale: 0.01
+      prior_params:
+        loc: 0
+        scale: 0.01
+      shape_dist: "uniform"
+      shape_params:
+        low: 1
+        high: 100
+      target_dist: "gamma"
+# - pooled:
+#     model_type: "pooled"
 #     target: "salary"
 #     year: null
 #     parameters:
 #     - exp
+#     - sex
+#     - elementary_edu
+#     - highschool_edu
+#     - postsec_edu
+#     - undergrad_edu
+#     - graduate_edu
+#     - age
+#     - tenure
+#     - union
+#     - part_time
+#     - public_sector
+#     - self_emp
+#     - grad_highschool_refyear
+#     - grad_college_refyear
+#     - grad_univ_refyear
 #     dimensions:
 #     - industry
 #     standardize_vars:
@@ -46,7 +116,25 @@
 #     - age
 #     - tenure
 #     run_settings:
-#       iterations: 10
 #       chains: 4
+#       tune: 1000
+#       draws: 1000
 #       target_accept: 0.95
 #       batch_size: null
+#       iterations: null
+#     initial_params:
+#       mu_dist: "laplace"
+#       mu_avg_salary_params: 
+#         loc: 0
+#         scale: 0.1
+#       mu_params:
+#         loc: 0
+#         scale: 0.1
+#       sigma_dist: "half_normal"
+#       sigma_params: 
+#         scale: 0.1
+#       shape_dist: "uniform"
+#       shape_params:
+#         low: 1
+#         high: 100
+#       target_dist: "gamma"

@@ -70,7 +70,7 @@ if __name__ == "__main__":
         progress_bar.update(1)
 
         # Run model
-        trace, divergences = model.run(tune=model_specs["run_settings"]["tune"],
+        trace, divergences, converg_iterations = model.run(tune=model_specs["run_settings"]["tune"],
                                         draws=model_specs["run_settings"]["draws"],
                                         chains=model_specs["run_settings"]["chains"],
                                         target_accept_prob=model_specs["run_settings"]["target_accept"],
@@ -93,8 +93,11 @@ if __name__ == "__main__":
         run_summary = pd.DataFrame.from_dict({model_name: {"year": model_specs["year"],
                                                            "model_type": model_specs["model_type"],
                                                            "dimensions": model_specs["dimensions"],
+                                                           "tune": model_specs["run_settings"]["tune"],
+                                                           "draws": model_specs["run_settings"]["draws"],
                                                            "iterations": model_specs["run_settings"]["iterations"],
                                                            "batch_size": model_specs["run_settings"]["batch_size"],
+                                                           "convergence_iterations": converg_iterations,
                                                            "divergences": divergences,
                                                            "max_rhat": max_rhat,
                                                            "sampling_time": sampling_time}},
