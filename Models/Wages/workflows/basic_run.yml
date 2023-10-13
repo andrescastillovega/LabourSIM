@@ -28,7 +28,7 @@
 #       chains: 4
 #       tune: 1000
 #       draws: 1000
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: null
 #       iterations: null
 # - pooled-reg:
@@ -61,7 +61,7 @@
 #       chains: 4
 #       tune: 1000
 #       draws: 1000
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: null
 #       iterations: null
 #     initial_params:
@@ -107,7 +107,7 @@
 #       chains: 4
 #       tune: null
 #       draws: null
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: 400
 #       iterations: 100
 # - pooled-reg-batch:
@@ -140,7 +140,7 @@
 #       chains: 4
 #       tune: null
 #       draws: null
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: 400
 #       iterations: 100
 #     initial_params:
@@ -187,7 +187,7 @@
 #       chains: 4
 #       tune: 1000
 #       draws: 1000
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: null
 #       iterations: null
 # - no-pooled-reg:
@@ -221,7 +221,7 @@
 #       chains: 4
 #       tune: 1000
 #       draws: 1000
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: null
 #       iterations: null
 #     initial_params:
@@ -268,7 +268,7 @@
 #       chains: 4
 #       tune: null
 #       draws: null
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: 400
 #       iterations: 100
 # - no-pooled-reg-batch:
@@ -302,7 +302,7 @@
 #       chains: 4
 #       tune: null
 #       draws: null
-#       target_accept: 0.95
+#       target_accept: 0.98
 #       batch_size: 400
 #       iterations: 100
 #     initial_params:
@@ -349,7 +349,7 @@
       chains: 4
       tune: 1000
       draws: 1000
-      target_accept: 0.95
+      target_accept: 0.98
       batch_size: null
       iterations: null
 - hierarchical-reg:
@@ -383,7 +383,7 @@
       chains: 4
       tune: 1000
       draws: 1000
-      target_accept: 0.95
+      target_accept: 0.98
       batch_size: null
       iterations: null
     initial_params:
@@ -433,7 +433,7 @@
       chains: 4
       tune: null
       draws: null
-      target_accept: 0.95
+      target_accept: 0.98
       batch_size: 400
       iterations: 100
 - hierarchical-reg-batch:
@@ -467,7 +467,7 @@
       chains: 4
       tune: null
       draws: null
-      target_accept: 0.95
+      target_accept: 0.98
       batch_size: 400
       iterations: 100
     initial_params:

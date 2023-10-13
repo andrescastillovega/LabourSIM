@@ -26,9 +26,11 @@ if __name__ == "__main__":
 
     # Load data and workflow
     data = pd.read_csv(args.dataset)
-    data = data.dropna()
     with open(args.workflow, 'r') as file:
         workflow = yaml.safe_load(file)
+
+    # Split data into training and testing (75/25)
+    data = data[data["year"] <= 2007].copy()
 
     # Run models
     for model in workflow:
