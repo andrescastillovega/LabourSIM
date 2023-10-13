@@ -1,0 +1,168 @@
+- hierarchical:
+    model_type: "hierarchical"
+    target: salary
+    year: null
+    parameters:
+    - exp
+    - sex
+    - elementary_edu
+    - highschool_edu
+    - postsec_edu
+    - undergrad_edu
+    - graduate_edu
+    - age
+    - tenure
+    - union
+    - part_time
+    - public_sector
+    - self_emp
+    - grad_highschool_refyear
+    - grad_college_refyear
+    - grad_univ_refyear
+    dimensions:
+    - industry
+    standardize_vars:
+    - exp
+    - age
+    - tenure
+    run_settings:
+      chains: 4
+      tune: 1000
+      draws: 1000
+      target_accept: 0.98
+      batch_size: null
+      iterations: null
+- hierarchical-reg:
+    model_type: "hierarchical"
+    target: salary
+    year: null
+    parameters:
+    - exp
+    - sex
+    - elementary_edu
+    - highschool_edu
+    - postsec_edu
+    - undergrad_edu
+    - graduate_edu
+    - age
+    - tenure
+    - union
+    - part_time
+    - public_sector
+    - self_emp
+    - grad_highschool_refyear
+    - grad_college_refyear
+    - grad_univ_refyear
+    dimensions:
+    - industry
+    standardize_vars:
+    - exp
+    - age
+    - tenure
+    run_settings:
+      chains: 4
+      tune: 1000
+      draws: 1000
+      target_accept: 0.98
+      batch_size: null
+      iterations: null
+    initial_params:
+      mu_dist: laplace
+      mu_avg_salary_params: 
+        loc: 0
+        scale: 0.1
+      mu_params:
+        loc: 0
+        scale: 0.1
+      sigma_dist: "half_normal"
+      sigma_params: 
+        scale: 0.1
+      shape_dist: uniform
+      shape_params:
+        low: 1
+        high: 100
+      target_dist: gamma
+- hierarchical-batch:
+    model_type: "hierarchical"
+    target: salary
+    year: null
+    parameters:
+    - exp
+    - sex
+    - elementary_edu
+    - highschool_edu
+    - postsec_edu
+    - undergrad_edu
+    - graduate_edu
+    - age
+    - tenure
+    - union
+    - part_time
+    - public_sector
+    - self_emp
+    - grad_highschool_refyear
+    - grad_college_refyear
+    - grad_univ_refyear
+    dimensions:
+    - industry
+    standardize_vars:
+    - exp
+    - age
+    - tenure
+    run_settings:
+      chains: 4
+      tune: null
+      draws: null
+      target_accept: 0.98
+      batch_size: 400
+      iterations: 100
+- hierarchical-reg-batch:
+    model_type: "hierarchical"
+    target: salary
+    year: null
+    parameters:
+    - exp
+    - sex
+    - elementary_edu
+    - highschool_edu
+    - postsec_edu
+    - undergrad_edu
+    - graduate_edu
+    - age
+    - tenure
+    - union
+    - part_time
+    - public_sector
+    - self_emp
+    - grad_highschool_refyear
+    - grad_college_refyear
+    - grad_univ_refyear
+    dimensions:
+    - industry
+    standardize_vars:
+    - exp
+    - age
+    - tenure
+    run_settings:
+      chains: 4
+      tune: null
+      draws: null
+      target_accept: 0.98
+      batch_size: 400
+      iterations: 100
+    initial_params:
+      mu_dist: laplace
+      mu_avg_salary_params: 
+        loc: 0
+        scale: 0.1
+      mu_params:
+        loc: 0
+        scale: 0.1
+      sigma_dist: "half_normal"
+      sigma_params: 
+        scale: 0.1
+      shape_dist: uniform
+      shape_params:
+        low: 1
+        high: 100
+      target_dist: gamma
