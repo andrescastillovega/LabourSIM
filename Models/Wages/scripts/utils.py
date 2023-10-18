@@ -9,9 +9,26 @@ import xarray as xr
 
 from jax.experimental import mesh_utils
 from jax.sharding import PositionalSharding
+from jax.scipy.stats import gaussian_kde
 from numpyro import distributions as dist
+from numpyro.distributions import Distribution, constraints
+from numpyro.distributions.util import validate_sample
 from numpyro.infer import MCMC, NUTS, init_to_median
 from numpyro.infer.util import log_likelihood
+
+class CustomDistribution(Distribution):
+    def __init__(self, data, validate_args=False):
+        self.kde = gaussian_kde(data.T)
+        self._batch_shape = ()
+        self.support = constraints.real
+        super(CustomDistribution, self).__init__(batch_shape=self._batch_shape, validate_args=validate_args)
+        
+    def sample(self, key, sample_shape=()):
+        return self.kde.resample(key, shape=sample_shape + self.batch_shape)
+
+    def log_prob(self, value):
+        validate_sample(value)
+        return jnp.log(self.kde.evaluate(value))
 
 DISTRIBUTIONS = {
     "normal": dist.Normal,
@@ -20,7 +37,8 @@ DISTRIBUTIONS = {
     "laplace": dist.Laplace,
     "uniform": dist.Uniform,
     "gamma": dist.Gamma,
-    "lognormal": dist.LogNormal
+    "lognormal": dist.LogNormal,
+    "custom": CustomDistribution
 }
 
 def standardize_vars(data, vars):

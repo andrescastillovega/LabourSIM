@@ -6,6 +6,7 @@ from numpyro import distributions as dist
 def pooled(features,
            feature_names,
            target,
+           from_posterior = None,
            **init_params_kwargs):
     # Initial parameters
     prior_dist = init_params_kwargs.get("prior_dist", "normal")
@@ -16,11 +17,18 @@ def pooled(features,
     target_dist = init_params_kwargs.get("target_dist", "gamma")
 
     # Priors and expected value
-    avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
-    mu = avg_salary
-    for feature, name in zip(features.T, feature_names):
-        prior = numpyro.sample(f"beta_{name}", utils.DISTRIBUTIONS[prior_dist](**prior_params))
-        mu += prior * feature
+    if from_posterior is None:
+        avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
+        mu = avg_salary
+        for feature, name in zip(features.T, feature_names):
+            prior = numpyro.sample(f"beta_{name}", utils.DISTRIBUTIONS[prior_dist](**prior_params))
+            mu += prior * feature
+    else:
+        avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS["custom"](from_posterior["avg_salary"]))
+        mu = avg_salary
+        for feature, name in zip(features.T, feature_names):
+            prior = numpyro.sample(f"beta_{name}", utils.DISTRIBUTIONS["custom"](from_posterior[f"beta_{name}"]))
+            mu += prior * feature
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
 
     mu = jnp.exp(mu)
@@ -37,6 +45,7 @@ def hierarchical(features,
                  dimension_name,
                  target,
                  argmax_dim,
+                 from_posterior = None,
                  **init_params_kwargs):
     # Initial parameters
     mu_dist = init_params_kwargs.get("mu_dist", "normal")
@@ -51,14 +60,20 @@ def hierarchical(features,
     # Hyperpriors
     mus = []
     sigmas = []
-
-    # Hyperpriors
-    mu_avg_salary = numpyro.sample("mu_avg_salary", utils.DISTRIBUTIONS[mu_dist](**mu_avg_salary_params))
-    sigma_avg_salary = numpyro.sample("sigma_avg_salary", utils.DISTRIBUTIONS[sigma_dist](**sigma_params))
-    
-    for feature in features_names:
-        mus.append(numpyro.sample(f"mu_{feature}", utils.DISTRIBUTIONS[mu_dist](**mu_params)))
-        sigmas.append(numpyro.sample(f"sigma_{feature}", utils.DISTRIBUTIONS[sigma_dist](**sigma_params)))
+    if from_posterior is None:
+        mu_avg_salary = numpyro.sample("mu_avg_salary", utils.DISTRIBUTIONS[mu_dist](**mu_avg_salary_params))
+        sigma_avg_salary = numpyro.sample("sigma_avg_salary", utils.DISTRIBUTIONS[sigma_dist](**sigma_params))
+        
+        for feature in features_names:
+            mus.append(numpyro.sample(f"mu_{feature}", utils.DISTRIBUTIONS[mu_dist](**mu_params)))
+            sigmas.append(numpyro.sample(f"sigma_{feature}", utils.DISTRIBUTIONS[sigma_dist](**sigma_params)))
+    else:
+        mu_avg_salary = numpyro.sample("mu_avg_salary", utils.DISTRIBUTIONS["custom"](from_posterior["mu_avg_salary"]))
+        sigma_avg_salary = numpyro.sample("sigma_avg_salary", utils.DISTRIBUTIONS["custom"](from_posterior["sigma_avg_salary"]))
+        
+        for feature in features_names:
+            mus.append(numpyro.sample(f"mu_{feature}", utils.DISTRIBUTIONS["custom"](from_posterior[f"mu_{feature}"])))
+            sigmas.append(numpyro.sample(f"sigma_{feature}", utils.DISTRIBUTIONS["custom"](from_posterior[f"sigma_{feature}"])))
 
     with numpyro.plate(f"{dimension_name}", argmax_dim):
         offset_avg_salary = numpyro.sample("offset_avg_salary", utils.DISTRIBUTIONS["normal"](loc=0, scale=1))
@@ -67,7 +82,6 @@ def hierarchical(features,
         for i, feature in enumerate(features_names):
             offset = numpyro.sample(f"offset_{feature}", utils.DISTRIBUTIONS["normal"](loc=0, scale=1))
             priors.append(numpyro.deterministic(feature, mus[i] + offset * sigmas[i]))
-
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
 
     # Expected value
@@ -89,6 +103,7 @@ def no_pooled(features,
               dimension_name,
               target,
               argmax_dim,
+              from_posterior = None,
               **init_params_kwargs):
     # Initial parameters
     prior_dist = init_params_kwargs.get("prior_dist", "normal")
@@ -99,11 +114,18 @@ def no_pooled(features,
     target_dist = init_params_kwargs.get("target_dist", "gamma")
 
     # Priors
-    with numpyro.plate(f"{dimension_name}", argmax_dim):
-        avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
-        priors = []
-        for i, feature in enumerate(features_names):
-            priors.append(numpyro.sample(f"beta_{feature}", utils.DISTRIBUTIONS[prior_dist](**prior_params)))
+    if from_posterior is None:
+        with numpyro.plate(f"{dimension_name}", argmax_dim):
+            avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS[prior_dist](**avg_salary_params))
+            priors = []
+            for i, feature in enumerate(features_names):
+                priors.append(numpyro.sample(f"beta_{feature}", utils.DISTRIBUTIONS[prior_dist](**prior_params)))
+    else:
+        with numpyro.plate(f"{dimension_name}", argmax_dim):
+            avg_salary = numpyro.sample("avg_salary", utils.DISTRIBUTIONS["custom"](from_posterior["avg_salary"]))
+            priors = []
+            for i, feature in enumerate(features_names):
+                priors.append(numpyro.sample(f"beta_{feature}", utils.DISTRIBUTIONS["custom"](from_posterior[f"beta_{feature}"])))
     shape = numpyro.sample("shape", utils.DISTRIBUTIONS[shape_dist](**shape_params))
 
     # Expected value
