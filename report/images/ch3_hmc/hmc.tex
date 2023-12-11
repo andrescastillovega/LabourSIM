@@ -1,0 +1,72 @@
+
+\documentclass{standalone}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colorbrewer} % LATEX and plain TEX
+\usepgfplotslibrary[colorbrewer] % ConTEXt
+\usetikzlibrary{pgfplots.colorbrewer} % LATEX and plain TEX
+\usetikzlibrary[pgfplots.colorbrewer] % ConTEXt
+\usepgfplotslibrary{groupplots}
+
+\begin{document}
+\begin{tikzpicture}[declare function={f(\x,\y) = -exp(-(\x^2 + \y^2));}]
+    \begin{groupplot}[
+        group style={
+            group size=2 by 1,
+            horizontal sep=100pt,},
+        xlabel={$x$},
+        ylabel={$y$},
+        zlabel={$z$},
+        zmin=-2, zmax=2,
+        xmin=-2, xmax=2,
+        ymin=-2, ymax=2,
+        colormap/YlOrBr,
+        scale=1.5,
+        % draw left and bottom axes only
+        axis lines=left, axis line style={-},
+        xlabel style={anchor=west},
+        ylabel style={anchor=south},
+        % change axis color to gray
+        axis line style={->, lightgray},
+        % set label names
+        xlabel={\textit{$\theta_0$}},
+        ylabel={\textit{$\theta_1$}},
+        % set ticks
+        xtick={-1, 0, 1},
+        ytick={-1, 0, 1},
+        % set tick labels gray
+        tick label style={font=\color{lightgray}},
+    ]
+    
+    \nextgroupplot[view={25}{15}, hide axis]
+    \addplot3[
+        surf,
+        opacity=0.7, % Adjust opacity as needed
+        domain=-2:2,
+        domain y=-2:2,
+        samples=50 % Increase samples for a smoother appearance
+    ]
+    {f(x,y)};
+
+    \node[anchor=north] at (axis cs:0,-2.1,0) {\textbf{$\theta_0$}};
+    \node[anchor=south east] at (axis cs:-2.1,0,0) {\textbf{$\theta_1$}};
+
+    \nextgroupplot[view={0}{90}, scale=1.0]
+    \addplot3[
+        contour gnuplot={
+            number=14,
+            labels=false,
+        },
+        thick,
+        domain=-2:2,
+        domain y=-2:2,
+    ]
+    {f(x,y)};
+    
+    \end{groupplot}
+    \end{tikzpicture}
+
+
+\end{document}
+

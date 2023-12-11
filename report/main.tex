@@ -1,0 +1,60 @@
+\documentclass[twoside, 12pt]{report}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{xcolor}
+\usepackage[skip=8pt, indent=20pt]{parskip}
+\usepackage[round]{natbib}
+
+% Set graphics path
+\graphicspath{{images/}}
+
+
+% Set dark mode
+% \pagecolor[rgb]{0,0,0} %black
+% \color[rgb]{0.5,0.5,0.5} %grey
+
+% Packages setup
+\hypersetup{
+    colorlinks,
+    citecolor=darkgray,
+    filecolor=darkgray,
+    linkcolor=darkgray,
+    urlcolor=darkgray
+}
+
+\usetikzlibrary{shapes.multipart, arrows.meta, decorations.markings}
+
+\title{MASc Thesis}
+\author{andres.castillo }
+\date{December 2023}
+
+\begin{document}
+\begin{sloppypar}
+
+\maketitle
+
+\chapter*{Abstract}
+\chapter*{Acknowledgements}
+
+\tableofcontents
+
+\include{chapters/1_introduction}
+\include{chapters/2_literature_review}
+\include{chapters/3_bayesian_inference}
+\include{chapters/4_data_sources}
+\include{chapters/5_salary_model}
+\include{chapters/6_model_integration}
+\include{chapters/7_computational_cost}
+\include{chapters/8_conclusions}
+\include{chapters/9_future_work}
+
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+
+\end{sloppypar}
+\end{document}

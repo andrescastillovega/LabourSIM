@@ -1,0 +1,187 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{fontspec}
+
+% Define fonts
+\setsansfont{SourceSerif4}[
+    Path=./static/,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic,
+    SlantedFont=*-ExtraLight,
+    ]
+
+% Define colours
+\definecolor{blue}{RGB}{0, 56, 101}
+\definecolor{grey}{RGB}{180, 180, 180}
+\definecolor{red}{RGB}{255, 0, 0}
+\definecolor{white}{RGB}{255, 255, 255}
+\definecolor{black70}{gray}{0.3}
+
+% Define beamer theme
+\setbeamercolor{title page}{bg=blue}
+\setbeamercolor{title}{fg=red}
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{subtitle}{fg=grey}
+\setbeamercolor{author}{fg=grey}
+\setbeamercolor{date}{fg=grey}
+\setbeamercolor{enumerate item}{fg=black70}
+\setbeamercolor{itemize subitem}{fg=blue!70}
+\setbeamercolor{normal text}{fg=black70}
+\setbeamercolor{subtitle}{fg=grey}
+
+
+\setbeamertemplate{frametitle}{
+  \vspace*{1em} % Adjust the top padding
+  \textcolor{blue}{{\fontsize{16pt}{10pt}\selectfont \textbf{\insertframetitle}}} \\
+  \textcolor{grey}{{\fontsize{14pt}{10pt}\selectfont {\insertframesubtitle}}}
+  \vspace*{1em} % Adjust the bottom padding
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
+\setbeamertemplate{itemize subitem}{\vrule height 1.5ex width .3ex depth 0ex}
+
+% Define a custom title page template
+\defbeamertemplate*{title page}{blue}[1][]
+    {
+    \begin{flushright} % Align to the right
+        \textcolor{white}{{\fontsize{25pt}{14pt}\selectfont \textbf{\inserttitle}}} \\ % Display the title
+        \textcolor{grey}{{\fontsize{18pt}{10pt}\selectfont \textit{\insertsubtitle}}} \\ % Display the subtitle
+        \vspace{30pt}
+        \textcolor{white}{{\fontsize{10pt}{10pt}\selectfont \insertauthor}} \\ % Display the author
+        
+        \vspace{30pt}
+        \textcolor{white}{\fontsize{8pt}{10pt}\selectfont Supervisor: Prof. Eric Miller} \\
+        \textcolor{white}{\fontsize{8pt}{10pt}\selectfont Department of Civil and Mineral Engineering} \\
+        \textcolor{white}{{\fontsize{8pt}{10pt}\selectfont \insertinstitute}} \\
+        \textcolor{white}{\fontsize{8pt}{10pt}\selectfont\insertdate} % Display the date
+    \end{flushright}
+    }
+
+% Information to be included in the title page:
+\title{Predicting salaries in the GTA}
+\subtitle{A Bayesian approach}
+\author{Andrés Castillo}
+\institute{University of Toronto}
+\date{2023}
+
+
+\begin{document}
+
+% Use the custom title page template
+{
+\setbeamertemplate{title page}[white]
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}{Outline}
+    \begin{enumerate}
+        {\normalsize
+            \item \textbf{Research motivation}
+            \item \textbf{Modelling labour markets}
+            \begin{itemize}
+                \item Labour market components
+                \item ILUTE framework
+            \end{itemize}
+            \item \textbf{Predicting salaries}
+            \begin{itemize}
+                \item Data sources
+                \item Model structure
+                \item Model specification
+                \item Variable selection
+                \item Model validation and results
+            \end{itemize}
+            \item \textbf{Conclusion and future work}
+        }
+    \end{enumerate}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+    \begin{center}
+        \textcolor{white}{{\fontsize{22pt}{14pt}\selectfont \textbf{Research motivation}}}\\
+        \vspace{20pt}
+        \textcolor{white}{{\fontsize{14pt}{10pt}\selectfont \textsl{Why we talk about labour markets in transportation?}}}
+    \end{center}
+\end{frame}
+}
+
+\begin{frame}{Research motivation}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+    \begin{center}
+        \textcolor{white}{{\fontsize{22pt}{14pt}\selectfont \textbf{Modelling labour markets}}}\\
+        \vspace{20pt}
+        \textcolor{white}{{\fontsize{14pt}{10pt}\selectfont \textsl{How we integrate labour markets in transportation models?}}}
+    \end{center}
+\end{frame}
+}
+
+\begin{frame}{Modelling labour markets}{Labour market components}
+\end{frame}    
+
+\begin{frame}{Modelling labour markets}{ILUTE framework}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+    \begin{center}
+        \textcolor{white}{{\fontsize{22pt}{14pt}\selectfont \textbf{Predicting salaries}}}\\
+        \vspace{20pt}
+        \textcolor{white}{{\fontsize{14pt}{10pt}\selectfont \textsl{From point estimates to probability distributions}}}
+    \end{center}
+\end{frame}
+}
+
+\begin{frame}{Predicting salaries}{Data sources}
+\end{frame}    
+
+\begin{frame}{Predicting salaries}{Model structure}
+\end{frame}
+
+\begin{frame}{Predicting salaries}{Model specification}
+\end{frame}
+
+\begin{frame}{Predicting salaries}{Variable selection}
+\end{frame}
+
+\begin{frame}{Predicting salaries}{Model validation and results}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+    \begin{center}
+        \textcolor{white}{{\fontsize{22pt}{14pt}\selectfont \textbf{Conclusions and future work}}}\\
+    \end{center}
+\end{frame}
+}
+
+\begin{frame}{Conclusions}
+\end{frame}
+
+\begin{frame}{Future work}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=blue}
+\begin{frame}
+    \begin{center}
+        \textcolor{white}{{\fontsize{22pt}{14pt}\selectfont \textbf{Questions?}}}\\
+        \vspace{20pt}
+        \textcolor{white}{{\fontsize{14pt}{10pt}\selectfont \textsl{Thank you for your attention!}}}
+    \end{center}
+\end{frame}
+}
+\end{document}

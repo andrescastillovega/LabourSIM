@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="149.6899mm"
+   height="131.91502mm"
+   viewBox="0 0 149.68989 131.91502"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="job_matching.svg"
+   inkscape:export-filename="job_matching.jpg"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="267.28636"
+     inkscape:cy="216.02112"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="1"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path2" />
+    </marker>
+    <rect
+       x="22.710886"
+       y="345.21109"
+       width="68.389938"
+       height="31.50091"
+       id="rect25" />
+    <rect
+       x="463.13184"
+       y="316.23965"
+       width="102.82808"
+       height="40.192863"
+       id="rect21" />
+    <rect
+       x="249.56709"
+       y="403.76846"
+       width="181.82297"
+       height="73.331734"
+       id="rect4" />
+    <rect
+       x="274.83093"
+       y="411.67178"
+       width="229.14363"
+       height="138.01083"
+       id="rect2" />
+    <rect
+       x="249.56709"
+       y="403.76846"
+       width="181.82297"
+       height="73.331734"
+       id="rect4-7" />
+    <rect
+       x="249.56709"
+       y="403.76846"
+       width="181.82297"
+       height="73.331734"
+       id="rect4-9" />
+    <rect
+       x="249.56709"
+       y="403.76846"
+       width="181.82297"
+       height="73.331734"
+       id="rect4-9-2" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.685204,-51.174221)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1"
+       style="font-size:12px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono @wght=500';text-align:center;text-decoration-color:#000000;letter-spacing:-1.2px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#8fa9e5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.13543;stroke-dasharray:8.54173, 2.13543;-inkscape-stroke:none;paint-order:markers fill stroke" />
+    <g
+       id="g5-3"
+       transform="translate(-17.298452,-30.9461)">
+      <rect
+         style="fill:#8fa9e5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.272198;stroke-dasharray:1.08879, 0.272198;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="rect1-5"
+         width="40.650379"
+         height="15.783181"
+         x="58.321892"
+         y="85.561623"
+         ry="1.5726326" />
+      <g
+         id="g4-6"
+         transform="translate(-17.200934,-3.6487667)">
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono @wght=500';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="95.701668"
+           y="95.540939"
+           id="text3-2"><tspan
+             sodipodi:role="line"
+             id="tspan3-9"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.564999"
+             x="95.701668"
+             y="95.540939">Job Seekers</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.564999"
+             x="95.542915"
+             y="101.74982"
+             id="tspan23">pool</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5-3-9"
+       transform="translate(76.746098,-30.9461)">
+      <rect
+         style="fill:#e58f8f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.272198;stroke-dasharray:1.08879, 0.272198;-inkscape-stroke:none;paint-order:markers fill stroke"
+         id="rect1-5-3"
+         width="40.650379"
+         height="15.783181"
+         x="58.321892"
+         y="85.561623"
+         ry="1.5726326" />
+      <g
+         id="g4-6-1"
+         transform="translate(-4.1408933e-7,-1.7708522)">
+        <text
+           xml:space="preserve"
+           style="font-size:5.64444px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono @wght=500';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="78.610977"
+           y="93.663025"
+           id="text3-2-9"><tspan
+             sodipodi:role="line"
+             id="tspan3-9-4"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.564999"
+             x="78.610977"
+             y="93.663025">Vacant jobs</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.564999"
+             x="78.452225"
+             y="99.87191"
+             id="tspan22">pool</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g5"
+       transform="translate(50.466383,58.959877)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+         x="124.36919"
+         y="58.723385"
+         id="text5-6"><tspan
+           sodipodi:role="line"
+           id="tspan5-3"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.564999"
+           x="124.05169"
+           y="58.723385">Calculate Market Wage</tspan></text>
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e58f8f;stroke-width:0.565;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect5"
+         width="41.456348"
+         height="11.222318"
+         x="84.198624"
+         y="52.156212"
+         ry="2.4220223" />
+    </g>
+    <g
+       id="g5-4"
+       transform="translate(50.466383,27.212449)" />
+    <g
+       id="g6"
+       transform="translate(-66.418959,-4.8703558)">
+      <g
+         id="g26"
+         transform="translate(21.901759,-5.3572497)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="128.54691"
+           y="92.467712"
+           id="text5"><tspan
+             sodipodi:role="line"
+             id="tspan5"
+             style="font-weight:bold;font-size:3.52778px;stroke-width:0.564999"
+             x="128.2294"
+             y="92.467712">Short-list: 12 applicants</tspan></text>
+        <rect
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.60636;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           id="rect5-1"
+           width="49.715683"
+           height="17.668177"
+           x="81.007988"
+           y="86.373337"
+           ry="3.8131802" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,89.179284,3.2383844)"
+           id="text25"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-1.2px;word-spacing:0px;white-space:pre;shape-inside:url(#rect25);display:inline;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.13543;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           x="-30.884493"
+           y="0"><tspan
+             x="22.710938"
+             y="353.15251"
+             id="tspan2"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan1">- Industry
+</tspan></tspan><tspan
+             x="22.710938"
+             y="362.75255"
+             id="tspan4"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan3">- Occupation
+</tspan></tspan><tspan
+             x="22.710938"
+             y="372.35259"
+             id="tspan7"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan6">- Experience</tspan></tspan></text>
+      </g>
+    </g>
+    <g
+       id="g6-3"
+       transform="translate(-39.093096,16.976241)">
+      <g
+         id="g10"
+         transform="translate(-10.04973,0.26093678)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           id="rect5-1-5-6"
+           width="43.242573"
+           height="22.675055"
+           x="91.671356"
+           y="90.080315"
+           ry="4.8937745" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           id="rect5-1-5-4"
+           width="43.242573"
+           height="22.675055"
+           x="89.626656"
+           y="88.118477"
+           ry="4.8937745" />
+        <g
+           id="g11">
+          <rect
+             style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+             id="rect5-1-5"
+             width="43.242573"
+             height="22.675055"
+             x="87.481094"
+             y="86.373337"
+             ry="4.8937745" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+             x="109.22881"
+             y="91.25544"
+             id="text5-7"><tspan
+               sodipodi:role="line"
+               style="font-weight:bold;font-size:3.52778px;text-align:center;text-anchor:middle;stroke-width:0.564999"
+               x="109.22881"
+               y="91.25544"
+               id="tspan24">Minimum Wage Accepted</tspan><tspan
+               sodipodi:role="line"
+               style="font-weight:bold;font-size:3.52778px;text-align:center;text-anchor:middle;stroke-width:0.564999"
+               x="109.07006"
+               y="95.136002"
+               id="tspan25">Vp</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,-26.712842,13.508156)"
+             id="text21"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-1.2px;word-spacing:0px;white-space:pre;shape-inside:url(#rect21);display:inline;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.13543;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+             x="-54.817921"
+             y="0"><tspan
+               x="463.13281"
+               y="324.18181"
+               id="tspan9"><tspan
+                 style="text-align:start;text-anchor:start"
+                 id="tspan8">- Base wage
+</tspan></tspan><tspan
+               x="463.13281"
+               y="333.78185"
+               id="tspan11"><tspan
+                 style="text-align:start;text-anchor:start"
+                 id="tspan10">- Work history
+</tspan></tspan><tspan
+               x="463.13281"
+               y="343.38189"
+               id="tspan13"><tspan
+                 style="text-align:start;text-anchor:start"
+                 id="tspan12">- Job location
+</tspan></tspan><tspan
+               x="463.13281"
+               y="352.98192"
+               id="tspan19"><tspan
+                 style="text-align:start;text-anchor:start"
+                 id="tspan15">- Market conditions</tspan></tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g21"
+       transform="translate(69.132424,38.786045)">
+      <g
+         id="g11-0"
+         transform="translate(-13.191757,8.2359446)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#e58f8f;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect5-1-5-48"
+           width="36.803234"
+           height="14.743259"
+           x="81.085342"
+           y="87.340904"
+           ry="3.1819189" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:0;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="100.23298"
+           y="91.805565"
+           id="text5-7-7"><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:3.52778px;line-height:1.1;text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="100.07423"
+             y="91.805565"
+             id="tspan14">Final offer</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:middle;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+         x="86.297272"
+         y="103.51688"
+         id="text16"><tspan
+           sodipodi:role="line"
+           id="tspan16"
+           style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.565"
+           x="86.297272"
+           y="103.51688">Second best Vp</tspan><tspan
+           sodipodi:role="line"
+           style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.565"
+           x="86.297272"
+           y="106.05688"
+           id="tspan17">+</tspan><tspan
+           sodipodi:role="line"
+           style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.565"
+           x="86.138519"
+           y="108.59689"
+           id="tspan18">Market conditions</tspan></text>
+    </g>
+    <g
+       id="g21-5"
+       transform="translate(-24.240517,41.728183)">
+      <g
+         id="g11-0-0"
+         transform="translate(-13.191757,8.2359446)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           id="rect5-1-5-48-9"
+           width="40.073334"
+           height="11.132178"
+           x="79.9608"
+           y="86.605324"
+           ry="2.4025686" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:0;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="100.23298"
+           y="91.805565"
+           id="text5-7-7-6"><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:3.52778px;line-height:1.1;text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="100.23298"
+             y="91.805565"
+             id="tspan36">Rank Candidates by</tspan><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:3.52778px;line-height:1.1;text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="100.07423"
+             y="95.686127"
+             id="tspan41">Vp</tspan></text>
+        <path
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+           d="m 120.03413,92.17141 h 54.42415"
+           id="path41" />
+        <path
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+           d="m 192.82545,72.374277 0.0345,12.024487"
+           id="path42" />
+      </g>
+    </g>
+    <g
+       id="g21-5-2"
+       transform="translate(-24.036872,61.399104)">
+      <g
+         id="g11-0-0-1"
+         transform="translate(-13.191757,8.2359446)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#908de8;stroke-width:0.606361;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+           id="rect5-1-5-48-9-0"
+           width="40.073334"
+           height="11.132178"
+           x="79.9608"
+           y="86.605324"
+           ry="2.4025686" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:0;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="100.23298"
+           y="91.805565"
+           id="text5-7-7-6-5"><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:3.52778px;line-height:1.1;text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="100.23298"
+             y="91.805565"
+             id="tspan14-3-1">Select</tspan><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:3.52778px;line-height:1.1;text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="100.07423"
+             y="95.686127"
+             id="tspan36-1">Candidate highest Vp</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+       x="58.475456"
+       y="98.204887"
+       id="text5-5-7"><tspan
+         sodipodi:role="line"
+         id="tspan5-0-6"
+         style="font-size:2.11667px;stroke-width:0.564999"
+         x="58.475456"
+         y="98.204887">For each</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.11667px;stroke-width:0.564999"
+         x="58.157955"
+         y="100.53323"
+         id="tspan32">applicant</tspan></text>
+    <path
+       style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 155.39318,70.398703 v 8.960485"
+       id="path28" />
+    <g
+       id="g27"
+       transform="translate(0,1.3199726)">
+      <g
+         id="g28"
+         transform="translate(-1.6336261,-1.3294451)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="107.27155"
+           y="56.708866"
+           id="text5-6-8"
+           transform="translate(50.466384,27.212449)"><tspan
+             sodipodi:role="line"
+             id="tspan5-3-1"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="107.27155"
+             y="56.708866">Randomly select</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;stroke-width:0.564999"
+             x="107.1128"
+             y="60.589424"
+             id="tspan27">a job</tspan></text>
+        <rect
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e58f8f;stroke-width:0.565;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect5-0"
+           width="33.830772"
+           height="11.241264"
+           x="140.11142"
+           y="79.36866"
+           ry="2.4261115" />
+      </g>
+    </g>
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill;stop-color:#000000;stop-opacity:1"
+       d="M 138.47779,84.979818 H 86.206461"
+       id="path29" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.82222px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:middle;white-space:pre;vector-effect:none;fill:#b2b2b2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       x="113.1926"
+       y="83.994354"
+       id="text29"><tspan
+         sodipodi:role="line"
+         id="tspan29"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.82222px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';fill:#b2b2b2;fill-opacity:1;stroke:none;stroke-width:0.365"
+         x="113.03384"
+         y="83.994354">Job characteristics</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82223px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Light';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:middle;white-space:pre;opacity:1;vector-effect:none;fill:#b2b2b2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       x="45.877838"
+       y="100.02425"
+       id="text30"><tspan
+         sodipodi:role="line"
+         id="tspan30"
+         style="stroke-width:0.365"
+         x="45.877838"
+         y="102.12546"></tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.365"
+         id="tspan31"
+         x="45.877838"
+         y="104.66546" /></text>
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 61.34863,70.398703 -5e-6,5.747027"
+       id="path34" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 61.348625,93.813904 5e-6,9.595036"
+       id="path35" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 61.34863,126.1932 v 10.07307"
+       id="path36" />
+    <g
+       id="g36">
+      <rect
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#ffc291;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers stroke fill"
+         id="rect36"
+         width="24.727081"
+         height="11.075804"
+         x="99.53495"
+         y="111.18935"
+         ry="0.95846742" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+         x="121.29578"
+         y="117.92121"
+         id="text5-6-7"><tspan
+           sodipodi:role="line"
+           id="tspan5-3-6"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.564999"
+           x="120.97828"
+           y="117.92121">Wage model</tspan></text>
+    </g>
+    <g
+       id="g36-6"
+       transform="translate(1.2755061,54.426712)" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill;stop-color:#000000;stop-opacity:1"
+       d="m 99.53495,116.72725 -17.650928,-0.0341"
+       id="path37" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill;stop-color:#000000;stop-opacity:1"
+       d="M 124.26203,116.72725 H 134.665"
+       id="path38" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="M 155.39318,90.600449 V 111.11609"
+       id="path39" />
+    <g
+       id="g43"
+       transform="translate(0,11.641668)">
+      <g
+         id="g42"
+         transform="translate(0.4436346,45.697629)">
+        <rect
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#8fd092;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers stroke fill"
+           id="rect36-9"
+           width="24.727081"
+           height="11.075804"
+           x="99.53495"
+           y="111.18935"
+           ry="0.95846742" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+           x="120.23744"
+           y="117.92121"
+           id="text5-6-7-2"><tspan
+             sodipodi:role="line"
+             id="tspan5-3-6-2"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.564999"
+             x="119.91994"
+             y="117.92121">Job match</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.82222px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:middle;white-space:pre;vector-effect:none;fill:#b2b2b2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+         x="112.30216"
+         y="154.19707"
+         id="text29-9"><tspan
+           sodipodi:role="line"
+           id="tspan29-3"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.82222px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';fill:#b2b2b2;fill-opacity:1;stroke:none;stroke-width:0.365"
+           x="112.14341"
+           y="154.19707">If Final offer &gt; Vp</tspan></text>
+    </g>
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 62.768836,167.37255 0.203647,6.694 37.006101,-1e-5"
+       id="path43"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 62.565192,147.70163 v 8.53874"
+       id="path44" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#b2b2b2;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWideRounded);paint-order:markers stroke fill"
+       d="m 155.42763,149.10616 v 24.84952 l -30.72197,0.11086"
+       id="path45"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
