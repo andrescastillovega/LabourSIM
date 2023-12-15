@@ -1,4 +1,56 @@
 \chapter{Introduction}
 
-\section{bla}
-\section{blabla}
+Transportation models have grown in complexity by including 
+more details on travel behaviour. However, some demographic 
+and socioeconomic variables are still considered exogenous 
+factors, introducing uncertainty and reducing the model's 
+effectiveness in forecasting future scenarios. Since work 
+trips are the most frequent trips in urban areas, understanding 
+work-related attributes is relevant for travel demand modelling. 
+Some attributes such as the place of residence, place of work, 
+household income, auto ownership, and mode choice can directly 
+or indirectly relate to the labour market.
+
+According to \citet{HarmonMiller2020}, the inclusion of labour 
+market interactions within urban simulations has had little 
+development despite the critical relationship between work and 
+transportation systems in urban areas. In their paper, 
+\citet{HarmonMiller2020} proposed an Agent-Based framework for 
+simulating the demand and supply interactions of the labour 
+market. This framework provided the first approach to a fully 
+endogenous labour market simulation within a 
+transportation-related model. Nevertheless, as discussed by 
+\citet{Harmon2013}, much research still needs to be done to ensure 
+the validity of results as the model evolves in time, to 
+understand the interactions between agents, and to investigate 
+the factors influencing the recruitment process within firms. 
+In particular, He provides some evidence that the existent wage 
+model could be underestimating salaries in the long run, which 
+can be critical given the role of wages in the labour market. 
+\\
+\\
+\\
+Therefore, this thesis presents a model that predicts salary 
+based on individual attributes of a worker using the principles 
+of Bayesian inference. This model improves the prediction 
+accuracy by accounting for the hierarchical structure of the 
+data, which better simulates the variability in the salaries 
+at both an aggregated and disaggregated level.
+
+\section{Outline}
+
+Although all sections in this document are structured 
+sequentially, some can be optional according to the reader's 
+knowledge of Bayesian inference. After this introduction, 
+Chapter 2 presents an overview of economic theory and discusses 
+the role of salaries and wages in the labour market interactions. 
+Chapter 3 briefly introduces Bayesian inference, the framework 
+for estimating the proposed model. Chapter 4 discusses the data 
+sources and the hierarchy of labour data. Additionally, it 
+presents the main results of the exploratory data analysis that 
+guides the model specification. Then, Chapter 5 presents the 
+details of the proposed salary model and the validation results 
+with new data, followed by Chapter 6, which discusses the 
+integration of this proposed model into the existing ILUTE 
+framework. Finally, Chapter 7 compiles the principal results, 
+and Chapter 8 discusses the future work.

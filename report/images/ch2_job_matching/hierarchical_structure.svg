@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="164.8535mm"
+   height="111.08998mm"
+   viewBox="0 0 164.8535 111.08998"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="hierarchical_structure.svg"
+   inkscape:export-filename="hierarchical_structure.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0318224"
+     inkscape:cx="463.74262"
+     inkscape:cy="227.2678"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker13"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path13" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker13-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path13-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1-4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-26.468792,-8.4958386)">
+    <g
+       id="g2"
+       transform="translate(5.3605899,-1.4432264)">
+      <rect
+         style="fill:#284372;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+         id="rect1"
+         width="33.294613"
+         height="14.592066"
+         x="86.742355"
+         y="10.828215"
+         ry="1.7224524" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#ffffff;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+         x="103.29671"
+         y="17.297941"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.489"
+           x="103.29671"
+           y="17.297941">Labour</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.489"
+           x="103.16971"
+           y="23.647942"
+           id="tspan2">Market</tspan></text>
+    </g>
+    <g
+       id="g5-2"
+       transform="translate(57.174245,47.132218)">
+      <g
+         id="g3-5"
+         transform="translate(22.757869,-5.9347823)">
+        <g
+           id="g2-3-4"
+           transform="translate(-74.571524,27.536368)">
+          <rect
+             style="fill:#8da8d3;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             id="rect1-5-7"
+             width="33.294613"
+             height="14.592066"
+             x="86.742355"
+             y="10.828215"
+             ry="1.7224524" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#ffffff;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             x="103.29671"
+             y="19.41461"
+             id="text1-6-4"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.489"
+               x="103.16971"
+               y="19.41461"
+               id="tspan2-9-4">Industry B</tspan></text>
+        </g>
+      </g>
+      <g
+         id="g6"
+         transform="translate(1.5011761)">
+        <g
+           id="g4-3"
+           transform="translate(-73.378038,46.119899)">
+          <rect
+             style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             id="rect1-5-3-0"
+             width="29.402632"
+             height="14.592066"
+             x="88.671745"
+             y="10.828215"
+             ry="1.7224524" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             x="103.29671"
+             y="17.471918"
+             id="text1-6-6-7"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+               x="103.29671"
+               y="17.471918"
+               id="tspan2-9-0-8">Occupation</tspan><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+               x="103.16971"
+               y="22.410809"
+               id="tspan3-6">1</tspan></text>
+        </g>
+        <g
+           id="g4-7-8"
+           transform="translate(-33.218423,46.119899)">
+          <rect
+             style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             id="rect1-5-3-5-8"
+             width="29.402632"
+             height="14.592066"
+             x="88.671745"
+             y="10.828215"
+             ry="1.7224524" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+             x="103.29671"
+             y="17.471918"
+             id="text1-6-6-9-4"><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+               x="103.29671"
+               y="17.471918"
+               id="tspan2-9-0-2-3">Occupation</tspan><tspan
+               sodipodi:role="line"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+               x="103.16971"
+               y="22.410809"
+               id="tspan3-28-1">M</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g7"
+       transform="translate(-1.0256196,-2.6458334)">
+      <g
+         id="g5-2-1"
+         transform="translate(12.148919,2.494458)">
+        <g
+           id="g3-5-0"
+           transform="translate(22.757869,-5.9347823)">
+          <g
+             id="g2-3-4-6"
+             transform="translate(-74.571524,27.536368)">
+            <rect
+               style="fill:#8da8d3;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-7-1"
+               width="33.294613"
+               height="14.592066"
+               x="86.742355"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#fefefe;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="19.41461"
+               id="text1-6-4-5"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#fefefe;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="19.41461"
+                 id="tspan2-9-4-9">Industry A</tspan></text>
+          </g>
+        </g>
+        <g
+           id="g6-4"
+           transform="translate(1.5011761)">
+          <g
+             id="g4-3-9"
+             transform="translate(-73.378038,46.119899)">
+            <rect
+               style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-3-0-0"
+               width="29.402632"
+               height="14.592066"
+               x="88.671745"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="17.471918"
+               id="text1-6-6-7-9"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.29671"
+                 y="17.471918"
+                 id="tspan2-9-0-8-1">Occupation</tspan><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="22.410809"
+                 id="tspan3-6-7">1</tspan></text>
+          </g>
+          <g
+             id="g4-7-8-7"
+             transform="translate(-33.218423,46.119899)">
+            <rect
+               style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-3-5-8-1"
+               width="29.402632"
+               height="14.592066"
+               x="88.671745"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="17.471918"
+               id="text1-6-6-9-4-1"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.29671"
+                 y="17.471918"
+                 id="tspan2-9-0-2-3-5">Occupation</tspan><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="22.410809"
+                 id="tspan3-28-1-9">M</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g5-2-7"
+         transform="translate(104.25081,2.494458)">
+        <g
+           id="g3-5-3"
+           transform="translate(22.757869,-5.9347823)">
+          <g
+             id="g2-3-4-65"
+             transform="translate(-74.571524,27.536368)">
+            <rect
+               style="fill:#8da8d3;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-7-6"
+               width="33.294613"
+               height="14.592066"
+               x="86.742355"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#ffffff;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="19.41461"
+               id="text1-6-4-3"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="19.41461"
+                 id="tspan2-9-4-94">Industry N</tspan></text>
+          </g>
+        </g>
+        <g
+           id="g6-8"
+           transform="translate(1.5011761)">
+          <g
+             id="g4-3-1"
+             transform="translate(-73.378038,46.119899)">
+            <rect
+               style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-3-0-2"
+               width="29.402632"
+               height="14.592066"
+               x="88.671745"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="17.471918"
+               id="text1-6-6-7-93"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.29671"
+                 y="17.471918"
+                 id="tspan2-9-0-8-9">Occupation</tspan><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="22.410809"
+                 id="tspan3-6-0">1</tspan></text>
+          </g>
+          <g
+             id="g4-7-8-8"
+             transform="translate(-33.218423,46.119899)">
+            <rect
+               style="fill:#dde4f2;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               id="rect1-5-3-5-8-8"
+               width="29.402632"
+               height="14.592066"
+               x="88.671745"
+               y="10.828215"
+               ry="1.7224524" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489;stroke-linejoin:round"
+               x="103.29671"
+               y="17.471918"
+               id="text1-6-6-9-4-5"><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.29671"
+                 y="17.471918"
+                 id="tspan2-9-0-2-3-0">Occupation</tspan><tspan
+                 sodipodi:role="line"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;line-height:1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.489"
+                 x="103.16971"
+                 y="22.410809"
+                 id="tspan3-28-1-96">M</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#999999;stroke-width:0.489;stroke-linejoin:round;stroke-opacity:1;marker-end:url(#ArrowWide)"
+       d="M 92.102944,16.681021 H 62.699306 l 10e-7,15.597404"
+       id="path7"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.489;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWide);stop-color:#000000;stop-opacity:1"
+       d="m 125.39756,16.681021 h 29.377 l 0.0266,15.597404"
+       id="path8"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.489;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#marker13);marker-end:url(#ArrowWide);stop-color:#000000;stop-opacity:1"
+       d="m 42.619498,56.796738 4e-6,-5.658102 20.079804,0.0064 10e-7,-4.274563 -10e-7,4.274563 20.079811,-0.09288 -2e-6,5.744562"
+       id="path9"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.489;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#ArrowWide);stop-color:#000000;stop-opacity:1"
+       d="M 108.75025,23.977054 V 79.562017"
+       id="path10" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.489;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#marker13);marker-end:url(#ArrowWide);stop-color:#000000;stop-opacity:1"
+       d="m 88.670444,104.08033 4e-6,-5.630184 20.079802,-0.0033 v -4.292786 4.292786 l 20.07981,0.0715 v 5.561964"
+       id="path11"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="font-variation-settings:normal;vector-effect:none;fill:none;fill-opacity:1;stroke:#b2b2b2;stroke-width:0.489;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#marker13-0);marker-end:url(#ArrowWide-4);stop-color:#000000"
+       d="m 134.72139,56.796761 10e-6,-5.630184 20.0798,-0.0033 v -4.292786 4.292786 l 20.07981,0.0715 v 5.561964"
+       id="path11-7"
+       sodipodi:nodetypes="ccccccc" />
+  </g>
+</svg>

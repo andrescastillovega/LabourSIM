@@ -1,22 +1,15 @@
 \begin{thebibliography}{}
 
-\bibitem[Gelman et~al., 2013]{Gelman2013}
-Gelman, A., Carlin, J.~B., Stern, H.~S., Dunson, D.~B., Vehtari, A., and Rubin,
-  D.~B. (2013).
-\newblock {\em Bayesian data analysis}.
-\newblock Texts in statistical science. CRC Press Boca Raton, Boca Raton, third
-  edition edition.
+\bibitem[Harmon, 2013]{Harmon2013}
+Harmon, A. (2013).
+\newblock A microsimulated industrial and occupation-based labour market model
+  for use in the integrated land use, transportation, environment (ilute)
+  modelling system.
 
-\bibitem[Lambert, 2018]{Lambert2018}
-Lambert, B. (2018).
-\newblock {\em A student's guide to Bayesian statistics}.
-\newblock SAGE Los Angeles, Los Angeles.
-
-\bibitem[McElreath, 2016]{McElreath2016}
-McElreath, R. (2016).
-\newblock {\em Statistical rethinking : a Bayesian course with examples in {R}
-  and Stan}.
-\newblock Texts in statistical science. CRC Press/Taylor \& Francis Group Boca
-  Raton, Boca Raton.
+\bibitem[Harmon and Miller, 2020]{HarmonMiller2020}
+Harmon, A. and Miller, E.~J. (2020).
+\newblock Microsimulating labour market job-worker matching.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing},
+  11:993--1006.
 
 \end{thebibliography}

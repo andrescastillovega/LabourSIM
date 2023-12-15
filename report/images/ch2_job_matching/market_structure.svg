@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="162.05829mm"
+   height="75.15152mm"
+   viewBox="0 0 162.05829 75.15152"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="market_structure.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   inkscape:export-filename="market_structure.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.81245791"
+     inkscape:cx="364.32656"
+     inkscape:cy="83.081227"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="94.153976"
+       y="360.34985"
+       width="206.34941"
+       height="174.03383"
+       id="rect8" />
+    <marker
+       style="overflow:visible"
+       id="ArrowWide"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide-2-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1-7-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path1-1" />
+    </marker>
+    <rect
+       x="94.153976"
+       y="360.34985"
+       width="206.34941"
+       height="174.03383"
+       id="rect8-3" />
+    <rect
+       x="94.153976"
+       y="360.34985"
+       width="206.34941"
+       height="174.03383"
+       id="rect8-3-7" />
+    <rect
+       x="94.153976"
+       y="360.34985"
+       width="206.34941"
+       height="174.03383"
+       id="rect8-9" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.992667,-9.640165)">
+    <g
+       id="g8">
+      <path
+         style="fill:#006b00;fill-opacity:0.952999;stroke:#999999;stroke-width:0.489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWide)"
+         d="M 81.889057,42.367575 H 94.017556"
+         id="path4" />
+      <path
+         style="fill:#006b00;fill-opacity:0.952999;stroke:#999999;stroke-width:0.489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWide-2)"
+         d="M 81.491666,59.795298 H 93.620165"
+         id="path4-3" />
+      <path
+         style="fill:#006b00;fill-opacity:0.952999;stroke:#999999;stroke-width:0.489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWide-6)"
+         d="m 131.40233,42.367577 h -12.1285"
+         id="path4-9" />
+      <path
+         style="fill:#006b00;fill-opacity:0.952999;stroke:#999999;stroke-width:0.489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWide-2-6)"
+         d="m 131.27055,59.7953 h -12.1285"
+         id="path4-3-2" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:normal;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.0892463;stroke-linejoin:round;stroke-opacity:0.5;-inkscape-stroke:none"
+       x="31.332466"
+       y="17.499041"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.0892464"
+         x="31.332466"
+         y="17.499041">Labour supply</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:normal;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.0892463;stroke-linejoin:round;stroke-opacity:0.5;-inkscape-stroke:none"
+       x="136.19917"
+       y="18.143963"
+       id="text1-5"><tspan
+         sodipodi:role="line"
+         id="tspan1-0"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.0892464"
+         x="136.19917"
+         y="18.143963">Labour demand</tspan></text>
+    <g
+       id="g4"
+       transform="matrix(0.8663268,0,0,0.8663268,7.841631,10.844119)"
+       style="stroke-width:1.1543">
+      <path
+         d="M 204.43435,22.524458 H 142.71738 V 78.01522 c 0,2.779346 2.22916,5.016817 4.99817,5.016817 h 51.72063 c 2.76902,0 4.99817,-2.237471 4.99817,-5.016817 z"
+         style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#e58f8f;stroke-width:0.544828;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;stop-color:#000000;stop-opacity:1"
+         id="path2-0" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.30540822,0,0,0.30540822,116.01438,-72.614524)"
+         id="text8-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;line-height:1.4;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:start;text-decoration-color:#000000;letter-spacing:-0.96px;white-space:pre;shape-inside:url(#rect8-3-7);display:inline;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.84819;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="-81.805489"
+         y="0"><tspan
+           x="94.154297"
+           y="374.93594"
+           id="tspan9"><tspan
+   style="font-weight:bold"
+   id="tspan8">Short-term decisions:</tspan>
+</tspan><tspan
+           x="94.154297"
+           y="395.46933"
+           id="tspan10">  -Marginal productivity 
+</tspan><tspan
+           x="94.154297"
+           y="416.00272"
+           id="tspan14"><tspan
+   style="font-weight:bold"
+   id="tspan13">Long-term decisions:</tspan>
+</tspan><tspan
+           x="94.154297"
+           y="436.5361"
+           id="tspan15">  -Substitution effect
+</tspan><tspan
+           x="94.154297"
+           y="457.06949"
+           id="tspan16">  -Scale effect</tspan></text>
+      <path
+         d="m 147.51777,12.248762 c -2.79019,0 -5.03639,2.246715 -5.03639,5.036902 v 5.531962 h 62.18897 v -5.531962 c 0,-2.790187 -2.2462,-5.036902 -5.03639,-5.036902 z"
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#e58f8f;fill-opacity:1;stroke:none;stroke-width:0.314198;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.25679, 0.314198;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke;stop-color:#000000;stop-opacity:1"
+         id="path3-7" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:5.64444px;line-height:normal;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.0892463;stroke-linejoin:round;stroke-opacity:0.5;-inkscape-stroke:none"
+       x="153.33749"
+       y="28.403055"
+       id="text1-8-9"><tspan
+         sodipodi:role="line"
+         id="tspan1-9-4"
+         style="font-size:5.64444px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.0892464"
+         x="153.33749"
+         y="28.403055">Firms</tspan></text>
+    <g
+       id="g1"
+       transform="translate(-6.2332041,-63.287559)">
+      <rect
+         style="font-variation-settings:normal;vector-effect:none;fill:#ffc291;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers stroke fill"
+         id="rect36"
+         width="24.25906"
+         height="11.075804"
+         x="100.71879"
+         y="100.11723"
+         ry="0.95846742" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:1.1;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:end;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+         x="118.96484"
+         y="106.8491"
+         id="text5-6-7"><tspan
+           sodipodi:role="line"
+           id="tspan5-3-6"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.564999"
+           x="118.64735"
+           y="106.8491">Wages</tspan></text>
+    </g>
+    <g
+       id="g2"
+       transform="translate(-6.2332041,-45.859837)">
+      <rect
+         style="font-variation-settings:normal;vector-effect:none;fill:#ffc291;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.365001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers stroke fill"
+         id="rect36-5"
+         width="24.727081"
+         height="11.075804"
+         x="100.25076"
+         y="100.11723"
+         ry="0.95846742" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:center;text-decoration-color:#000000;letter-spacing:-0.3175px;word-spacing:0px;text-anchor:middle;white-space:pre;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.564999;stroke-dasharray:2.26, 0.564999;-inkscape-stroke:none;paint-order:markers fill stroke"
+         x="112.57648"
+         y="105.28767"
+         id="text5-6-7-6"><tspan
+           sodipodi:role="line"
+           id="tspan5-3-6-2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;stroke-width:0.564999"
+           x="112.57648"
+           y="105.28767">Working</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;line-height:0.9;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:center;text-anchor:middle;stroke-width:0.564999"
+           x="112.41772"
+           y="109.41517"
+           id="tspan2">hours</tspan></text>
+    </g>
+    <g
+       id="g10"
+       transform="translate(7.6539566,6.4527161)">
+      <g
+         id="g6"
+         transform="translate(0,1.4613377)">
+        <g
+           id="g3"
+           transform="matrix(0.87004059,0,0,0.87004067,2.5602344,1.7427812)"
+           style="stroke-width:1.14937">
+          <path
+             d="M 81.653059,23.68573 H 19.93609 v 55.490762 c 0,2.779346 2.22915,5.016817 4.99816,5.016817 h 51.720648 c 2.769011,0 4.998161,-2.237471 4.998161,-5.016817 z"
+             style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#8fa9e5;stroke-width:0.542502;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke;stop-color:#000000;stop-opacity:1"
+             id="path2" />
+          <text
+             xml:space="preserve"
+             transform="matrix(0.30410459,0,0,0.30410457,-5.2287176,-77.162304)"
+             id="text8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.6667px;line-height:1.4;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:start;text-decoration-color:#000000;letter-spacing:-0.96px;white-space:pre;shape-inside:url(#rect8-9);display:inline;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.84819;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             x="-81.805489"
+             y="0"><tspan
+               x="94.154297"
+               y="374.93594"
+               id="tspan18"><tspan
+   style="font-weight:bold"
+   id="tspan17">Short-term decisions:</tspan>
+</tspan><tspan
+               x="94.154297"
+               y="395.46933"
+               id="tspan19">  -Reservation wage
+</tspan><tspan
+               x="94.154297"
+               y="416.00272"
+               id="tspan20">  -Household production
+</tspan><tspan
+               x="94.154297"
+               y="436.5361"
+               id="tspan21">
+</tspan><tspan
+               x="94.154297"
+               y="457.06949"
+               id="tspan23"><tspan
+   style="font-weight:bold"
+   id="tspan22">Long-term decisions:</tspan>
+</tspan><tspan
+               x="94.154297"
+               y="477.60288"
+               id="tspan24">  -Substitution effect
+</tspan><tspan
+               x="94.154297"
+               y="498.13626"
+               id="tspan25">  -Income effect</tspan></text>
+          <path
+             d="m 24.736475,13.410034 c -2.790187,0 -5.036385,2.246715 -5.036385,5.036902 v 5.531962 h 62.188968 v -5.531962 c 0,-2.790187 -2.246198,-5.036902 -5.036385,-5.036902 z"
+             style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#8fa9e5;fill-opacity:1;stroke:none;stroke-width:0.312857;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.25142, 0.312857;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:markers fill stroke;stop-color:#000000;stop-opacity:1"
+             id="path3" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-weight:500;font-size:5.64444px;line-height:normal;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Medium';text-decoration-color:#000000;letter-spacing:-0.254px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.0892463;stroke-linejoin:round;stroke-opacity:0.5;-inkscape-stroke:none"
+           x="29.322233"
+           y="20.095453"
+           id="text1-8"><tspan
+             sodipodi:role="line"
+             id="tspan1-9"
+             style="font-size:5.64444px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.0892464"
+             x="29.322233"
+             y="20.095453">Individuals</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
