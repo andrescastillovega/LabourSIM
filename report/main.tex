@@ -1,18 +1,45 @@
 \documentclass[twoside, 12pt]{report}
-\usepackage{amsmath}
 \usepackage{graphicx} % Required for inserting images
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{hyperref}
-\usepackage{cleveref}
 \usepackage{xcolor}
 \usepackage[skip=8pt, indent=20pt]{parskip}
 \usepackage[authoryear]{natbib}
+\usepackage{setspace} \onehalfspacing
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\usepackage{annotate-equations}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{color,soul}
+\usepackage{appendix}
+\usepackage{pdflscape}
+
+
+% Set page margins
+\geometry{
+    letterpaper,
+    inner=30mm,
+    outer=20mm,
+}
+
 
 % Set graphics path
 \graphicspath{{images/}}
 
+% % Define colours
+\definecolor{lightBlue}{RGB}{129, 183, 242}
+\definecolor{lightGrey}{RGB}{128, 128, 128}
+\definecolor{lightRed}{RGB}{255, 143, 143}
+\definecolor{lightGreen}{RGB}{46, 184, 59}
+\definecolor{lightPurple}{RGB}{160, 98, 239}
+\definecolor{lightgray}{gray}{0.92}
 
 % Set dark mode
 % \pagecolor[rgb]{0,0,0} %black
@@ -30,18 +57,41 @@
 \usetikzlibrary{shapes.multipart, arrows.meta, decorations.markings}
 
 \title{MASc Thesis}
-\author{andres.castillo }
+\author{Andres Castillo}
 \date{December 2023}
+
+\raggedbottom
 
 \begin{document}
 \begin{sloppypar}
 
-\maketitle
+% \maketitle
+\include{chapters/0_title_page}
 
 \chapter*{Abstract}
+\begin{spacing}{2}
+Labour markets and transportation systems are at the core of urban life. Attributes such as residential and work locations, household income, and auto ownership are closely related to the interactions in the labour market. Since salaries are a key component of these interactions, predicting salaries becomes an important task for integrating labour market outcomes into travel behaviour modelling. Using a data-driven approach, we estimate a Bayesian hierarchical model to predict salary distributions in the Greater Toronto Area. The results of this work demonstrate that this approach provides better estimates at both the aggregated and disaggregated levels and generates more robust predictions by producing probability distributions instead of point estimates. This characteristic is key for using this model in an urban simulation setting such as the ILUTE framework. 
+\end{spacing}
+
+
 \chapter*{Acknowledgements}
+\vspace{-1cm}
+The completion of this thesis marks the end of a long journey that began at least seven years ago as a dream. This journey has been full of learnings and experiences that define who I am. Today also marks the beginning of a new stage in my life. For that reason, I would like to thank all the people who have been part of this journey and made it possible.
+
+To my love, Ale, for being my support and inspiration. I feel so fortunate to have you in my life. This achievement is also yours. To my love, Emi, you arrived in our lives at the perfect moment, and we are happily waiting for you. I hope someday you can find this work as an inspiration to follow your dreams and never give up. There are no limits if you work with love and dedication.
+
+To Prof. Eric Miller, for his patience, guidance, and support during this journey. I am very grateful for the opportunity to work with you and learn from your experience.
+
+To Prof. Matthew Roorda, for kindly agreeing to be the second reader of this thesis and providing his feedback. Also, to all my colleagues at the University of Toronto, I learned a lot from all of you. Thanks for the good times and memories.
+
+To my family, for their encouragement during this journey. All of you are continuously teaching me about the important things in life. This thesis is dedicated to the memory of my mother, Lucinda, who always believed in me and inspired me to follow my dreams. I am sure you would be very proud of this achievement. All that I have done is thanks to you.
+
+Last but not least, to my dog, Avena. This thesis is also yours because you stayed with me during the long hours of work and study. You do not know how much those afternoon walks helped me to clear my mind and keep going.
+
 
 \tableofcontents
+\listoffigures
+\listoftables
 
 \include{chapters/1_introduction}
 \include{chapters/2_literature_review}
@@ -49,12 +99,16 @@
 \include{chapters/4_data_sources}
 \include{chapters/5_salary_model}
 \include{chapters/6_model_integration}
-\include{chapters/7_computational_cost}
-\include{chapters/8_conclusions}
-\include{chapters/9_future_work}
+\include{chapters/7_conclusions}
+\include{chapters/8_future_work}
 
 \bibliographystyle{apalike}
 \bibliography{bibliography}
+
+\appendix
+\include{chapters/A1_posterior_structure}
+\include{chapters/A2_posterior_final}
+
 
 \end{sloppypar}
 \end{document}

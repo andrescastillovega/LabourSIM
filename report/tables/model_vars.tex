@@ -1,0 +1,25 @@
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+    \begin{tabular}{p{2cm}p{4cm}p{2cm}p{7cm}}
+        \textbf{Name} & \textbf{Units} & \textbf{Type} & \textbf{Description} \\
+        \hline
+        \rowcolor{lightgray} Experience & years & Continuous & Years of previous experience in the occupation and industry \\
+
+        Sex & 0 or 1 & Categorical & Dummy variable that takes 0 for Males or 1 for Females \\
+
+        \rowcolor{lightgray} Education Level & 0 or 1 for each education level: \newline No education, \newline Elementary, \newline High-school, \newline Postsecondary, \newline Undergraduate, \newline Graduate & Categorical & The dummy variable represents the education level using a One-hot encoding. \\
+
+        Age & years (15-99) & Continuous & Age of the individual at the time of the survey \\
+
+        \rowcolor{lightgray} Tenure & months & Continuous & Number of months in the same job \\
+
+        Union & 0 or 1 & Categorical & Dummy variable that takes 1 if the individual is unionized or 0 otherwise \\
+
+        \rowcolor{lightgray} Public sector & 0 or 1 & Categorical & The dummy variable takes 1 if the individual works in the public sector and 0 otherwise. \\
+
+        Self-employment & 0 or 1 & Categorical & The dummy variable takes 1 if the individual is self-employed and 0 otherwise. \\
+
+        \hline
+    \end{tabular}
+    \caption{\label{table:model_vars} Variables used in the model specification}
+\end{table}

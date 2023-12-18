@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    width="929.7475pt"
-   height="272.29626pt"
-   viewBox="0 0 929.74749 272.29627"
+   height="291.45874pt"
+   viewBox="0 0 929.74749 291.45875"
    version="1.1"
    id="svg253"
    sodipodi:docname="salary_edu_gender.svg"
    inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
-   inkscape:export-filename="salary_edu_gender.jpg"
-   inkscape:export-xdpi="600"
-   inkscape:export-ydpi="600"
+   inkscape:export-filename="salary_edu_gender.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -28,13 +28,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="0.73472222"
-     inkscape:cx="716.59735"
-     inkscape:cy="227.97732"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="0.51952706"
+     inkscape:cx="639.04274"
+     inkscape:cy="687.16343"
+     inkscape:window-width="1850"
+     inkscape:window-height="1136"
+     inkscape:window-x="70"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg253" />
   <metadata
@@ -391,7 +391,7 @@
   </defs>
   <g
      id="g31"
-     transform="translate(-56.141347,10.988083)" />
+     transform="translate(-56.141347,30.150552)" />
   <defs
      id="defs253">
     <clipPath
@@ -442,7 +442,7 @@
   </defs>
   <g
      id="g302"
-     transform="translate(2.7694581,-14.732261)">
+     transform="translate(2.7694581,4.4302084)">
     <g
        id="g293"
        transform="translate(-58.910805,25.720344)">
@@ -1199,7 +1199,7 @@
   </g>
   <g
      id="g301"
-     transform="translate(80.883447,-14.732261)">
+     transform="translate(80.883447,-15.069792)">
     <g
        id="g299"
        transform="translate(0,-0.6812973)">
@@ -1246,4 +1246,59 @@
            y="38.322639">Male</tspan></text>
     </g>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.2;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:end;text-decoration-color:#000000;letter-spacing:-0.72px;text-anchor:end;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751177;stroke-linecap:round;stroke-dasharray:0.751177, 1.50236;-inkscape-stroke:none"
+     x="177.68846"
+     y="51.257553"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751181"
+       x="176.96846"
+       y="51.257553">Elementary</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.2;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:end;text-decoration-color:#000000;letter-spacing:-0.72px;text-anchor:end;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751177;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.751177, 1.50236;-inkscape-stroke:none"
+     x="347.54099"
+     y="51.257553"
+     id="text1-6"><tspan
+       sodipodi:role="line"
+       id="tspan1-7"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751181"
+       x="346.82098"
+       y="51.257553">High school</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.2;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:end;text-decoration-color:#000000;letter-spacing:-0.72px;text-anchor:end;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751177;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.751177, 1.50236;-inkscape-stroke:none"
+     x="539.47375"
+     y="51.257553"
+     id="text1-6-3"><tspan
+       sodipodi:role="line"
+       id="tspan1-7-5"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751181"
+       x="538.75372"
+       y="51.257553">Post-secondary</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.2;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:end;text-decoration-color:#000000;letter-spacing:-0.72px;text-anchor:end;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751177;stroke-linecap:round;stroke-dasharray:0.751177, 1.50236;-inkscape-stroke:none"
+     x="724.66852"
+     y="51.257553"
+     id="text2"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.751181"
+       x="723.94855"
+       y="51.257553">Undergraduate</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.2;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';text-align:end;text-decoration-color:#000000;letter-spacing:-0.72px;text-anchor:end;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.751177;stroke-linecap:round;stroke-dasharray:0.751177, 1.50236;-inkscape-stroke:none"
+     x="871.03259"
+     y="51.257553"
+     id="text3"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono Bold';stroke-width:0.751181"
+       x="870.31256"
+       y="51.257553">Graduate</tspan></text>
 </svg>

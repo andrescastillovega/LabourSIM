@@ -1,15 +1,180 @@
 \begin{thebibliography}{}
 
+\bibitem[Anderson, 1997]{Joseph1997}
+Anderson, J.~M. (1997).
+\newblock Models for retirement policy analysis.
+
+\bibitem[Angrist and Evans, 1998]{Angrist1998}
+Angrist, J.~D. and Evans, W.~N. (1998).
+\newblock Children and their parents' labor supply: Evidence from exogenous
+  variation in family size.
+
+\bibitem[Baker and Benjamin, 1999]{Baker1999}
+Baker, M. and Benjamin, D. (1999).
+\newblock Early retirement provisions and the labor force behavior of older
+  men: Evidence from canada.
+\newblock {\em Journal of Labor Economics}, 17:724--756.
+
+\bibitem[Benjamin et~al., 2021]{Benjamin2021}
+Benjamin, D., Gunderson, M., Lemieux, T., Riddell, C., and Schile, T. (2021).
+\newblock {\em Labour market economics : theory, evidence, and policy in
+  Canada}.
+\newblock McGraw-Hill Ryerson, 9th edition edition.
+
+\bibitem[Borjas, 2020]{Borjas2020}
+Borjas, G.~J. (2020).
+\newblock {\em Labor economics}.
+\newblock McGraw-Hill Education, 8th edition edition.
+
+\bibitem[Devore, 2016]{Devore2016}
+Devore, J. (2016).
+\newblock {\em Probability and statistics for engineering and the Sciences}.
+\newblock Cengage Learning.
+
+\bibitem[Gelman et~al., 2013]{Gelman2013}
+Gelman, A., Carlin, J.~B., Stern, H.~S., Dunson, D.~B., Vehtari, A., and Rubin,
+  D.~B. (2013).
+\newblock {\em Bayesian data analysis}.
+\newblock Texts in statistical science. CRC Press Boca Raton, Boca Raton, third
+  edition edition.
+
+\bibitem[Gelman and Rubin, 1992]{Gelman1992}
+Gelman, A. and Rubin, D.~B. (1992).
+\newblock Inference from iterative simulation using multiple sequences.
+\newblock {\em Statistical Science}, 7:457--472.
+
+\bibitem[Gunderson, 1979]{Gunderson1979}
+Gunderson, M. (1979).
+\newblock Earnings differentials between the public and private sectors.
+\newblock {\em The Canadian Journal of Economics / Revue canadienne
+  d'Economique}, 12:228--242.
+
+\bibitem[Hain, 2010]{Hain2010}
+Hain, M. D.~L. (2010).
+\newblock Labour market model of the greater toronto and hamilton area for
+  integration within the integrated land use, transportation, environment
+  modelling system.
+
+\bibitem[Hamilton, 2000]{Hamilton2000}
+Hamilton, B. (2000).
+\newblock Does entrepreneurship pay? an empirical analysis of the returns to
+  self‐employment.
+\newblock {\em Journal of Political Economy}, 108:604--631.
+
 \bibitem[Harmon, 2013]{Harmon2013}
 Harmon, A. (2013).
 \newblock A microsimulated industrial and occupation-based labour market model
   for use in the integrated land use, transportation, environment (ilute)
   modelling system.
 
+\bibitem[Harmon and Miller, 2018]{HarmonMiller2018}
+Harmon, A. and Miller, E.~J. (2018).
+\newblock Overview of a labour market microsimulation model.
+\newblock {\em Procedia Computer Science}, 130:172--179.
+
 \bibitem[Harmon and Miller, 2020]{HarmonMiller2020}
 Harmon, A. and Miller, E.~J. (2020).
 \newblock Microsimulating labour market job-worker matching.
 \newblock {\em Journal of Ambient Intelligence and Humanized Computing},
   11:993--1006.
+
+\bibitem[Kaufman and Hotchkiss, 2003]{Kaufman2003}
+Kaufman, B. and Hotchkiss, J.~L. (2003).
+\newblock {\em The Economics of Labor Markets}, volume~1.
+\newblock South-Western College Pub.
+
+\bibitem[Keegan, 2007]{Keegan2007}
+Keegan, M. (2007).
+\newblock Modelling the workers of tomorrow: the appsim dynamic microsimulation
+  model.
+
+\bibitem[Lambert, 2018]{Lambert2018}
+Lambert, B. (2018).
+\newblock {\em A student's guide to Bayesian statistics}.
+\newblock SAGE Los Angeles, Los Angeles.
+
+\bibitem[Lewis, 1986]{Gregg1986}
+Lewis, H.~G. (1986).
+\newblock Union relative wage effects.
+\newblock {\em Handbook of Labor Economics}, 2:1139--1181.
+
+\bibitem[McCurdy et~al., 1980]{McCurdy1980}
+McCurdy, T.~E., Brown, D., Gould, W., Michael, R., Pencavel, J., Sumner, D.,
+  and MaCurdy, T.~E. (1980).
+\newblock An empirical model of labour supply in a life cycle setting.
+
+\bibitem[Mcdonald and Solow, 1992]{Mcdonald1992}
+Mcdonald, I.~M. and Solow, R.~M. (1992).
+\newblock Wage bargaining and employment.
+\newblock {\em Economic Models of Trade Unions}, pages 85--104.
+
+\bibitem[McElreath, 2016]{McElreath2016}
+McElreath, R. (2016).
+\newblock {\em Statistical rethinking : a Bayesian course with examples in {R}
+  and Stan}.
+\newblock Texts in statistical science. CRC Press/Taylor \& Francis Group Boca
+  Raton, Boca Raton.
+
+\bibitem[Miller and Vaughan, 2021]{Miller2021}
+Miller, E.~J. and Vaughan, J. (2021).
+\newblock Place of residence-place of work modelling: Issues \& options.
+
+\bibitem[Neal, 2012]{Neal2012}
+Neal, R.~M. (2012).
+\newblock Mcmc using hamiltonian dynamics.
+
+\bibitem[Nielsen, 2010]{Nielsen2010}
+Nielsen, S.~F. (2010).
+\newblock Generalized linear models for insurance data.
+\newblock {\em Journal of Applied Statistics}, 37:703.
+\newblock doi: 10.1080/02664760902811571.
+
+\bibitem[Phan et~al., 2019]{Phan2019}
+Phan, D., Pradhan, N., and Jankowiak, M. (2019).
+\newblock Composable effects for flexible and accelerated probabilistic
+  programming in numpyro.
+
+\bibitem[Salvini and Miller, 2005]{Salvini2005}
+Salvini, P. and Miller, E.~J. (2005).
+\newblock Ilute: An operational prototype of a comprehensive microsimulation
+  model of urban systems.
+\newblock {\em Networks and Spatial Economics}, 5:217--234.
+
+\bibitem[Smith, 1910]{Smith1910}
+Smith, A. (1910).
+\newblock {\em The Wealth of Nations}, volume~1.
+\newblock London : J.M. Dent \& Sons ; New York : E.P. Dutton.
+
+\bibitem[Smith, 2003]{Smith2003}
+Smith, S. (2003).
+\newblock {\em Labour Economics}.
+\newblock Taylor \& Francis Group, 2nd edition edition.
+
+\bibitem[StatisticsCanada, 1998]{StatsCAN2018}
+StatisticsCanada (1998).
+\newblock Overview of dynacan a full-fledged canadian actuarial stochastic
+  model designed for the fiscal and policy analysis of social security schemes.
+
+\bibitem[StatisticsCanada, 2012]{StatsCAN2012}
+StatisticsCanada (2012).
+\newblock Survey of labour and income dynamics (slid) - a 2011 survey overview.
+
+\bibitem[StatisticsCanada, 2013]{StatsCAN2013}
+StatisticsCanada (2013).
+\newblock The lifepaths microsimulation model: An overview.
+
+\bibitem[Sullivan, 2010]{Sullivan2010}
+Sullivan, P. (2010).
+\newblock A dynamic analysis of educational attainment, occupational choices,
+  and job search.
+
+\bibitem[Tikanmäki and Lappo, 2020]{Tika2020}
+Tikanmäki, H. and Lappo, S. (2020).
+\newblock Elsi: The finnish pension microsimulation model.
+
+\bibitem[Vehtari et~al., 2015]{Vehtari2015}
+Vehtari, A., Gelman, A., and Gabry, J. (2015).
+\newblock Practical bayesian model evaluation using leave-one-out
+  cross-validation and waic.
 
 \end{thebibliography}
